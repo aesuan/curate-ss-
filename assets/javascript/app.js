@@ -42,7 +42,7 @@ let paintings = [
 //wikipedia API query URL to get first two sentences of article
 //"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=" + pageName + "&exintro=&exsentences=2&explaintext=&redirects=&format=json"
 
-
+let paintingNumber = 0;
 let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + paintings[paintingNumber].paintingName;
 
 //Met API ajax call
@@ -50,5 +50,5 @@ $.ajax({
   url: metQueryURL,
   method: "GET"
 }) .then(function(response) {
-  
+
 })
