@@ -1,6 +1,6 @@
 
   // Initialize Firebase
-  var config = {
+  const config = {
     apiKey: firebaseAPI,
     authDomain: "curate-ss.firebaseapp.com",
     databaseURL: "https://curate-ss.firebaseio.com",
