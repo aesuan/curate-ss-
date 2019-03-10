@@ -4,42 +4,49 @@ html, body {
     width: 100%;
     position: relative;
     overflow: hidden;
+    z-index: -4;
 
 }
 
 .geoBox1 {
-    background-color: green;
     position: absolute;
     top: -200px;
-    right: -400px;
+    right: -500px;
     width: 100%;
-    z-index: 1;
-    height: 500px;
-    opacity: .75;
+    z-index: -3;
+    height: 600px;
+    opacity: .95;
     transform: translate(30px, 20px) rotate(55deg);
 }
 
+.grad1 {
+    background-image: linear-gradient(to right, #528360, #869e8d);
+}
+
+.grad2 {
+    background-image: linear-gradient(rgb(130, 164, 216), rgb(79, 114, 167),rgb(64, 96, 143));
+}
+
 .geoBox2 {
-    background-color: yellow;
     position: absolute;
     right: 0;
     width: 600px;
     height: 1800px;
     top: -350px;
-
-    z-index: 2;
-    opacity: .75;
+    z-index: -2;
+    opacity: .98;
     transform: translate(30px, 20px) rotate(65deg);
 }
 
 .geoBox3 {
-    background-color: red;
+    background-image: url("../img/vangoghmuseum-s0106V1962-3840.jpg");
+    background-position: right bottom;
+    opacity: .65;
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 400px;
-    z-index: 3;
-    opacity: .75;
+    z-index: -1;
     left: -600px;
     bottom: -100px;
     transform: translate(30px, 20px) rotate(30deg);
