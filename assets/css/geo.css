@@ -5,6 +5,7 @@ html, body {
     position: relative;
     overflow: hidden;
     z-index: -4;
+    font-family: 'PT Sans', sans-serif;
 
 }
 
@@ -24,7 +25,7 @@ html, body {
 }
 
 .grad2 {
-    background-image: linear-gradient(to right, rgb(130, 164, 216), #1F4C8F);
+    background-image: linear-gradient(to right, rgb(137, 164, 204), #1F4C8F);
 }
 
 .grad1 {
@@ -58,4 +59,38 @@ html, body {
 #vg-painting {
     width: 500px;
     margin-top: 15vh;
+}
+
+.art-info {
+    width: 500px;
+    height: 250px;
+    padding-top: 1px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.artist-name {
+    font-size: 2.5em;
+    font-weight: bolder;
+    background-color: rgb(48, 78, 122);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: rgb(237, 244, 255) 2px 2px 1px;
+}
+
+.painting-name {
+    font-weight: bolder;
+    background-color: rgb(48, 78, 122);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: rgb(237, 244, 255) 2px 2px 1px;
+}
+
+.painting-info {
+    color: rgb(20, 32, 51);
 }
