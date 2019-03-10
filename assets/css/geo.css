@@ -19,12 +19,16 @@ html, body {
     transform: translate(30px, 20px) rotate(55deg);
 }
 
-.grad1 {
-    background-image: linear-gradient(to right, #528360, #869e8d);
+.grad3 {
+    background-image: linear-gradient(to right, #528360, #1F4C8F);
 }
 
 .grad2 {
-    background-image: linear-gradient(rgb(130, 164, 216), rgb(79, 114, 167),rgb(64, 96, 143));
+    background-image: linear-gradient(to right, rgb(130, 164, 216), #1F4C8F);
+}
+
+.grad1 {
+    background-image: linear-gradient(to top,#528360, white);
 }
 
 .geoBox2 {
@@ -39,9 +43,8 @@ html, body {
 }
 
 .geoBox3 {
-    background-image: url("../img/vangoghmuseum-s0106V1962-3840.jpg");
-    background-position: right bottom;
-    opacity: .65;
+
+    background-color: #528360;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -50,4 +53,9 @@ html, body {
     left: -600px;
     bottom: -100px;
     transform: translate(30px, 20px) rotate(30deg);
+}
+
+#vg-painting {
+    width: 500px;
+    margin-top: 15vh;
 }
