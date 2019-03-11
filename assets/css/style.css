@@ -2,3 +2,32 @@ body {
   background-color: #CDAB63;
 }
 
+#wrapper {
+  margin-top: 8%;
+}
+
+.card-content {
+  background: #A9A8BD;
+  color: #395A7A;
+}
+
+#art-piece {
+  max-width: 380px;
+}
+
+#clock-container {
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+h3 {
+  color: #03648B;
+}
+
+h2 {
+  color: #528360;
+}
+
+h5 {
+  color: #03648B;
+}
