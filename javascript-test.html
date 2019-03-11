@@ -25,11 +25,15 @@
 
         }
 
-        .painting {
+        .painting-card {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .painting {
+            width: 200px;
         }
 
         .colors {
@@ -49,9 +53,21 @@
 
     <div id="test-div">
 
-        <section class="painting" id="painting-one">
+        <!-- <section class="painting-card" id="painting-one">
             <section class="info">
-                <img src="https://via.placeholder.com/200">
+                <img class="painting" src="https://via.placeholder.com/200">
+            </section>
+
+            <div class="colors">
+                <figure class="color-one block"></figure>
+                <figure class="colo-two block"></figure>
+                <figure class="color-three block"></figure>
+            </div>
+        </section>
+
+        <section class="painting-card" id="painting-two">
+            <section class="info">
+                <img class="painting" src="https://via.placeholder.com/200">
             </section>
 
             <div class="colors">
@@ -59,19 +75,8 @@
                 <section class="colo-two block"></section>
                 <section class="color-three block"></section>
             </div>
-        </section>
+        </section> -->
 
-        <section class="painting" id="painting-two">
-            <section class="info">
-                <img src="https://via.placeholder.com/200">
-            </section>
-
-            <div class="colors">
-                <section class="color-one block"></section>
-                <section class="colo-two block"></section>
-                <section class="color-three block"></section>
-            </div>
-        </section>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
