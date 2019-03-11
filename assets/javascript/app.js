@@ -11,44 +11,29 @@ firebase.initializeApp(config);
 
 let paintings = [
   {
-    paintingName: "Cow's Skull: Red, White, and Blue",
-    objectID: 0,
-    palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
-      //rainyPalette: {}, nightPalette: {} etc 
-    },
-  {
     paintingName: "The Harvesters",
-    objectID: 0,
+    objectID: 435809,
     palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
-  },
-  {
-    paintingName: "Bridge over a Pond of Water Lillies",
-    objectID: 0,
-    palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
+    //rainyPalette: {}, nightPalette: {} etc
   },
   {
     paintingName: "Madonna and Child",
-    objectID: 0,
+    objectID: 459136,
     palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
   },
   {
     paintingName: "The Dance Class",
-    objectID: 0,
+    objectID: 438817,
     palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
   },
   {
-    paintingName: "Autumn Rhythm (Number 30)",
-    objectID: 0,
-    palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
-  },
-  {
-    paintingName: "Lake of Zug: Early Morning",
-    objectID: 0,
+    paintingName: "Whalers",
+    objectID: 437854,
     palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
   },
   {
     paintingName: "View of Toledo",
-    objectID: 0,
+    objectID: 436575,
     palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
   },
   {
@@ -62,38 +47,55 @@ let paintings = [
     palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
   },
   {
-    paintingName: "Dutch Interior (III)",
-    objectID: 486758,
+    paintingName: "La Berceuse",
+    objectID: 437984,
     palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
-  }
-
+  },
 ]
 
 
 //wikipedia API query URL to get first two sentences of article
 //"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=" + pageName + "&exintro=&exsentences=2&explaintext=&redirects=&format=json"
 
-let paintingNumber = 1;
-//query by object number
-let paintingURL;
+let paintingNumber = 7;
 
+//Search by painting name
+//let metSearchURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=" + paintings[paintingNumber].paintingName;
+// $.ajax({
+//   url: metSearchURL,
+//   method: "GET"
+// }) .then(function(response) {
+//   console.log(response);
+//   let paintingID = response.objectIDs[0];
 
-
-//+ paintings[paintingNumber].objectID;
-let metSearchURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=" + paintings[paintingNumber].paintingName;
 //Met API ajax call
+let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + paintings[paintingNumber].objectID;
+
 $.ajax({
-  url: metSearchURL,
+  url: metQueryURL,
   method: "GET"
-}) .then(function(response) {
+}).then(function (response) {
   console.log(response);
-  let paintingID = response.objectIDs[0];
-  let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + paintingID; 
-  $.ajax({
-    url: metQueryURL,
-    method: "GET"
-  }) .then(function(result) {
-    console.log(result);
+  // if (!isPublicDomain) {
+  //   console.log("Can't use this one!");
+  // }
+  let paintingTitle = response.title;
+  let artist = response.artistDisplayName;
+  let artistBio = response.artistDisplayBio;
+  let artistNationality = response.artistNationality;
+  let medium = response.medium;
+  //might have to remove all non-number characters from response depending on how this is used
+  let year = response.objectDate;
+  let paintingURL = response.primaryImageSmall;
+
+  console.log(paintingTitle);
+  console.log(artist);
+  console.log(artistBio);
+  console.log(artistNationality);
+  console.log(medium);
+  console.log(year);
+  console.log(paintingURL);
+
 })
-})
+//})
 

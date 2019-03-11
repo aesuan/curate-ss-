@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #test-div {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 20px 20px;
+
+        }
+
+        .painting {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .colors {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .block {
+            width: 60px;
+            height: 20px;
+            margin: 5px;
+            position: relative;
+            background-color: black;
+        }
+    </style>
+
+
+    <div id="test-div">
+
+        <section class="painting" id="painting-one">
+            <section class="info">
+                <img src="https://via.placeholder.com/200">
+            </section>
+
+            <div class="colors">
+                <section class="color-one block"></section>
+                <section class="colo-two block"></section>
+                <section class="color-three block"></section>
+            </div>
+        </section>
+
+        <section class="painting" id="painting-two">
+            <section class="info">
+                <img src="https://via.placeholder.com/200">
+            </section>
+
+            <div class="colors">
+                <section class="color-one block"></section>
+                <section class="colo-two block"></section>
+                <section class="color-three block"></section>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./assets/javascript/apikeys.js"></script>
+    <script src="./assets/javascript/app.js"></script>
+</body>
+
+</html>
