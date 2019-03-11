@@ -13,45 +13,45 @@ let paintings = [
   {
     paintingName: "The Harvesters",
     objectID: 435809,
-    palette: []
+    palette: ["rgb(214, 152, 70)", "rgb(37, 31, 17)", "rgb(114, 62, 17)"]
     // palette: { primaryColor: "", secondaryColor: "", tertiaryColor: "" }
     //rainyPalette: {}, nightPalette: {} etc
   },
   {
     paintingName: "Madonna and Child",
     objectID: 459136,
-    palette: []
+    palette: ["rgb(11, 6, 9)", "rgb(216, 152, 69)", "rgb(163, 5, 4)"]
   },
   {
     paintingName: "The Dance Class",
     objectID: 438817,
-    palette: []
+    palette: ["rgb(85, 94, 56)", "rgb(88, 58, 26)", "rgb(150, 140, 113)"]
   },
   {
     paintingName: "Whalers",
     objectID: 437854,
-    palette: []
+    palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"]
 
   },
   {
     paintingName: "View of Toledo",
     objectID: 436575,
-    palette: []
+    palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"]
   },
   {
     paintingName: "Young Woman with a Water Pitcher",
     objectID: 437881,
-    palette: []
+    palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"]
   },
   {
     paintingName: "Boating",
     objectID: 436947,
-    palette: []
+    palette: ["rgb(101, 134, 166)", "rgb(89, 57, 36)", "rgb(216, 212, 209)"]
   },
   {
     paintingName: "La Berceuse",
     objectID: 437984,
-    palette: []
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
   },
 ]
 
@@ -71,12 +71,13 @@ let paintings = [
 //   let paintingID = response.objectIDs[0];
 // })
 
-
+let paintingNumber = 0;
 
 //Met API ajax call
 
-for (let i = 0, numberPaintings = paintings.length; i < numberPaintings; i++) {
-  let paintingNumber = i;
+//UNCOMMENT THE NEXT TWO LINES TO USE JS/PALETTE TEST HTML
+// for (let i = 0, numberPaintings = paintings.length; i < numberPaintings; i++) {
+//   paintingNumber = i;
   let thisPainting = paintings[paintingNumber];
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
@@ -105,23 +106,24 @@ for (let i = 0, numberPaintings = paintings.length; i < numberPaintings; i++) {
     console.log(year);
     console.log(paintingURL);
 
-    //uncomment this section to print simple painting card on test html page
-    let newPainting = $("<div>", { class: "painting-card", id: "painting-" + paintingNumber });
-    let infoSection = $("<section>", { class: "info" });
-    let paintingImage = $("<img>", { class: "painting", src: paintingURL, alt: "painting" });
-    infoSection.append(paintingImage);
-    newPainting.append(infoSection);
-    let colorSection = $("<section>", { class: "colors" });
-    for (let j = 0; j < 3; j++) {
-      let newColor = $("<figure>", { class: "color-" + j + " block", style: thisPainting.palette[j]});
-      colorSection.append(newColor);
-    }
-    newPainting.append(colorSection);
-    $("#test-div").append(newPainting);
+    //UNCOMMENT THIS WHOLE SECTION TO USE JS/PALETTE TEST HTML
+    // let newPainting = $("<div>", { class: "painting-card", id: "painting-" + paintingNumber });
+    // let infoSection = $("<section>", { class: "info" });
+    // let paintingImage = $("<img>", { class: "painting", src: paintingURL, alt: "painting" });
+    // infoSection.append(paintingImage);
+    // newPainting.append(infoSection);
+    // let colorSection = $("<section>", { class: "colors" });
+    // for (let j = 0; j < 3; j++) {
+    //   let newColor = $("<figure>", { class: "color-" + j + " block", style: "background: " + thisPainting.palette[j] + ";"});
+    //   colorSection.append(newColor);
+    // }
+    // newPainting.append(colorSection);
+    // $("#test-div").append(newPainting);
 
 
   })
 
-}
+  //UNCOMMENT FOR JS/PALETTE TEST HTML
+// }
 
 
