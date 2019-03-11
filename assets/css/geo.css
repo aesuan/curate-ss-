@@ -5,7 +5,8 @@ html, body {
     position: relative;
     overflow: hidden;
     z-index: -4;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Archivo Narrow', sans-serif;
+    letter-spacing: 1px;
 
 }
 
@@ -21,7 +22,7 @@ html, body {
 }
 
 .grad3 {
-    background-image: linear-gradient(to right, #528360, #1F4C8F);
+    background-image: linear-gradient(to right, #80a738, #1F4C8F);
 }
 
 .grad2 {
@@ -29,7 +30,7 @@ html, body {
 }
 
 .grad1 {
-    background-image: linear-gradient(to top,#528360, white);
+    background-image: linear-gradient(to top,#528360, #c2dd8f);
 }
 
 .geoBox2 {
@@ -45,7 +46,6 @@ html, body {
 
 .geoBox3 {
 
-    background-color: #528360;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -56,15 +56,11 @@ html, body {
     transform: translate(30px, 20px) rotate(30deg);
 }
 
-#vg-painting {
-    width: 500px;
-    margin-top: 15vh;
-}
 
 .art-info {
     width: 500px;
     height: 250px;
-    padding-top: 1px;
+    padding-top: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -73,7 +69,7 @@ html, body {
 .artist-name {
     font-size: 2.5em;
     font-weight: bolder;
-    background-color: rgb(48, 78, 122);
+    background-color: rgb(60, 97, 153);
         -webkit-background-clip: text;
         -moz-background-clip: text;
         background-clip: text;
@@ -83,7 +79,7 @@ html, body {
 
 .painting-name {
     font-weight: bolder;
-    background-color: rgb(48, 78, 122);
+    background-color: rgb(60, 97, 153);
         -webkit-background-clip: text;
         -moz-background-clip: text;
         background-clip: text;
@@ -93,4 +89,36 @@ html, body {
 
 .painting-info {
     color: rgb(237, 244, 255);
+    font-weight: bold;
+}
+
+.time {
+
+    padding: 20px;
+
+}
+
+.clock {
+    font-size: 3em;
+    margin: 20px;
+    background-color: rgb(44, 57, 78);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: rgb(209, 228, 255) 2px 2px 1px;
+}
+
+.weather, .date {
+    font-size: 1em;
+    margin: 20px;
+    color: rgb(209, 228, 255);
+}
+
+.materialboxed {
+    margin-top: 0;
+}
+
+.top-space {
+    height: 12vh;
 }
