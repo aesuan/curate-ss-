@@ -1,1 +1,4 @@
 apikeys.js
+
+var firebaseAPI = "AIzaSyDFkB70-ZlFHiBOIFlSzE0TSkw00BNmuIs";
+
