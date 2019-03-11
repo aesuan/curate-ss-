@@ -1,0 +1,173 @@
+html, body {
+    background-color: #1F4C8F;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: -4;
+    font-family: 'Archivo Narrow', sans-serif;
+    letter-spacing: 1px;
+
+}
+
+.geoBox1 {
+    position: absolute;
+    top: -200px;
+    right: -500px;
+    width: 100%;
+    z-index: -3;
+    height: 600px;
+    opacity: .95;
+    transform: translate(30px, 20px) rotate(55deg);
+}
+
+.grad3 {
+    background-image: linear-gradient(to right, #80a738, #1F4C8F);
+}
+
+.grad2 {
+    background-image: linear-gradient(to right, rgb(137, 164, 204), #1F4C8F);
+}
+
+.grad1 {
+    background-image: linear-gradient(to top,#528360, #c2dd8f);
+}
+
+.geoBox2 {
+    position: absolute;
+    right: 0;
+    width: 600px;
+    height: 1800px;
+    top: -350px;
+    z-index: -2;
+    opacity: .98;
+    transform: translate(30px, 20px) rotate(65deg);
+}
+
+.geoBox3 {
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 400px;
+    z-index: -1;
+    left: -600px;
+    bottom: -100px;
+    transform: translate(30px, 20px) rotate(30deg);
+}
+
+
+.art-info {
+    width: 500px;
+    height: 200px;
+    padding: 20px;
+}
+
+.artist-name {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bolder;
+    background-color: rgb(45, 70, 109);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: rgb(237, 244, 255) 2px 2px 1px;
+}
+
+.painting-name {
+    color: rgb(237, 244, 255);
+}
+
+.painting-info {
+    color: rgb(237, 244, 255);
+    margin: 0;
+    line-height: 120%;
+}
+
+.time {
+
+    margin-top: 7vh;
+    padding: 20px;
+
+}
+
+.clock {
+    font-size: 3em;
+    margin: 20px;
+    background-color: rgb(44, 57, 78);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: rgb(209, 228, 255) 2px 2px 1px;
+}
+
+.weather, .date {
+    font-size: 1em;
+    margin: 20px;
+    color: rgb(209, 228, 255);
+}
+
+
+.top-space {
+    height: 12vh;
+}
+
+.greeting {
+    position: relative;
+    bottom: -12vh;
+    margin: 0;
+    padding: 0;
+    color: rgb(209, 228, 255);
+    font-size: 1.5em;
+}
+
+.main-container {
+    position: relative;
+    height: 200px;
+    width: 600px;
+}
+
+.the-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+}
+
+.the-card:hover {
+    transform: rotateY(180deg);
+}
+
+.the-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    
+}
+
+
+.the-back {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    backface-visibility: hidden;
+    background: white;
+    transform: rotateY(180deg);
+    color: black;
+    font-size: .95em;
+    margin: 0;
+    padding: 0 10px;
+    letter-spacing: 0px;
+
+}
+
+.fixed-action-btn{
+    right: auto; 
+    margin-left: 5%;  
+}
+
+
