@@ -1,4 +1,7 @@
 // Initialize Firebase
+
+
+
 const config = {
   apiKey: firebaseAPI,
   authDomain: "curate-ss.firebaseapp.com",
@@ -55,7 +58,13 @@ let paintings = [
   },
 ]
 
-
+let paintingTitle;
+let artist;
+let artistBio;
+let artistNationality;
+let medium;
+let year;
+let paintingURL;
 //wikipedia API query URL to get first two sentences of article
 //"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=" + pageName + "&exintro=&exsentences=2&explaintext=&redirects=&format=json"
 
@@ -70,8 +79,17 @@ let paintings = [
 //   console.log(response);
 //   let paintingID = response.objectIDs[0];
 // })
+function choosePainting(paintingsArray) {
+  let numberChoices = paintingsArray.length;
+  return Math.floor(Math.random() * numberChoices);
+ }
 
-let paintingNumber = 0;
+ 
+
+let paintingNumber = choosePainting(paintings);
+
+console.log(paintingNumber);
+
 
 //Met API ajax call
 
@@ -79,7 +97,10 @@ let paintingNumber = 0;
 // for (let i = 0, numberPaintings = paintings.length; i < numberPaintings; i++) {
 //   paintingNumber = i;
   let thisPainting = paintings[paintingNumber];
+  console.log(thisPainting);
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
+
+
 
   $.ajax({
     url: metQueryURL,
@@ -89,22 +110,34 @@ let paintingNumber = 0;
     // if (!isPublicDomain) {
     //   console.log("Can't use this one!");
     // }
-    let paintingTitle = response.title;
-    let artist = response.artistDisplayName;
-    let artistBio = response.artistDisplayBio;
-    let artistNationality = response.artistNationality;
-    let medium = response.medium;
+    paintingTitle = response.title;
+    artist = response.artistDisplayName;
+    artistBio = response.artistDisplayBio;
+    artistNationality = response.artistNationality;
+    medium = response.medium;
     //might have to remove all non-number characters from response depending on how this is used
-    let year = response.objectDate;
-    let paintingURL = response.primaryImageSmall;
+    year = response.objectDate;
+    paintingURL = response.primaryImageSmall;
 
-    console.log(paintingTitle);
-    console.log(artist);
-    console.log(artistBio);
-    console.log(artistNationality);
-    console.log(medium);
-    console.log(year);
-    console.log(paintingURL);
+
+    //STUFF FOR GEOMETRIC PAGE STYLING
+
+    $("#vg-painting").attr("src", paintingURL);
+    $("#vg-painting").attr("alt", thisPainting.paintingName);
+    $(".artist-name").text(artist);
+    $(".painting-name").text(paintingTitle);
+    $(".painting-info").text(artistBio);
+    $(".painting-info2").text(year + " " + medium);
+
+
+
+    // console.log(paintingTitle);
+    // console.log(artist);
+    // console.log(artistBio);
+    // console.log(artistNationality);
+    // console.log(medium);
+    // console.log(year);
+    // console.log(paintingURL);
 
     //UNCOMMENT THIS WHOLE SECTION TO USE JS/PALETTE TEST HTML
     // let newPainting = $("<div>", { class: "painting-card", id: "painting-" + paintingNumber });
@@ -125,5 +158,8 @@ let paintingNumber = 0;
 
   //UNCOMMENT FOR JS/PALETTE TEST HTML
 // }
+
+
+
 
 
