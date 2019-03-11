@@ -79,8 +79,17 @@ let paintingURL;
 //   console.log(response);
 //   let paintingID = response.objectIDs[0];
 // })
+function choosePainting(paintingsArray) {
+  let numberChoices = paintingsArray.length;
+  return Math.floor(Math.random() * numberChoices);
+ }
 
-let paintingNumber = 6;
+ 
+
+let paintingNumber = choosePainting(paintings);
+
+console.log(paintingNumber);
+
 
 //Met API ajax call
 
@@ -88,6 +97,7 @@ let paintingNumber = 6;
 // for (let i = 0, numberPaintings = paintings.length; i < numberPaintings; i++) {
 //   paintingNumber = i;
   let thisPainting = paintings[paintingNumber];
+  console.log(thisPainting);
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
 
@@ -114,6 +124,11 @@ let paintingNumber = 6;
 
     $("#vg-painting").attr("src", paintingURL);
     $("#vg-painting").attr("alt", thisPainting.paintingName);
+    $(".artist-name").text(artist);
+    $(".painting-name").text(paintingTitle);
+    $(".painting-info").text(artistBio);
+    $(".painting-info2").text(year + " " + medium);
+
 
 
     // console.log(paintingTitle);

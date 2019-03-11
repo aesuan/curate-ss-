@@ -21,6 +21,7 @@ $(document).ready(function(){
 
 
 
+
 //   $(".geoBox1").attr("style", "background-color: white;");
 
 //   $(".primary-color-background").attr("style", "background: " + thisPainting.palette[0] + ";");
