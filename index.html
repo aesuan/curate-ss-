@@ -5,19 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <title>curate(ss)</title>
 </head>
 <body>
-    <section id="colorOne" class="block"></section>
-    <section id="colorTwo" class="block"></section>
-    <section id="colorThree" class="block"></section>
-    
+  <div id="wrapper" class="container">
+    <div class="row">
+      <div id='content-container' class="row col 12">
+        <div class="row col s12 m6 l6 xl6 left">
+          <div class="col s12 m8 l8 xl8 right">
+            <h3>Richard<br>Diebenkorn</h3>
+            <section class="card">
+              <div class="card-content">
+                <div class="card-title">Ocean Park #79, 1975</div>
+                <div class="card-title">Philadelphia Museum of Art</div>
+                <br>
+                <p>
+                  Richard Diebenkorn was an American painter and printmaker. His early work is associated with abstract 
+                  expressionism and the Bay Area Figurative Movement of the 1950s and 1960s. In the late 1960s he began 
+                  his extensive series of geometric, lyrical abstract paintings.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div id='img-container' class="row col s12 m6 l6 xl6 right">
+          <div class="col s12 m10 l10 xl10">
+            <img id="art-piece" src="./assets/images/richard-diebenkorn-ocean-park-79.jpg" class="responsive-img z-depth-2 hoverable">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='clock-container' class="row">
+      <div class="col s4 push-s4 center">
+        <h5 id="date" class="flow-text">Sunday March 10</h5>
+        <h2 id="time">10:15 am</h2>
+        <h5 id="loc-weather" class="flow-text">Oakland, CA  |  58° & cloudy</h5>
+      </div>
+      <!-- POTENTIALLY ADD BUTTON TO SURFACE OPTIONS TO USER
+      <div class="container">
+        <a class="btn-floating right waves-effect">
+          <i class="material-icons">menu</i>
+        </a>
+      </div> -->
+    </div>
+  </div>
+
+
+<!-- SCRIPTS -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script src="./assets/javascript/apikeys.js"></script>
 <script src="./assets/javascript/app.js"></script>
+
 </body>
 </html>
 
