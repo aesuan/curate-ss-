@@ -31,7 +31,6 @@ let paintings = [
     paintingName: "Whalers",
     objectID: 437854,
     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"]
-
   },
   {
     paintingName: "View of Toledo",
@@ -55,6 +54,14 @@ let paintings = [
   },
 ]
 
+let paintingTitle;
+let artist;
+let artistBio;
+let artistNationality;
+let medium;
+let year;
+let paintingURL;
+
 
 //wikipedia API query URL to get first two sentences of article
 //"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=" + pageName + "&exintro=&exsentences=2&explaintext=&redirects=&format=json"
@@ -71,32 +78,80 @@ let paintings = [
 //   let paintingID = response.objectIDs[0];
 // })
 
-let paintingNumber = 0;
+
 
 //Met API ajax call
 
-//UNCOMMENT THE NEXT TWO LINES TO USE JS/PALETTE TEST HTML
-// for (let i = 0, numberPaintings = paintings.length; i < numberPaintings; i++) {
-//   paintingNumber = i;
-  let thisPainting = paintings[paintingNumber];
-  let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
+function choosePainting(paintingsArray) {
+  let numberChoices = paintingsArray.length;
+  return Math.floor(Math.random() * numberChoices);
+}
 
+
+// let paintingNumber = choosePainting(paintings);
+// let thisPainting = paintings[paintingNumber];
+// let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
+
+
+
+// $.ajax({
+//   url: metQueryURL,
+//   method: "GET"
+// }).then(function (response) {
+//   console.log(response);
+//   // if (!isPublicDomain) {
+//   //   console.log("Can't use this one!");
+//   // }
+//   let paintingTitle = response.title;
+//   let artist = response.artistDisplayName;
+//   let artistBio = response.artistDisplayBio;
+//   let artistNationality = response.artistNationality;
+//   let medium = response.medium;
+//   //might have to remove all non-number characters from response depending on how this is used
+//   let year = response.objectDate;
+//   let paintingURL = response.primaryImageSmall;
+
+//   console.log(paintingTitle);
+//   console.log(artist);
+//   console.log(artistBio);
+//   console.log(artistNationality);
+//   console.log(medium);
+//   console.log(year);
+//   console.log(paintingURL);
+
+// })
+
+
+// Search API by painting name
+let paintingNumber = 7;
+let thisPainting = paintings[paintingNumber];
+let metSearchURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=" + paintings[paintingNumber].paintingName;
+$.ajax({
+  url: metSearchURL,
+  method: "GET"
+}).then(function (response) {
+  console.log(response);
+  let paintingID = response.objectIDs[0];
+  metAPI(paintingID);
+})
+
+
+
+function metAPI(objectID) {
+  let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + objectID;
   $.ajax({
     url: metQueryURL,
     method: "GET"
   }).then(function (response) {
     console.log(response);
-    // if (!isPublicDomain) {
-    //   console.log("Can't use this one!");
-    // }
-    let paintingTitle = response.title;
-    let artist = response.artistDisplayName;
-    let artistBio = response.artistDisplayBio;
-    let artistNationality = response.artistNationality;
-    let medium = response.medium;
+    paintingTitle = response.title;
+    artist = response.artistDisplayName;
+    artistBio = response.artistDisplayBio;
+    artistNationality = response.artistNationality;
+    medium = response.medium;
     //might have to remove all non-number characters from response depending on how this is used
-    let year = response.objectDate;
-    let paintingURL = response.primaryImageSmall;
+    year = response.objectDate;
+    paintingURL = response.primaryImageSmall;
 
     console.log(paintingTitle);
     console.log(artist);
@@ -105,25 +160,8 @@ let paintingNumber = 0;
     console.log(medium);
     console.log(year);
     console.log(paintingURL);
-
-    //UNCOMMENT THIS WHOLE SECTION TO USE JS/PALETTE TEST HTML
-    // let newPainting = $("<div>", { class: "painting-card", id: "painting-" + paintingNumber });
-    // let infoSection = $("<section>", { class: "info" });
-    // let paintingImage = $("<img>", { class: "painting", src: paintingURL, alt: "painting" });
-    // infoSection.append(paintingImage);
-    // newPainting.append(infoSection);
-    // let colorSection = $("<section>", { class: "colors" });
-    // for (let j = 0; j < 3; j++) {
-    //   let newColor = $("<figure>", { class: "color-" + j + " block", style: "background: " + thisPainting.palette[j] + ";"});
-    //   colorSection.append(newColor);
-    // }
-    // newPainting.append(colorSection);
-    // $("#test-div").append(newPainting);
-
-
   })
+}
 
-  //UNCOMMENT FOR JS/PALETTE TEST HTML
-// }
-
+function 
 
