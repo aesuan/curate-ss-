@@ -13,10 +13,10 @@ $(document).ready(function(){
 
 
 
-  $(".geoBox1").attr("style", "background-image: linear-gradient(to top, " + thisPainting.palette[0] + ", " + thisPainting.palette[1] + ");");
-  $(".geoBox2").attr("style", "background-image: linear-gradient(to right, " + thisPainting.palette[1] + ", " + thisPainting.palette[2] + ");");
-  $(".geoBox3").attr("style", "background-image: linear-gradient(to right, " + thisPainting.palette[0] + ", " + thisPainting.palette[2] + ");");
-  $(".geo-html").attr("style", "background-color: " + thisPainting.palette[2]);
+  $(".geoBox1").attr("style", "background-image: linear-gradient(to top, " + thisPainting.paletteDark.one + ", " + thisPainting.paletteMuted.two + ");");
+  $(".geoBox2").attr("style", "background-image: linear-gradient(to right, " + thisPainting.paletteDark.three + ", " + thisPainting.paletteDark.four + ");");
+  $(".geoBox3").attr("style", "background-image: linear-gradient(to right, " + thisPainting.paletteDark.one + ", " + thisPainting.paletteDark.three + ");");
+  $(".geo-html").attr("style", "background-color: " + thisPainting.paletteDark.five);
 
 
 
