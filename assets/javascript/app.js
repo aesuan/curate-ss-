@@ -50,7 +50,7 @@ let paintings = [
     objectID: 459136,
     wikiSearch: "",
     description: "Simone Martini was one of the leading painters of his time, whose highly refined technique and descriptive powers were unequalled in Europe and earned the praise and friendship of the Italian poet Petrarch (1304–1374). This panel, together with a related work depicting Saint Ansanus in the Robert Lehman Collection (1975.1.13) and a third panel of Saint Andrew (41.100.23) in the European Paintings Collection, formed part of an altarpiece that was possibly commissioned by the civic government of Siena.",
-    palette: ["rgb(11, 6, 9)", "rgb(216, 152, 69)", "rgb(163, 5, 4)"]
+    palette: ["rgb(11, 6, 9)", "rgb(216, 152, 69)", "rgb(163, 5, 4)"],
     orientation: "portrait",
     weatherPalettes: [
       {
@@ -82,7 +82,7 @@ let paintings = [
     wikiSearch: "The Dance Class (Degas, Metropolitan Museum of Art)",
     description: "",
     palette: ["rgb(85, 94, 56)", "rgb(88, 58, 26)", "rgb(150, 140, 113)"],
-      orientation: "portrait",
+    orientation: "portrait",
     weatherPalettes: [
       {
         one: "#F8EAC8",
@@ -105,9 +105,8 @@ let paintings = [
         four: "#742313",
         five: "#341E16"
       }
-  }
-      ]
-    
+    ]
+  }  
 //   {
 //     paintingName: "Whalers",
 //     objectID: 437854,
