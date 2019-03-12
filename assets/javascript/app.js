@@ -61,97 +61,145 @@ let artistNationality;
 let medium;
 let year;
 let paintingURL;
-
+let latitude = 0;
+let longitude = 0;
+let weatherCode;
+let weatherDescription;
+let weatherIcon;
+let temperature;
+let city;
+let weatherType;
 
 //wikipedia API query URL to get first two sentences of article
 //"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=" + pageName + "&exintro=&exsentences=2&explaintext=&redirects=&format=json"
 
 
 //Search API by painting name
-//
-//let metSearchURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=" + paintings[paintingNumber].paintingName;
+// let paintingNumber = 7;
+// let thisPainting = paintings[paintingNumber];
+// let metSearchURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=" + paintings[paintingNumber].paintingName;
 // $.ajax({
 //   url: metSearchURL,
 //   method: "GET"
-// }) .then(function(response) {
+// }).then(function (response) {
 //   console.log(response);
 //   let paintingID = response.objectIDs[0];
+//   metAPI(paintingID);
 // })
 
+// function metAPI(objectID) {
+//   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + objectID;
 
 
-//Met API ajax call
 
+
+//chooses random painting, will be fleshed out later
 function choosePainting(paintingsArray) {
   let numberChoices = paintingsArray.length;
   return Math.floor(Math.random() * numberChoices);
 }
 
 
-// let paintingNumber = choosePainting(paintings);
-// let thisPainting = paintings[paintingNumber];
-// let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
+
+//get's user's geolocation, if it fails defaults to berkeley location
+function getLocation() {
+
+  function success(position) {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    console.log("Latitude: " + latitude + " and Longitude: " + longitude);
+    //calls get weather as a solution to asynchronous data retrieval so weather call doesnt happen til we have location data
+    getWeather();
+  }
+
+  function error() {
+    console.log("Unable to retrieve location");
+    latitude = 37.9;
+    longitude = -122.3;
+  }
+
+  if (!navigator.geolocation) {
+    console.log('Geolocation is not supported by this browser');
+    latitude = 37.9;
+    longitude = -122.3;
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+
+}
 
 
 
-// $.ajax({
-//   url: metQueryURL,
-//   method: "GET"
-// }).then(function (response) {
-//   console.log(response);
-//   // if (!isPublicDomain) {
-//   //   console.log("Can't use this one!");
-//   // }
-//   let paintingTitle = response.title;
-//   let artist = response.artistDisplayName;
-//   let artistBio = response.artistDisplayBio;
-//   let artistNationality = response.artistNationality;
-//   let medium = response.medium;
-//   //might have to remove all non-number characters from response depending on how this is used
-//   let year = response.objectDate;
-//   let paintingURL = response.primaryImageSmall;
-
-//   console.log(paintingTitle);
-//   console.log(artist);
-//   console.log(artistBio);
-//   console.log(artistNationality);
-//   console.log(medium);
-//   console.log(year);
-//   console.log(paintingURL);
-
-// })
-
-
-// Search API by painting name
-let paintingNumber = 7;
-let thisPainting = paintings[paintingNumber];
-let metSearchURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=" + paintings[paintingNumber].paintingName;
-$.ajax({
-  url: metSearchURL,
-  method: "GET"
-}).then(function (response) {
-  console.log(response);
-  let paintingID = response.objectIDs[0];
-  metAPI(paintingID);
-})
+//get's weather based on geocoordinates in getLocation
+function getWeather() {
+  // let weatherQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=lat={" + latitude + "}&lon={" + longitude + "}&APPID=" + openWeatherAPI;
+  let weatherQueryURL = "https://api.weatherbit.io/v2.0/current?units=I&lat=" + latitude + "&lon=" + longitude + "&key=" + weatherBitAPI;
+  $.ajax({
+    url: weatherQueryURL,
+    method: "GET"
+  }).then(function (response) {
+    let data = response.data[0];
+    console.log(data);
+    weatherCode = data.weather.code;
+    weatherDescription = data.weather.description;
+    weatherIcon = data.weather.icon;
+    temperature = data.temp;
+    timezone = data.timezone;
+    city = data.city_name;
+    state = data.state_code;
+    country = data.country_code;
+    console.log(weatherCode);
+    console.log(weatherDescription);
+    //if it's a stormy code
+    if (weatherCode<700) {
+      setWeather(2);
+      //if its one of three sunny codes
+    } else if (weatherCode === 800 || weatherCode == 801 || weatherCode === 802) {
+      setWeather(0);
+      //else its overcast-y
+    } else {
+      setWeather(1);
+    }
+  })
+}
 
 
 
-function metAPI(objectID) {
-  let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + objectID;
+//basic function for now, will add color printing later.  sets weather code
+function setWeather(code) {
+  weatherType = code;
+}
+
+
+
+
+//when page is loaded gets location/weather, does met api call, etc
+$(document).ready(function () {
+
+  getLocation();
+
+  let paintingNumber = choosePainting(paintings);
+  let thisPainting = paintings[paintingNumber];
+  let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
+
+
+  //Met API ajax call
   $.ajax({
     url: metQueryURL,
     method: "GET"
   }).then(function (response) {
     console.log(response);
-    paintingTitle = response.title;
-    artist = response.artistDisplayName;
-    artistBio = response.artistDisplayBio;
-    artistNationality = response.artistNationality;
-    medium = response.medium;
+    // if (!isPublicDomain) {
+    //   console.log("Can't use this one!");
+    // }
+    let paintingTitle = response.title;
+    let artist = response.artistDisplayName;
+    let artistBio = response.artistDisplayBio;
+    let artistNationality = response.artistNationality;
+    let medium = response.medium;
     //might have to remove all non-number characters from response depending on how this is used
-    year = response.objectDate;
-    paintingURL = response.primaryImageSmall;
+    let year = response.objectDate;
+    let paintingURL = response.primaryImageSmall;
 
     console.log(paintingTitle);
     console.log(artist);
@@ -160,8 +208,19 @@ function metAPI(objectID) {
     console.log(medium);
     console.log(year);
     console.log(paintingURL);
+
   })
-}
 
-function 
+  ///add moment.js - time
+  //add weather
+  //add wikipedia
+  //change based on location painting was made in - time, weather, font
+  //
 
+  // database.ref().push({
+  //   userID: ?,
+  //   paintingIndex: n,
+  //   timeAdded: firebase.database.ServerValue.TIMESTAMP
+  // });
+
+})
