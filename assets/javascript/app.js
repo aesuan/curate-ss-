@@ -358,7 +358,7 @@ let time;
 let date;
 let thisPainting;
 let user = "Gray";
-let timeOfDay = getGreetingTime(moment());
+let timeOfDay;
 
 
 
@@ -584,8 +584,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //when page is loaded gets location/weather, does met api call, etc
 $(document).ready(function () {
+	
   M.AutoInit();
   $('.modal').modal('open');
+	
+  timeOfDay = getGreetingTime(moment());
+	
   $("#user-name").text(user);
   getLocationAndWeather();
   setTime();
