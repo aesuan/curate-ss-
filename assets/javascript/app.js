@@ -85,7 +85,7 @@ let paintings = [
         five: "#A83A0D"
       },
       {
-        one: "#CFC2A8",
+        one: "#E5D7BA",
         two: "#7B8C60",
         three: "#4F593E",
         four: "#5E472B",

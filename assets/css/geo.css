@@ -17,7 +17,6 @@
     width: 100%;
     z-index: -3;
     height: 600px;
-    opacity: .95;
     transform: translate(30px, 20px) rotate(55deg);
 }
 
@@ -30,7 +29,6 @@
     height: 1800px;
     top: -350px;
     z-index: -2;
-    opacity: .98;
     transform: translate(30px, 20px) rotate(65deg);
 }
 
