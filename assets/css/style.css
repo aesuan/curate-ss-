@@ -12,14 +12,26 @@ body {
 }
 
 #info-back {
-  margin:20px;
-
+  margin:10px auto;
+  color: #A9A8BD;
 }
 
-/* #info-back .card {
-  justify-self: flex-end;
-  align-self: stretch;
-} */
+#info-back-text {
+  margin:10px;
+}
+
+#demo-card {
+  margin: 5px -10% 0px -10%;
+}
+
+#fav-icon-demo{
+  padding-top:7%;
+  padding-right:20%;
+}
+
+#fav-img-demo{
+  padding-left:10%;
+}
 
 h3 {
   color: #03648B;
@@ -31,6 +43,10 @@ h2 {
 
 h5 {
   color: #03648B;
+}
+
+h6{
+  color:#A9A8BD;
 }
 
 .modal-content {
