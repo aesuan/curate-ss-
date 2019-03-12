@@ -18,83 +18,87 @@ let paintings = [
     objectID: 435809,
     palette: ["rgb(214, 152, 70)", "rgb(37, 31, 17)", "rgb(114, 62, 17)"],
     orientation: "landscape",
-    paletteBright: {
-      one: "#D9C4AB",
-      two: "#D89B48",
-      three: "#8B4B0E",
-      four: "#717453",
-      five: "#782D16"
-    },
-    paletteMuted: {
-      one: "#D7C4AE",
-      two: "#6F6759",
-      three: "#3F4333",
-      four: "#592B0E",
-      five: "#2E1A08"
-    },
-    paletteDark: {
-      one: "#A7988D",
-      two: "#6C6B53",
-      three: "#2F2F21",
-      four: "#241106",
-      five: "#160F07"
-    }
-
+    weatherPalettes: [
+      {
+        one: "#D9C4AB",
+        two: "#D89B48",
+        three: "#8B4B0E",
+        four: "#717453",
+        five: "#782D16"
+      },
+      {
+        one: "#D7C4AE",
+        two: "#6F6759",
+        three: "#3F4333",
+        four: "#592B0E",
+        five: "#2E1A08"
+      },
+      {
+        one: "#A7988D",
+        two: "#6C6B53",
+        three: "#2F2F21",
+        four: "#241106",
+        five: "#160F07"
+      }
+    ]
   },
   {
     paintingName: "Madonna and Child",
     objectID: 459136,
     palette: ["rgb(11, 6, 9)", "rgb(216, 152, 69)", "rgb(163, 5, 4)"],
     orientation: "portrait",
-    paletteBright: {
-      one: "#F1C77A",
-      two: "#D89743",
-      three: "#C15E0C",
-      four: "#A70103",
-      five: "#412D24"
-    },
-    paletteMuted: {
-      one: "#F1C77A",
-      two: "#BE8D42",
-      three: "#996A3B",
-      four: "#750208",
-      five: "#362314"
-    },
-    paletteDark: {
-      one: "#BF873A",
-      two: "#713B04",
-      three: "#750208",
-      four: "#3E281A",
-      five: "#0F0505"
-    }
-
+    weatherPalettes: [
+      {
+        one: "#F1C77A",
+        two: "#D89743",
+        three: "#C15E0C",
+        four: "#A70103",
+        five: "#412D24"
+      },
+      {
+        one: "#F1C77A",
+        two: "#BE8D42",
+        three: "#996A3B",
+        four: "#750208",
+        five: "#362314"
+      },
+      {
+        one: "#BF873A",
+        two: "#713B04",
+        three: "#750208",
+        four: "#3E281A",
+        five: "#0F0505"
+      }
+    ]
   },
   {
     paintingName: "The Dance Class",
     objectID: 438817,
     palette: ["rgb(85, 94, 56)", "rgb(88, 58, 26)", "rgb(150, 140, 113)"],
     orientation: "portrait",
-    paletteBright: {
-      one: "#F8EAC8",
-      two: "#818E63",
-      three: "#A56F3F",
-      four: "#606F4C",
-      five: "#A83A0D"
-    },
-    paletteMuted: {
-      one: "#CFC2A8",
-      two: "#7B8C60",
-      three: "#4F593E",
-      four: "#5E472B",
-      five: "#2A1D17"
-    },
-    paletteDark: {
-      one: "#DBCCAE",
-      two: "#717D5C",
-      three: "#4E664C",
-      four: "#742313",
-      five: "#341E16"
-    }
+    weatherPalettes: [
+      {
+        one: "#F8EAC8",
+        two: "#818E63",
+        three: "#A56F3F",
+        four: "#606F4C",
+        five: "#A83A0D"
+      },
+      {
+        one: "#CFC2A8",
+        two: "#7B8C60",
+        three: "#4F593E",
+        four: "#5E472B",
+        five: "#2A1D17"
+      },
+      {
+        one: "#DBCCAE",
+        two: "#717D5C",
+        three: "#4E664C",
+        four: "#742313",
+        five: "#341E16"
+      }
+    ]
   },
   // {
   //   paintingName: "Whalers",
