@@ -1,5 +1,5 @@
 .geo-html {
-    background-color: #1F4C8F;
+
     height: 100%;
     width: 100%;
     position: relative;
@@ -17,21 +17,10 @@
     width: 100%;
     z-index: -3;
     height: 600px;
-    opacity: .95;
     transform: translate(30px, 20px) rotate(55deg);
 }
 
-.grad1 {
-    background-image: linear-gradient(to top,#528360, #c2dd8f);
-}
 
-.grad2 {
-    background-image: linear-gradient(to right, rgb(137, 164, 204), #1F4C8F);
-}
-
-.grad3 {
-    background-image: linear-gradient(to right, #80a738, #1F4C8F);
-}
 
 .geoBox2 {
     position: absolute;
@@ -40,7 +29,6 @@
     height: 1800px;
     top: -350px;
     z-index: -2;
-    opacity: .98;
     transform: translate(30px, 20px) rotate(65deg);
 }
 
@@ -49,10 +37,10 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 400px;
+    height: 500px;
     z-index: -1;
-    left: -600px;
-    bottom: -100px;
+    left: -700px;
+    bottom: -300px;
     transform: translate(30px, 20px) rotate(30deg);
 }
 
@@ -118,9 +106,10 @@
     height: 100%;
     transform-style: preserve-3d;
     transition: all 1s ease;
+    perspective: 1000px;
 }
 
-.the-card:active {
+.the-card:hover {
     transform: rotateY(180deg);
 }
 
@@ -136,11 +125,9 @@
 .the-back {
     position: absolute;
     width: 100%;
-    height: 250px;
+    height: 275px;
     backface-visibility: hidden;
-    background: white;
     transform: rotateY(180deg);
-    color: black;
     font-size: .95em;
     margin: 0;
     padding: 0 10px;
