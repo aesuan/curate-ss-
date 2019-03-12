@@ -209,12 +209,15 @@ function getWikiDescription(index) {
       async: false,
       dataType: "json",
     }).then(function (response) {
-      console.log(response.query.pages);
+      let pageID = Object.keys(response.query.pages)[0];
+      console.log(pageID);
+      console.log(page)
+      
 
     })
 
   }
-  return "this";
+  return "this is a placeholder description while i figure this out";
 }
 
 function setTime() {
@@ -246,7 +249,8 @@ $(document).ready(function () {
   setTime();
   setDate();
 
-  let paintingNumber = choosePainting(paintings);
+  //let paintingNumber = choosePainting(paintings);
+  let paintingNumber = 5;
   let thisPainting = paintings[paintingNumber];
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
