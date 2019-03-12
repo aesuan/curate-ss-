@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 
 
-let whichWeather = 2
+let whichWeather = 0
 
   $(".geoBox1").attr("style", "background-image: linear-gradient(to top, " + thisPainting.weatherPalettes[whichWeather].four + ", " + thisPainting.weatherPalettes[whichWeather].one + ");");
   $(".geoBox2").attr("style", "background-image: linear-gradient(to right, " + thisPainting.weatherPalettes[whichWeather].five + ", " + thisPainting.weatherPalettes[whichWeather].three + ");");
@@ -24,6 +24,7 @@ let whichWeather = 2
   $(".the-back").attr("style", "background: " + thisPainting.weatherPalettes[whichWeather].one);
   $(".the-back").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
   $(".btn-floating").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $(".material-icons").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
 
   $(".art-info").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
 

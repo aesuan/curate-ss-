@@ -20,8 +20,8 @@ let paintings = [
     orientation: "landscape",
     weatherPalettes: [
       {
-        one: "#D9C4AB",
-        two: "#D89B48",
+        one: "#FFE6C9",
+        two: "#E8A74D",
         three: "#8B4B0E",
         four: "#717453",
         five: "#782D16"
@@ -34,10 +34,10 @@ let paintings = [
         five: "#2E1A08"
       },
       {
-        one: "#A7988D",
+        one: "#CCBAAC",
         two: "#6C6B53",
         three: "#2F2F21",
-        four: "#241106",
+        four: "#331808",
         five: "#160F07"
       }
     ]
@@ -63,11 +63,11 @@ let paintings = [
         five: "#362314"
       },
       {
-        one: "#BF873A",
-        two: "#713B04",
-        three: "#750208",
+        one: "#F2AB4A",
+        two: "#750208",
+        three: "#713B04",
         four: "#3E281A",
-        five: "#0F0505"
+        five: "#000000"
       }
     ]
   },
