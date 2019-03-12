@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" href="./assets/css/geo.css">
+    <title>Geometric</title>
+</head>
+<body class="geo-html white-text">
+
+<div class="geoBox1 grad1"></div>
+<div class="geoBox2 grad2"></div>
+<div class="geoBox3 grad3"></div>
+
+    <div class="row">
+        <div class="col s3 offset-s2 center-align top-space">
+            <p class="greeting">Good evening, Gray</p>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col s3 offset-s2 z-depth-3 center-align time hoverable">
+            <h4 class="weather">San Leandro, CA | 56&deg; and cloudy</h4>
+            <h1 class="clock">8:01pm</h1>
+            <h4 class="date">Sunday, March 10</h4>
+        </div>
+
+        <div class="col s4 offset-s1">
+            <img class="z-depth-3 materialboxed" id="vg-painting" src="./assets/img/vangoghmuseum-s0106V1962-3840.jpg" alt="Van Gogh's Weatfield under Thunderclouds">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s4 offset-s6 main-container" style="width: 500px;">
+            <div class="the-card">
+                <div class="z-depth-3 art-info left-align the-front">
+                    <h5 class="artist-name">Vincent van Gogh</h5>
+                    <h5 class="painting-name">Wheatfield under Thunderclouds</h5>
+                    <p class="painting-info">Auvers-sur-Oise, July 1890, oil on canvas, 50.4 cm x 101.3 cm</p>
+                    <p class="painting-info2">Credits: Van Gogh Museum, Amsterdam (Vincent van Gogh Foundation)</p>
+                </div>
+                <div class="z-depth-3 art-info left-align the-back">
+
+                    <p class="card-reverse left-align">
+                        In the last weeks of his life, Van Gogh completed a number of impressive paintings of the wheatfields around Auvers. This outspread field under a dark sky is one of them.
+                    </p>
+                    <p class="card-reverse left-align">
+                        In these landscapes he tried to express 'sadness, extreme loneliness'. But the overwhelming emotions that Van Gogh experienced in nature were also positive. He wrote to his brother Theo, 'I'd almost believe that these canvases will tell you what I can't say in words, what I consider healthy and fortifying about the countryside.'
+                    </p>
+                    <p class="card-reverse left-align">
+                        The elongated format of Wheatfields under Thunderclouds is unusual. It emphasizes the grandeur of the landscape, as does the simple composition: two horizontal planes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed-action-btn left-align">
+        <a class="btn-floating btn-large white">
+            <i class="large material-icons black-text">mode_edit</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating white"><i class="material-icons black-text">insert_chart</i></a></li>
+            <li><a class="btn-floating white"><i class="material-icons black-text">format_quote</i></a></li>
+            <li><a class="btn-floating white"><i class="material-icons black-text">publish</i></a></li>
+            <li><a class="btn-floating white"><i class="material-icons black-text">attach_file</i></a></li>
+        </ul>
+    </div>
+                
+
+
+<script type="text/javascript" src="./assets/javascript/materialize.min.js"></script>
+<script src="./assets/javascript/apikeys.js"></script>
+<script src="assets/javascript/app.js"></script>
+<script src="./assets/javascript/geo.js"></script>
+</body>
+</html>
+
+
+

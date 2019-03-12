@@ -1,4 +1,7 @@
 // Initialize Firebase
+
+
+
 const config = {
   apiKey: firebaseAPI,
   authDomain: "curate-ss.firebaseapp.com",
@@ -71,6 +74,7 @@ let paintings = [
   },
 ]
 
+
 let latitude = 0;
 let longitude = 0;
 let weatherCode;
@@ -79,6 +83,7 @@ let weatherIcon;
 let temperature;
 let city;
 let weatherType;
+
 let paintingTitle;
 let artist;
 let artistBio;
@@ -107,6 +112,16 @@ let date;
 //   let paintingID = response.objectIDs[0];
 //   metAPI(paintingID);
 // })
+function choosePainting(paintingsArray) {
+  let numberChoices = paintingsArray.length;
+  return Math.floor(Math.random() * numberChoices);
+ }
+
+ 
+
+let paintingNumber = choosePainting(paintings);
+
+console.log(paintingNumber);
 
 // function metAPI(objectID) {
 //   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + objectID;
@@ -248,10 +263,12 @@ $(document).ready(function () {
 
   let paintingNumber = choosePainting(paintings);
   let thisPainting = paintings[paintingNumber];
+  console.log(thisPainting);
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
 
   //Met API ajax call
+
   $.ajax({
     url: metQueryURL,
     method: "GET"
@@ -269,13 +286,25 @@ $(document).ready(function () {
     year = response.objectDate;
     paintingURL = response.primaryImageSmall;
 
-    console.log(paintingTitle);
-    console.log(artist);
-    console.log(artistBio);
-    console.log(artistNationality);
-    console.log(medium);
-    console.log(year);
-    console.log(paintingURL);
+
+    //STUFF FOR GEOMETRIC PAGE STYLING
+
+    $("#vg-painting").attr("src", paintingURL);
+    $("#vg-painting").attr("alt", thisPainting.paintingName);
+    $(".artist-name").text(artist);
+    $(".painting-name").text(paintingTitle);
+    $(".painting-info").text(artistBio);
+    $(".painting-info2").text(year + " " + medium);
+
+
+
+    // console.log(paintingTitle);
+    // console.log(artist);
+    // console.log(artistBio);
+    // console.log(artistNationality);
+    // console.log(medium);
+    // console.log(year);
+    // console.log(paintingURL);
 
     description = getWikiDescription(paintingNumber);
     console.log(description);
@@ -296,4 +325,6 @@ $(document).ready(function () {
   //   timeAdded: firebase.database.ServerValue.TIMESTAMP
   // });
 
+
 })
+
