@@ -22,15 +22,15 @@
 
     <div class="row">
         <div class="col s3 offset-s2 center-align top-space">
-            <p class="greeting">Good evening, Gray</p>
+            <p class="greeting">Good <span id="time-of-day"></span>, <span id="user-name"></span></p>
         </div>
     </div>
     <div class="row">
 
         <div class="col s3 offset-s2 z-depth-3 center-align time hoverable">
-            <h4 class="weather">San Leandro, CA | 56&deg; and cloudy</h4>
-            <h1 class="clock">8:01pm</h1>
-            <h4 class="date">Sunday, March 10</h4>
+            <h4 class="weather"><span id="city"></span>, <span id="state"></span> | <span id="temp"></span>&deg; and <span id="weather"></span></h4>
+            <h1 class="clock"></h1>
+            <h4 class="date"></h4>
         </div>
 
         <div class="col s4 offset-s1">
@@ -39,7 +39,7 @@
     </div>
 
     <div class="row">
-        <div class="col s4 offset-s6 main-container" style="width: 500px;">
+        <div class="col s5 offset-s6 main-container">
             <div class="the-card">
                 <div class="z-depth-3 art-info left-align the-front">
                     <h5 class="artist-name"></h5>
@@ -78,6 +78,7 @@
 
 
 <script type="text/javascript" src="./assets/javascript/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 <script src="./assets/javascript/apikeys.js"></script>
 <script src="./assets/javascript/app.js"></script>
 <script src="./assets/javascript/geo.js"></script>
