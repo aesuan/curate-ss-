@@ -25,20 +25,19 @@ h5 {
 
 /* CARD FLIP ANIMATION */
 .flip-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  margin: -150px;
+  position: relative;
+  /* width: 380px;
+  height: 437px; */
   float: left;
-  perspective: 500px;
+  perspective: 700px;
 }
 
 .flip-content {
   position: relative;
-  width: 100%;
-  height: 100%;
+  /* width: 380px;
+  height: 437px; */
+  width:100%;
+  height:100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 
   transition: transform 1s;
@@ -53,9 +52,7 @@ h5 {
 .flip-front,
 .flip-back {
   position: absolute;
-  height: 100%;
-  width: 100%;
-  background: 03446A;
+  background: #03446A;
   color: white;
   text-align: center;
   border-radius: 5px;
@@ -64,6 +61,8 @@ h5 {
 
 .flip-back {
   background: #03446A;
+  height: 100%;
+  width: 100%;
   color: white;
   transform: rotateY( 180deg );
 }
