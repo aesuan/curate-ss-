@@ -356,6 +356,10 @@ let paintingDescription;
 let intervalID;
 let time;
 let date;
+let thisPainting;
+let user = "Gray";
+let timeOfDay;
+
 
 
 //Search API by painting name
@@ -423,6 +427,8 @@ function getLocationAndWeather() {
     navigator.geolocation.getCurrentPosition(success, error);
   }
 
+
+
 }
 
 
@@ -443,7 +449,9 @@ function getWeather() {
     temperature = data.temp;
     timezone = data.timezone;
     city = data.city_name;
+    console.log("city is: " + city);
     state = data.state_code;
+    console.log("state is: " + state);
     country = data.country_code;
     console.log(weatherCode);
     console.log(weatherDescription);
@@ -457,6 +465,12 @@ function getWeather() {
     } else {
       setWeather(1);
     }
+
+    $("#city").text(city);
+    $("#state").text(state);
+    $("#weather").text(weatherDescription);
+    $("#temp").text(temperature);
+
   })
 }
 
@@ -465,6 +479,19 @@ function getWeather() {
 //basic function for now, will add color printing later.  sets weather code
 function setWeather(code) {
   whichWeather = code;
+  console.log("the weather is: " + code)
+  $(".geoBox1").attr("style", "background-image: linear-gradient(to top, " + thisPainting.weatherPalettes[whichWeather].four + ", " + thisPainting.weatherPalettes[whichWeather].one + ");");
+  $(".geoBox2").attr("style", "background-image: linear-gradient(to right, " + thisPainting.weatherPalettes[whichWeather].five + ", " + thisPainting.weatherPalettes[whichWeather].three + ");");
+  $(".geoBox3").attr("style", "background-image: linear-gradient(to right, " + thisPainting.weatherPalettes[whichWeather].four + ", " + thisPainting.weatherPalettes[whichWeather].two + ");");
+  $("html").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
+
+  $("body").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $(".the-back").attr("style", "background: " + thisPainting.weatherPalettes[whichWeather].one);
+  $(".the-back").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $(".btn-floating").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $(".material-icons").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+
+  $(".art-info").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
 }
 
 
@@ -498,6 +525,26 @@ function setWikiDescription(index) {
   }
 }
 
+function getGreetingTime (m) {
+	var g = null; //return g
+	
+	if(!m || !m.isValid()) { return; } //if we can't find a valid or filled moment, we return.
+	
+	var split_afternoon = 12 //24hr time to split the afternoon
+	var split_evening = 17 //24hr time to split the evening
+	var currentHour = parseFloat(m.format("HH"));
+	
+	if(currentHour >= split_afternoon && currentHour <= split_evening) {
+		g = "afternoon";
+	} else if(currentHour >= split_evening) {
+		g = "evening";
+	} else {
+		g = "morning";
+	}
+	
+	return g;
+}
+
 function setTime() {
   clearInterval(intervalID);
   intervalID = setInterval(count, 1000); 
@@ -506,34 +553,53 @@ function setTime() {
     time = moment().format("hh:mm A");
     console.log(time);
     //some statement printing time to screen
+    $(".clock").text(time);
+
+  //function to check general time of day
+
+    $("#time-of-day").text(timeOfDay);
   }
 }
 
 function setDate() {
   date = moment().format("dddd MMM Do");
   console.log(date);
+  $(".date").text(date);
   //some statment printing date
 }
 
 
+//stuff for materialize functionality
+$(document).ready(function(){
+  $('.materialboxed').materialbox();
+});
 
-
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.fixed-action-btn');
+  var instances = M.FloatingActionButton.init(elems, {
+    direction: 'right'
+  });
+});
 
 
 //when page is loaded gets location/weather, does met api call, etc
 $(document).ready(function () {
+	
   M.AutoInit();
   $('.modal').modal('open');
-
+	
+  timeOfDay = getGreetingTime(moment());
+	
+  $("#user-name").text(user);
   getLocationAndWeather();
   setTime();
   setDate();
   
 
-  let paintingNumber = 6;
-  //choosePainting(paintings);
-  let thisPainting = paintings[paintingNumber];
-  console.log(thisPainting);
+
+  let paintingNumber = choosePainting(paintings);
+  thisPainting = paintings[paintingNumber];
+  console.log("this is this painting: " + thisPainting);
   setWikiDescription(paintingNumber);
   
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
