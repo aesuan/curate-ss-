@@ -24,6 +24,7 @@ let paintings = [
     paintingName: "Madonna and Child",
     objectID: 459136,
     palette: ["rgb(11, 6, 9)", "rgb(216, 152, 69)", "rgb(163, 5, 4)"]
+
   },
   {
     paintingName: "The Dance Class",
@@ -56,6 +57,157 @@ let paintings = [
     objectID: 437984,
     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
   },
+  {
+    paintingName: "Pines Along the Shore",
+    objectID: 459095,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Windflowers",
+    objectID: 10767,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "LThe Calm Sea",
+    objectID: 436005,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "The Veteran in a New Field",
+    objectID: 11145,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Marine Landscape",
+    objectID: 10215,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Steamboats in the Port of Rouen",
+    objectID: 437309,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Allée of Chestnut Trees",
+    objectID: 459121,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Sunflowers",
+    objectID: 436524,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "View of the Domaine Saint-Joseph",
+    objectID: 435885,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Oleanders",
+    objectID: 436530,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Venice, from the Porch of Madonna della Salute",
+    objectID: 437853,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Dancers, Pink and Green",
+    objectID: 436140,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Breton Brother and Sister",
+    objectID: 435754,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Olive Trees",
+    objectID: 437998,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Roman Girl at a Fountain",
+    objectID: 435708,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Kynance",
+    objectID: 435775,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "The House with the Cracked Walls",
+    objectID: 435874,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Dancers Practicing at the Barre",
+    objectID: 436139,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Still Life with Apples and a Pot of Primroses",
+    objectID: 435882,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Madame Cézanne (Hortense Fiquet, 1850–1922) in the Conservatory",
+    objectID: 435875,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "The Road from Versailles to Louveciennes",
+    objectID: 437685,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Sahurs Meadows in Morning Sun",
+    objectID: 437683,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Washerwoman, Study",
+    objectID: 437303,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Irises",
+    objectID: 436528,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Madame Manet (Suzanne Leenhoff, 1830–1906) at Bellevue",
+    objectID: 438002,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "The Gulf of Marseilles Seen from L'Estaque",
+    objectID: 435872,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Wheat Field with Cypresses",
+    objectID: 436535,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "Roses",
+    objectID: 436534,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "A Farm in Brittany",
+    objectID: 436448,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+  {
+    paintingName: "The Siesta",
+    objectID: 436449,
+    palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  },
+
 ]
 
 let paintingTitle;
