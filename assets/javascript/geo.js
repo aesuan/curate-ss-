@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 
 
-let whichWeather = 1
+let whichWeather =1
 
   $(".geoBox1").attr("style", "background-image: linear-gradient(to top, " + thisPainting.weatherPalettes[whichWeather].four + ", " + thisPainting.weatherPalettes[whichWeather].one + ");");
   $(".geoBox2").attr("style", "background-image: linear-gradient(to right, " + thisPainting.weatherPalettes[whichWeather].five + ", " + thisPainting.weatherPalettes[whichWeather].three + ");");
