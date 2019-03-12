@@ -2,15 +2,15 @@
 
 
 
-const config = {
-  apiKey: firebaseAPI,
-  authDomain: "curate-ss.firebaseapp.com",
-  databaseURL: "https://curate-ss.firebaseio.com",
-  projectId: "curate-ss",
-  storageBucket: "curate-ss.appspot.com",
-  messagingSenderId: "872408743875"
-};
-firebase.initializeApp(config);
+// const config = {
+//   apiKey: firebaseAPI,
+//   authDomain: "curate-ss.firebaseapp.com",
+//   databaseURL: "https://curate-ss.firebaseio.com",
+//   projectId: "curate-ss",
+//   storageBucket: "curate-ss.appspot.com",
+//   messagingSenderId: "872408743875"
+// };
+// firebase.initializeApp(config);
 
 let paintings = [
   {
@@ -138,6 +138,12 @@ console.log(paintingNumber);
     // console.log(medium);
     // console.log(year);
     // console.log(paintingURL);
+
+    //  MATERIALIZE MODAL CALL
+    M.AutoInit();
+    $(document).ready(function(){
+      $('.modal').modal('open');
+    });
 
     //UNCOMMENT THIS WHOLE SECTION TO USE JS/PALETTE TEST HTML
     // let newPainting = $("<div>", { class: "painting-card", id: "painting-" + paintingNumber });
