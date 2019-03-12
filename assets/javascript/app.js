@@ -22,6 +22,7 @@ let paintings = [
     palette: ["rgb(214, 152, 70)", "rgb(37, 31, 17)", "rgb(114, 62, 17)"],
     orientation: "landscape",
     weatherPalettes: [
+      //sunny
       {
         one: "#FFE6C9",
         two: "#E8A74D",
@@ -29,6 +30,7 @@ let paintings = [
         four: "#717453",
         five: "#782D16"
       },
+      //overcast
       {
         one: "#D7C4AE",
         two: "#6F6759",
@@ -36,6 +38,7 @@ let paintings = [
         four: "#592B0E",
         five: "#2E1A08"
       },
+      //stormy
       {
         one: "#CCBAAC",
         two: "#6C6B53",
@@ -491,6 +494,11 @@ function setWeather(code) {
   $(".material-icons").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
 
   $(".art-info").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
+
+
+  //space for Ben
+
+
 }
 
 
@@ -502,13 +510,14 @@ function setWikiDescription(index) {
   let pageName = paintings[index].wikiSearch;
   if (pageName === "") {
     paintingDescription = paintings[index].description;
+    $(".card-reverse").text(paintingDescription);
   } else {
     let wikiURL = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=" + pageName + "&exintro=&exsentences=4&explaintext=&redirects=&format=json&callback=?";
     $.ajax({
       url: wikiURL,
       method: "GET",
       contentType: "application/json; charset=utf-8",
-      async: false,
+      // async: false,
       dataType: "json",
     }).then(function (response) {
       console.log(response);
@@ -518,8 +527,11 @@ function setWikiDescription(index) {
       console.log(wikiExtract);
 
       paintingDescription = wikiExtract;
+      $(".card-reverse").text(paintingDescription);
       console.log(paintingDescription);
     })
+
+    
 
   }
 }
@@ -629,6 +641,7 @@ $(document).ready(function () {
     $(".painting-name").text(paintingTitle);
     $(".painting-info").text(artistBio);
     $(".painting-info2").text(year + " " + medium);
+    $(".painting-info3").text(dimensions);
 
     console.log(paintingTitle);
     console.log(artist);
