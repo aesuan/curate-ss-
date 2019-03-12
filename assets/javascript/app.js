@@ -2,15 +2,15 @@
 
 
 
-const config = {
-  apiKey: firebaseAPI,
-  authDomain: "curate-ss.firebaseapp.com",
-  databaseURL: "https://curate-ss.firebaseio.com",
-  projectId: "curate-ss",
-  storageBucket: "curate-ss.appspot.com",
-  messagingSenderId: "872408743875"
-};
-firebase.initializeApp(config);
+// const config = {
+//   apiKey: firebaseAPI,
+//   authDomain: "curate-ss.firebaseapp.com",
+//   databaseURL: "https://curate-ss.firebaseio.com",
+//   projectId: "curate-ss",
+//   storageBucket: "curate-ss.appspot.com",
+//   messagingSenderId: "872408743875"
+// };
+// firebase.initializeApp(config);
 
 
 let paintings = [
@@ -522,6 +522,8 @@ function setDate() {
 
 //when page is loaded gets location/weather, does met api call, etc
 $(document).ready(function () {
+  M.AutoInit();
+  $('.modal').modal('open');
 
   getLocationAndWeather();
   setTime();
@@ -563,7 +565,6 @@ $(document).ready(function () {
     $(".painting-info").text(artistBio);
     $(".painting-info2").text(year + " " + medium);
 
-
     console.log(paintingTitle);
     console.log(artist);
     console.log(artistBio);
@@ -571,8 +572,7 @@ $(document).ready(function () {
     console.log(medium);
     console.log(year);
     console.log(dimensions);
-    console.log(paintingURL)
-
+    console.log(paintingURL);
 
   })
 
