@@ -21,7 +21,7 @@
         <div class="row col s12 m6 l6 xl6 left">
           <div class="col s12 m8 l8 xl8 right">
             <h3 id='artist-name'></h3>
-            <section id='painting-card' class="card">
+            <section id='painting-card' class="card" width='400'>
               <div class="card-content">
                 <div class="card-title"><span id='painting-name'></span></div>
                 <div class="card-title"><span id='artist-bio'></span></div>
@@ -46,7 +46,7 @@
                     There are a few ways to curate your space a bit more to your liking.
                     We have 2 layouts to choose from and other options you can try. Just click the  
                     <a class="btn-small btn-floating"><i class="material-icons">add</i></a>
-                    in the bottom left.
+                    in the bottom right.
                   </p>
 
     <!--=================== DEMO CARD TABULATED OPTIONS =================================-->
@@ -94,12 +94,21 @@
         </div>
       </div>
     </div>
+    <!-- ============================= CLOCK/TIME/WEATHER ===============================
     <div id='clock-container' class="row">
       <div class="col s4 push-s4 center">
         <h5 id="date" class="flow-text"><span class="date"></span></h5>
         <h2 id="time"><span class='clock'></span></h2>
         <h5 class="flow-text"><span id='city'>  |  <span id='weather'></h5>
       </div>
+    </div> -->
+  </div>
+  <!--============================= CLOCK/TIME/WEATHER ===============================-->
+  <div id='clock-container' class="row">
+    <div class="col s4 push-s4 center">
+      <h5 id="date" class="flow-text"><span class="date"></span></h5>
+      <h2 id="time"><span class='clock'></span></h2>
+      <h5 class="flow-text"><span id='city'>  |  <span id='weather'></h5>
     </div>
   </div>
   <!--============================= MODAL ===============================-->
@@ -123,7 +132,7 @@
     </div>
   </div>
   <!--====================== NAV BUTTONS ========================-->
-  <div class="fixed-action-btn left-align">
+  <div class="fixed-action-btn right direction-left">
     <a class="btn-floating btn-large">
         <i class="large material-icons">add</i>
     </a>
