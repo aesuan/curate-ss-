@@ -605,10 +605,11 @@ $(document).ready(function(){
   $('.materialboxed').materialbox();
 });
 
+//nav button event listener 
+//direction is defaulted to up, need to set in each instance for other directionality
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.fixed-action-btn');
   var instances = M.FloatingActionButton.init(elems, {
-    // direction: 'right'
   });
 });
 
