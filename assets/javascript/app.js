@@ -176,6 +176,7 @@ let paintings = [
       }
     ]
   },  
+
 //   {
 //     paintingName: "Whalers",
 //     objectID: 437854,
@@ -198,15 +199,15 @@ let paintings = [
 //     wikiSearch: "",
 //     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
 //     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
-//     orientation: "portrait"
+
 //   },
 //   {
 //     paintingName: "La Berceuse",
 //     objectID: 437984,
 //     wikiSearch: "",
 //     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
-//     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
-//     orientation: "portrait"
+//     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
+//     orientation: portrait
 //   },
 //  
   // {
@@ -428,13 +429,13 @@ let timeOfDay;
 //   let paintingID = response.objectIDs[0];
 //   metAPI(paintingID);
 // })
-    
+
 function choosePainting(paintingsArray) {
   let numberChoices = paintingsArray.length;
   return Math.floor(Math.random() * numberChoices);
- }
+}
 
- 
+
 
 let paintingNumber = choosePainting(paintings);
 
@@ -443,7 +444,7 @@ console.log(paintingNumber);
 function choosePainting(paintingsArray) {
   let numberChoices = paintingsArray.length;
   return Math.floor(Math.random() * numberChoices);
- }
+}
 
 
 
@@ -457,11 +458,13 @@ function choosePainting(paintingsArray) {
 
 
 //get's user's geolocation, if it fails defaults to berkeley location
-function getLocationAndWeather() {
+function getLocationPermission() {
 
   function success(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
+    localStorage.setItem("currentLatitude", latitude);
+    localStorage.setItem("currentLongitude", longitude);
     console.log("Latitude: " + latitude + " and Longitude: " + longitude);
     //calls get weather as a solution to asynchronous data retrieval so weather call doesnt happen til we have location data
     getWeather();
@@ -485,11 +488,38 @@ function getLocationAndWeather() {
 
 }
 
+function getIP() {
+  let ipCity;
+
+  if (localStorage.getItem("cityName") === null) {
+    console.log("no local storage city");
+    getLocationPermission();
+  } else {
+    $.get("https://ipinfo.io", function (response) {
+      console.log(response);
+      console.log("City: " + response.city, " Latitude/Longitude: " + response.loc);
+      ipCity = response.city;
+      console.log(ipCity);
+
+      if (localStorage.getItem("cityName") === ipCity) {
+
+        latitude = localStorage.getItem("currentLatitude");
+        longitude = localStorage.getItem("currentLongitude");
+        getWeather();
+
+      } else {
+        getLocationPermission();
+      }
+    }, "jsonp");
+  }
+}
+
 
 
 //get's weather based on geocoordinates in getLocation
 function getWeather() {
   // let weatherQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=lat={" + latitude + "}&lon={" + longitude + "}&APPID=" + openWeatherAPI;
+
   let weatherQueryURL = "https://api.weatherbit.io/v2.0/current?units=I&lat=" + latitude + "&lon=" + longitude + "&key=" + weatherBitAPI;
   $.ajax({
     url: weatherQueryURL,
@@ -509,6 +539,7 @@ function getWeather() {
     country = data.country_code;
     console.log(weatherCode);
     console.log(weatherDescription);
+    localStorage.setItem("cityName", city);
     //if it's a stormy code
     if (weatherCode < 700) {
       setWeather(2);
@@ -589,7 +620,6 @@ function setWeather(code) {
 
 
 
-//this does not totally work yet but getting there!!! sorry :/
 //wikipedia description puller from first two sentences of article
 function setWikiDescription(index) {
   //wikipedia API query URL to get first two sentences of article
@@ -603,7 +633,6 @@ function setWikiDescription(index) {
       url: wikiURL,
       method: "GET",
       contentType: "application/json; charset=utf-8",
-      // async: false,
       dataType: "json",
     }).then(function (response) {
       console.log(response);
@@ -622,37 +651,37 @@ function setWikiDescription(index) {
   }
 }
 
-function getGreetingTime (m) {
-	var g = null; //return g
-	
-	if(!m || !m.isValid()) { return; } //if we can't find a valid or filled moment, we return.
-	
-	var split_afternoon = 12 //24hr time to split the afternoon
-	var split_evening = 17 //24hr time to split the evening
-	var currentHour = parseFloat(m.format("HH"));
-	
-	if(currentHour >= split_afternoon && currentHour <= split_evening) {
-		g = "afternoon";
-	} else if(currentHour >= split_evening) {
-		g = "evening";
-	} else {
-		g = "morning";
-	}
-	
-	return g;
+function getGreetingTime(m) {
+  var g = null; //return g
+
+  if (!m || !m.isValid()) { return; } //if we can't find a valid or filled moment, we return.
+
+  var split_afternoon = 12 //24hr time to split the afternoon
+  var split_evening = 17 //24hr time to split the evening
+  var currentHour = parseFloat(m.format("HH"));
+
+  if (currentHour >= split_afternoon && currentHour <= split_evening) {
+    g = "afternoon";
+  } else if (currentHour >= split_evening) {
+    g = "evening";
+  } else {
+    g = "morning";
+  }
+
+  return g;
 }
 
 function setTime() {
   clearInterval(intervalID);
-  intervalID = setInterval(count, 1000); 
-  
+  intervalID = setInterval(count, 1000);
+
   function count() {
     time = moment().format("hh:mm A");
     console.log(time);
     //some statement printing time to screen
     $(".clock").text(time);
 
-  //function to check general time of day
+    //function to check general time of day
 
     $("#time-of-day").text(timeOfDay);
   }
@@ -667,13 +696,11 @@ function setDate() {
 
 
 //stuff for materialize functionality
-$(document).ready(function(){
-  $('.materialboxed').materialbox();
-});
 
 //nav button event listener 
 //direction is defaulted to up, need to set in each instance for other directionality
 document.addEventListener('DOMContentLoaded', function() {
+
   var elems = document.querySelectorAll('.fixed-action-btn');
   var instances = M.FloatingActionButton.init(elems, {
   });
@@ -682,24 +709,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //when page is loaded gets location/weather, does met api call, etc
 $(document).ready(function () {
-	
+  //materialize stuff
+  $('.materialboxed').materialbox();
+  //modal stuff
   M.AutoInit();
   $('.modal').modal('open');
-	
+
   timeOfDay = getGreetingTime(moment());
-	
+
   $("#user-name").text(user);
-  getLocationAndWeather();
+  getIP();
   setTime();
   setDate();
-  
 
-
-  let paintingNumber = choosePainting(paintings);
+  let paintingNumber;
+  if (localStorage.getItem("paintingChoice") === null) {
+    paintingNumber = choosePainting(paintings);
+    localStorage.setItem("paintingChoice", paintingNumber);
+  }
+  else {
+    paintingNumber = localStorage.getItem("paintingChoice");
+  }
   thisPainting = paintings[paintingNumber];
   console.log("this is this painting: " + thisPainting);
   setWikiDescription(paintingNumber);
-  
+
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
 
@@ -762,7 +796,7 @@ $(document).ready(function () {
 
 
 
-  ///add moment.js - time
+
   //more possible additions:
   //change based on time period/location: font
   //also - greeting in language of nationality of painter?

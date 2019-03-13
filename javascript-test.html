@@ -148,7 +148,16 @@
                 newPainting.append(colorSection);
                 $("#test-div").append(newPainting);
             })
+
+
         }
+
+        $.get("https://ipinfo.io", function (response) {
+            console.log(response);
+            console.log("City: " + response.city, " Latitude/Longitude: " + response.loc);
+        }, "jsonp")
+
+
     </script>
 </body>
 
