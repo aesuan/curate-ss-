@@ -50,7 +50,7 @@ let paintings = [
     objectID: 459136,
     wikiSearch: "",
     description: "Simone Martini was one of the leading painters of his time, whose highly refined technique and descriptive powers were unequalled in Europe and earned the praise and friendship of the Italian poet Petrarch (1304–1374). This panel, together with a related work depicting Saint Ansanus in the Robert Lehman Collection (1975.1.13) and a third panel of Saint Andrew (41.100.23) in the European Paintings Collection, formed part of an altarpiece that was possibly commissioned by the civic government of Siena.",
-    palette: ["rgb(11, 6, 9)", "rgb(216, 152, 69)", "rgb(163, 5, 4)"]
+    palette: ["rgb(11, 6, 9)", "rgb(216, 152, 69)", "rgb(163, 5, 4)"],
     orientation: "portrait",
     weatherPalettes: [
       {
@@ -82,7 +82,7 @@ let paintings = [
     wikiSearch: "The Dance Class (Degas, Metropolitan Museum of Art)",
     description: "",
     palette: ["rgb(85, 94, 56)", "rgb(88, 58, 26)", "rgb(150, 140, 113)"],
-      orientation: "portrait",
+    orientation: "portrait",
     weatherPalettes: [
       {
         one: "#F8EAC8",
@@ -105,50 +105,51 @@ let paintings = [
         four: "#742313",
         five: "#341E16"
       }
+
+    ]
   }
-      ]
-    
-//   {
-//     paintingName: "Whalers",
-//     objectID: 437854,
-//     wikiSearch: "Whalers (J. M. W. Turner)",
-//     description: "",
-//     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
-//     orientation: "landscape"
-//   },
-//   {
-//     paintingName: "View of Toledo",
-//     objectID: 436575,
-//     wikiSearch: "View of Toledo",
-//     description: "",
-//     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
-//     orientation: portrait
-//   },
-//   {
-//     paintingName: "Young Woman with a Water Pitcher",
-//     objectID: 437881,
-//     wikiSearch: "",
-//     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
-//     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
-//     orientation: portrait
-//   },
-//   {
-//     paintingName: "Boating",
-//     objectID: 436947,
-//     wikiSearch: "",
-//     description: "Boating was painted in the summer of 1874 when Manet was at the family home at Gennevilliers on the Seine, opposite Argenteuil. At this time he was frequently joined by Claude Monet, who had been living in Argenteuil for some time, and occasionally by Renoir. Manet painted Monet and his wife and it was at this period that he came closest to adopting the impressionist idiom of working in the open air, using short rapid brushstrokes and adopting a much higher key than in his earlier work.",
-//     palette: ["rgb(101, 134, 166)", "rgb(89, 57, 36)", "rgb(216, 212, 209)"]
-//     orientation: landscape
-//   },
-//   {
-//     paintingName: "La Berceuse",
-//     objectID: 437984,
-//     wikiSearch: "",
-//     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
-//     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
-//     orientation: portrait
-//   },
-//  
+
+  //   {
+  //     paintingName: "Whalers",
+  //     objectID: 437854,
+  //     wikiSearch: "Whalers (J. M. W. Turner)",
+  //     description: "",
+  //     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
+  //     orientation: "landscape"
+  //   },
+  //   {
+  //     paintingName: "View of Toledo",
+  //     objectID: 436575,
+  //     wikiSearch: "View of Toledo",
+  //     description: "",
+  //     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
+  //     orientation: portrait
+  //   },
+  //   {
+  //     paintingName: "Young Woman with a Water Pitcher",
+  //     objectID: 437881,
+  //     wikiSearch: "",
+  //     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
+  //     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
+  //     orientation: portrait
+  //   },
+  //   {
+  //     paintingName: "Boating",
+  //     objectID: 436947,
+  //     wikiSearch: "",
+  //     description: "Boating was painted in the summer of 1874 when Manet was at the family home at Gennevilliers on the Seine, opposite Argenteuil. At this time he was frequently joined by Claude Monet, who had been living in Argenteuil for some time, and occasionally by Renoir. Manet painted Monet and his wife and it was at this period that he came closest to adopting the impressionist idiom of working in the open air, using short rapid brushstrokes and adopting a much higher key than in his earlier work.",
+  //     palette: ["rgb(101, 134, 166)", "rgb(89, 57, 36)", "rgb(216, 212, 209)"]
+  //     orientation: landscape
+  //   },
+  //   {
+  //     paintingName: "La Berceuse",
+  //     objectID: 437984,
+  //     wikiSearch: "",
+  //     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
+  //     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
+  //     orientation: portrait
+  //   },
+  //  
   // {
   //   paintingName: "Pines Along the Shore",
   //   objectID: 459095,
@@ -374,13 +375,13 @@ let timeOfDay;
 //   let paintingID = response.objectIDs[0];
 //   metAPI(paintingID);
 // })
-    
+
 function choosePainting(paintingsArray) {
   let numberChoices = paintingsArray.length;
   return Math.floor(Math.random() * numberChoices);
- }
+}
 
- 
+
 
 let paintingNumber = choosePainting(paintings);
 
@@ -389,7 +390,7 @@ console.log(paintingNumber);
 function choosePainting(paintingsArray) {
   let numberChoices = paintingsArray.length;
   return Math.floor(Math.random() * numberChoices);
- }
+}
 
 
 
@@ -403,11 +404,13 @@ function choosePainting(paintingsArray) {
 
 
 //get's user's geolocation, if it fails defaults to berkeley location
-function getLocationAndWeather() {
+function getLocationPermission() {
 
   function success(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
+    localStorage.setItem("currentLatitude", latitude);
+    localStorage.setItem("currentLongitude", longitude);
     console.log("Latitude: " + latitude + " and Longitude: " + longitude);
     //calls get weather as a solution to asynchronous data retrieval so weather call doesnt happen til we have location data
     getWeather();
@@ -431,11 +434,38 @@ function getLocationAndWeather() {
 
 }
 
+function getIP() {
+  let ipCity;
+
+  if (localStorage.getItem("cityName") === null) {
+    console.log("no local storage city");
+    getLocationPermission();
+  } else {
+    $.get("https://ipinfo.io", function (response) {
+      console.log(response);
+      console.log("City: " + response.city, " Latitude/Longitude: " + response.loc);
+      ipCity = response.city;
+      console.log(ipCity);
+
+      if (localStorage.getItem("cityName") === ipCity) {
+
+        latitude = localStorage.getItem("currentLatitude");
+        longitude = localStorage.getItem("currentLongitude");
+        getWeather();
+
+      } else {
+        getLocationPermission();
+      }
+    }, "jsonp");
+  }
+}
+
 
 
 //get's weather based on geocoordinates in getLocation
 function getWeather() {
   // let weatherQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=lat={" + latitude + "}&lon={" + longitude + "}&APPID=" + openWeatherAPI;
+
   let weatherQueryURL = "https://api.weatherbit.io/v2.0/current?units=I&lat=" + latitude + "&lon=" + longitude + "&key=" + weatherBitAPI;
   $.ajax({
     url: weatherQueryURL,
@@ -455,6 +485,7 @@ function getWeather() {
     country = data.country_code;
     console.log(weatherCode);
     console.log(weatherDescription);
+    localStorage.setItem("cityName", city);
     //if it's a stormy code
     if (weatherCode < 700) {
       setWeather(2);
@@ -496,7 +527,6 @@ function setWeather(code) {
 
 
 
-//this does not totally work yet but getting there!!! sorry :/
 //wikipedia description puller from first two sentences of article
 function setWikiDescription(index) {
   //wikipedia API query URL to get first two sentences of article
@@ -509,7 +539,6 @@ function setWikiDescription(index) {
       url: wikiURL,
       method: "GET",
       contentType: "application/json; charset=utf-8",
-      async: false,
       dataType: "json",
     }).then(function (response) {
       console.log(response);
@@ -525,37 +554,37 @@ function setWikiDescription(index) {
   }
 }
 
-function getGreetingTime (m) {
-	var g = null; //return g
-	
-	if(!m || !m.isValid()) { return; } //if we can't find a valid or filled moment, we return.
-	
-	var split_afternoon = 12 //24hr time to split the afternoon
-	var split_evening = 17 //24hr time to split the evening
-	var currentHour = parseFloat(m.format("HH"));
-	
-	if(currentHour >= split_afternoon && currentHour <= split_evening) {
-		g = "afternoon";
-	} else if(currentHour >= split_evening) {
-		g = "evening";
-	} else {
-		g = "morning";
-	}
-	
-	return g;
+function getGreetingTime(m) {
+  var g = null; //return g
+
+  if (!m || !m.isValid()) { return; } //if we can't find a valid or filled moment, we return.
+
+  var split_afternoon = 12 //24hr time to split the afternoon
+  var split_evening = 17 //24hr time to split the evening
+  var currentHour = parseFloat(m.format("HH"));
+
+  if (currentHour >= split_afternoon && currentHour <= split_evening) {
+    g = "afternoon";
+  } else if (currentHour >= split_evening) {
+    g = "evening";
+  } else {
+    g = "morning";
+  }
+
+  return g;
 }
 
 function setTime() {
   clearInterval(intervalID);
-  intervalID = setInterval(count, 1000); 
-  
+  intervalID = setInterval(count, 1000);
+
   function count() {
     time = moment().format("hh:mm A");
     console.log(time);
     //some statement printing time to screen
     $(".clock").text(time);
 
-  //function to check general time of day
+    //function to check general time of day
 
     $("#time-of-day").text(timeOfDay);
   }
@@ -570,11 +599,7 @@ function setDate() {
 
 
 //stuff for materialize functionality
-$(document).ready(function(){
-  $('.materialboxed').materialbox();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.fixed-action-btn');
   var instances = M.FloatingActionButton.init(elems, {
     direction: 'right'
@@ -584,24 +609,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //when page is loaded gets location/weather, does met api call, etc
 $(document).ready(function () {
-	
+  //materialize stuff
+  $('.materialboxed').materialbox();
+  //modal stuff
   M.AutoInit();
   $('.modal').modal('open');
-	
+
   timeOfDay = getGreetingTime(moment());
-	
+
   $("#user-name").text(user);
-  getLocationAndWeather();
+  getIP();
   setTime();
   setDate();
-  
 
-
-  let paintingNumber = choosePainting(paintings);
+  let paintingNumber;
+  if (localStorage.getItem("paintingChoice") === null) {
+    paintingNumber = choosePainting(paintings);
+    localStorage.setItem("paintingChoice", paintingNumber);
+  }
+  else {
+    paintingNumber = localStorage.getItem("paintingChoice");
+  }
   thisPainting = paintings[paintingNumber];
   console.log("this is this painting: " + thisPainting);
   setWikiDescription(paintingNumber);
-  
+
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
 
@@ -642,7 +674,7 @@ $(document).ready(function () {
 
   })
 
-  ///add moment.js - time
+
   //more possible additions:
   //change based on time period/location: font
   //also - greeting in language of nationality of painter?
