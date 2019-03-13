@@ -105,51 +105,50 @@ let paintings = [
         four: "#742313",
         five: "#341E16"
       }
-
     ]
-  }
-
-  //   {
-  //     paintingName: "Whalers",
-  //     objectID: 437854,
-  //     wikiSearch: "Whalers (J. M. W. Turner)",
-  //     description: "",
-  //     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
-  //     orientation: "landscape"
-  //   },
-  //   {
-  //     paintingName: "View of Toledo",
-  //     objectID: 436575,
-  //     wikiSearch: "View of Toledo",
-  //     description: "",
-  //     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
-  //     orientation: portrait
-  //   },
-  //   {
-  //     paintingName: "Young Woman with a Water Pitcher",
-  //     objectID: 437881,
-  //     wikiSearch: "",
-  //     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
-  //     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
-  //     orientation: portrait
-  //   },
-  //   {
-  //     paintingName: "Boating",
-  //     objectID: 436947,
-  //     wikiSearch: "",
-  //     description: "Boating was painted in the summer of 1874 when Manet was at the family home at Gennevilliers on the Seine, opposite Argenteuil. At this time he was frequently joined by Claude Monet, who had been living in Argenteuil for some time, and occasionally by Renoir. Manet painted Monet and his wife and it was at this period that he came closest to adopting the impressionist idiom of working in the open air, using short rapid brushstrokes and adopting a much higher key than in his earlier work.",
-  //     palette: ["rgb(101, 134, 166)", "rgb(89, 57, 36)", "rgb(216, 212, 209)"]
-  //     orientation: landscape
-  //   },
-  //   {
-  //     paintingName: "La Berceuse",
-  //     objectID: 437984,
-  //     wikiSearch: "",
-  //     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
-  //     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
-  //     orientation: portrait
-  //   },
-  //  
+  }  
+  
+//   {
+//     paintingName: "Whalers",
+//     objectID: 437854,
+//     wikiSearch: "Whalers (J. M. W. Turner)",
+//     description: "",
+//     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
+//     orientation: "landscape"
+//   },
+//   {
+//     paintingName: "View of Toledo",
+//     objectID: 436575,
+//     wikiSearch: "View of Toledo",
+//     description: "",
+//     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
+//     orientation: portrait
+//   },
+//   {
+//     paintingName: "Young Woman with a Water Pitcher",
+//     objectID: 437881,
+//     wikiSearch: "",
+//     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
+//     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
+//     orientation: portrait
+//   },
+//   {
+//     paintingName: "Boating",
+//     objectID: 436947,
+//     wikiSearch: "",
+//     description: "Boating was painted in the summer of 1874 when Manet was at the family home at Gennevilliers on the Seine, opposite Argenteuil. At this time he was frequently joined by Claude Monet, who had been living in Argenteuil for some time, and occasionally by Renoir. Manet painted Monet and his wife and it was at this period that he came closest to adopting the impressionist idiom of working in the open air, using short rapid brushstrokes and adopting a much higher key than in his earlier work.",
+//     palette: ["rgb(101, 134, 166)", "rgb(89, 57, 36)", "rgb(216, 212, 209)"],
+//     orientation: landscape
+//   },
+//   {
+//     paintingName: "La Berceuse",
+//     objectID: 437984,
+//     wikiSearch: "",
+//     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
+//     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
+//     orientation: portrait
+//   },
+//  
   // {
   //   paintingName: "Pines Along the Shore",
   //   objectID: 459095,
