@@ -542,11 +542,13 @@ function getWeather() {
 }
 
 
+
+
 let thisPalette;
 
 //basic function for now, will add color printing later.  sets weather code
 function setWeather(code) {
-  whichWeather = 2;
+  whichWeather = code;
   console.log("the weather code is" + code);
   thisPalette = thisPainting.weatherPalettes[whichWeather];
   console.log("the weather is: " + code)
@@ -704,6 +706,17 @@ $(document).ready(function () {
   setTime();
   setDate();
 
+  $(".switch-weather").on("click", function() {
+    console.log("the code now is: " + whichWeather);
+    if(whichWeather<=1) {
+      whichWeather++;
+      setWeather(whichWeather);
+    }
+    else {
+      whichWeather=0;
+      setWeather(whichWeather);
+    }
+  });
  
   if (localStorage.getItem("paintingChoice") === null) {
     paintingNumber = choosePainting(paintings);
