@@ -506,7 +506,7 @@ function setWeather(code) {
   $("#demo-card-info").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
   $(".card-tabs").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
   $("#info-back").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $(".flip-back").attr("style", "background: " + thisPainting.weatherPalettes[whichWeather].five);
+  $(".flip-back").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
   $("#info-back-title").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
   $("#info-back-text").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
 
@@ -515,7 +515,14 @@ function setWeather(code) {
   $("#artist-name").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
   $("#painting-name").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
   $("#artist-bio").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
-  
+
+  //==CLOCK/TIME====//
+  $("#date").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $("#time").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $("#city").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $("#weather").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $("#temp").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $("#temp-weather-info").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
 }
 
 
