@@ -1,19 +1,13 @@
-body {
+/* body {
   background-color: #CDAB63;
-}
+} */
 
 #wrapper {
   margin-top: 6%;
 }
 
-.card-content {
-  background: #A9A8BD;
-  color: #395A7A;
-}
-
 #info-back {
   margin:10px auto;
-  color: #A9A8BD;
 }
 
 #info-back-text {
@@ -33,25 +27,15 @@ body {
   padding-left:10%;
 }
 
-h3 {
-  color: #03648B;
-}
-
-h2 {
-  color: #528360;
-}
-
-h5 {
-  color: #03648B;
-}
-
-h6{
-  color:#A9A8BD;
-}
-
+/* ADD MODAL TEXT STYLING */
+/*************************/
 .modal-content {
   color: #03648B;
 }
+/*************************/
+/*************************/
+/*************************/
+
 
 /* CARD FLIP ANIMATION */
 .flip-card {

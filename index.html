@@ -12,7 +12,7 @@
     
     <title>curate(ss)</title>
 </head>
-<body>
+<body id='gallery-body'>
 
   <div id="wrapper" class="container">
     <div class="row">
@@ -20,17 +20,12 @@
       <div id='content-container' class="row col 12">
         <div class="row col s12 m6 l6 xl6 left">
           <div class="col s12 m8 l8 xl8 right">
-            <h3>Richard<br>Diebenkorn</h3>
-            <section class="card">
+            <h3 id='artist-name'></h3>
+            <section id='painting-card' class="card">
               <div class="card-content">
-                <div class="card-title">Ocean Park #79, 1975</div>
-                <div class="card-title">Philadelphia Museum of Art</div>
-                <br>
-                <p>
-                  Richard Diebenkorn was an American painter and printmaker. His early work is associated with abstract 
-                  expressionism and the Bay Area Figurative Movement of the 1950s and 1960s. In the late 1960s he began 
-                  his extensive series of geometric, lyrical abstract paintings.
-                </p>
+                <div class="card-title"><span id='painting-name'></span></div>
+                <div class="card-title"><span id='artist-bio'></span></div>
+                <div></div>
               </div>
             </section>
           </div>
@@ -43,7 +38,7 @@
               <div class="flip-front">
                 <img id="art-piece" src="./assets/images/richard-diebenkorn-ocean-park-79.jpg" class="z-depth-2">
               </div>
-<!-- START IMAGE BACK FUNCTIONALITY -->
+<!-- START IMAGE FLIP FUNCTIONALITY -->
               <div class='flip-back'>
                 <div id='info-back' class="container">
                   <h6>Features!</h6>
@@ -56,7 +51,7 @@
 
     <!-- DEMO CARD TABULATED OPTIONS -->
                   <div id='demo-card' class="card">
-                    <div class="card-content">
+                    <div id='demo-card-info' class="card-content">
                       <p>Check out the demos below if you're having any trouble</p>
                     </div>
                     <div class="card-tabs">
@@ -94,14 +89,14 @@
               </div>
             </div>
           <div class="col s12 m10 l10 xl10">
-            <img id="art-piece" src="./assets/images/richard-diebenkorn-ocean-park-79.jpg" class="z-depth-2 hoverable" width="300">
+            <img id="art-piece" src="" class="z-depth-2 hoverable" width="300" alt=''>
           </div>
         </div>
       </div>
     </div>
     <div id='clock-container' class="row">
       <div class="col s4 push-s4 center">
-        <h5 id="date" class="flow-text">Sunday March 10</h5>
+        <h5 id="date" class="flow-text"><span class="date"></span></h5>
         <h2 id="time"><span class='clock'></span></h2>
         <h5 class="flow-text"><span id='city'>  |  <span id='weather'></h5>
       </div>
