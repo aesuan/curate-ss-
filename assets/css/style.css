@@ -40,6 +40,11 @@
   padding-left:10%;
 }
 
+.fixed-action-btn{
+  right: auto;
+  margin-left: 5%;
+}
+
 /* ADD MODAL TEXT STYLING */
 /*************************/
 .modal-content {
