@@ -1,6 +1,8 @@
+
+const weatherBitAPI = "39180678a6fe491da37075fd7f8bf0f6";
 // Initialize Firebase
 
-
+//const firebaseAPI = "AIzaSyDFkB70-ZlFHiBOIFlSzE0TSkw00BNmuIs";
 
 // const config = {
 //   apiKey: firebaseAPI,
@@ -154,25 +156,25 @@ let paintings = [
     metURL: "https://www.metmuseum.org/art/collection/search/435882",
     weatherPalettes: [
       {
-        one: "#F8EAC8",
-        two: "#818E63",
-        three: "#A56F3F",
-        four: "#606F4C",
-        five: "#A83A0D"
+        one: "#EBEDE0",
+        two: "#F0C242",
+        three: "#71A29E",
+        four: "#BF593C",
+        five: "#2A4F5C"
       },
       {
-        one: "#E5D7BA",
-        two: "#7B8C60",
-        three: "#4F593E",
-        four: "#5E472B",
-        five: "#2A1D17"
+        one: "#DAD8C6",
+        two: "#BF5D42",
+        three: "#548A89",
+        four: "#C2891A",
+        five: "#47626E"
       },
       {
-        one: "#DBCCAE",
-        two: "#717D5C",
-        three: "#4E664C",
-        four: "#742313",
-        five: "#341E16"
+        one: "#BECFC7",
+        two: "#4F8283",
+        three: "#1E4644",
+        four: "#7E3523",
+        five: "#1B3C54"
       }
     ]
   },  
@@ -544,7 +546,7 @@ let thisPalette;
 
 //basic function for now, will add color printing later.  sets weather code
 function setWeather(code) {
-  whichWeather = code;
+  whichWeather = 2;
   console.log("the weather code is" + code);
   thisPalette = thisPainting.weatherPalettes[whichWeather];
   console.log("the weather is: " + code)
