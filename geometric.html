@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="geo-html" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/css/geo.css">
     <title>Geometric</title>
 </head>
-<body class="geo-html">
+<body class="geo-body">
 
 <div class="geoBox1 grad1"></div>
 <div class="geoBox2 grad2"></div>
@@ -27,13 +27,13 @@
     </div>
     <div class="row">
 
-        <div class="col s3 offset-s2 z-depth-3 center-align time hoverable">
+        <div class="col s3 offset-s2 z-depth-3 center-align time">
             <h4 class="weather"><span id="city"></span>, <span id="state"></span> | <span id="temp"></span>&deg; and <span id="weather"></span></h4>
             <h1 class="clock"></h1>
             <h4 class="date"></h4>
         </div>
 
-        <div class="col s4 offset-s1">
+        <div class="col s4 offset-s1 painting">
             <img class="z-depth-3 materialboxed" id="vg-painting" src="" alt="">
         </div>
     </div>
@@ -57,15 +57,15 @@
         </div>
     </div>
 
-    <div class="fixed-action-btn left-align">
+    <div class="fixed-action-btn left-align direction-right">
         <a class="btn-floating btn-large">
             <i class="large material-icons">add</i>
         </a>
         <ul>
             <li><a class="btn-floating waves-effect"><i class="material-icons">favorite</i></a></li>
-            <li><a class="btn-floating waves-effect"><i class="material-icons">block</i></a></li>
-            <li><a class="btn-floating waves-effect"><i class="material-icons">info</i></a></li>
-            <li><a class="btn-floating waves-effect"><i class="material-icons">cached</i></a></li>
+            <li class="dislike"><a class="btn-floating waves-effect"><i class="material-icons">block</i></a></li>
+            <li><a class="extra-info btn-floating waves-effect"><i class="material-icons">info</i></a></li>
+            <li><a href="./index.html" class="btn-floating waves-effect"><i class="material-icons">cached</i></a></li>
         </ul>
     </div>
                 
@@ -75,7 +75,6 @@
 <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 <script src="./assets/javascript/apikeys.js"></script>
 <script src="./assets/javascript/app.js"></script>
-<script src="./assets/javascript/geo.js"></script>
 </body>
 </html>
 

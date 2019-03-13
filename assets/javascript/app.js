@@ -21,6 +21,7 @@ let paintings = [
     description: "",
     palette: ["rgb(214, 152, 70)", "rgb(37, 31, 17)", "rgb(114, 62, 17)"],
     orientation: "landscape",
+    metURL: "https://www.metmuseum.org/art/collection/search/435809",
     weatherPalettes: [
       //sunny
       {
@@ -55,6 +56,7 @@ let paintings = [
     description: "Simone Martini was one of the leading painters of his time, whose highly refined technique and descriptive powers were unequalled in Europe and earned the praise and friendship of the Italian poet Petrarch (1304–1374). This panel, together with a related work depicting Saint Ansanus in the Robert Lehman Collection (1975.1.13) and a third panel of Saint Andrew (41.100.23) in the European Paintings Collection, formed part of an altarpiece that was possibly commissioned by the civic government of Siena.",
     palette: ["rgb(11, 6, 9)", "rgb(216, 152, 69)", "rgb(163, 5, 4)"],
     orientation: "portrait",
+    metURL: "https://www.metmuseum.org/art/collection/search/459136",
     weatherPalettes: [
       {
         one: "#F1C77A",
@@ -86,6 +88,7 @@ let paintings = [
     description: "",
     palette: ["rgb(85, 94, 56)", "rgb(88, 58, 26)", "rgb(150, 140, 113)"],
     orientation: "portrait",
+    metURL: "https://www.metmuseum.org/art/collection/search/438817",
     weatherPalettes: [
       {
         one: "#F8EAC8",
@@ -109,7 +112,70 @@ let paintings = [
         five: "#341E16"
       }
     ]
-  }  
+  },
+  {
+    paintingName: "Boating",
+    objectID: 436947,
+    wikiSearch: "",
+    description: "Boating was painted in the summer of 1874 when Manet was at the family home at Gennevilliers on the Seine, opposite Argenteuil. At this time he was frequently joined by Claude Monet, who had been living in Argenteuil for some time, and occasionally by Renoir. Manet painted Monet and his wife and it was at this period that he came closest to adopting the impressionist idiom of working in the open air, using short rapid brushstrokes and adopting a much higher key than in his earlier work.",
+    palette: ["rgb(101, 134, 166)", "rgb(89, 57, 36)", "rgb(216, 212, 209)"],
+    orientation: "landscape",
+    metURL: "https://www.metmuseum.org/art/collection/search/436947",
+    weatherPalettes: [
+      {
+        one: "#E6E2E9",
+        two: "#DBB9A6",
+        three: "#8FACCB",
+        four: "#523420",
+        five: "#4A5578"
+      },
+      {
+        one: "#D1CDD1",
+        two: "#6A90B0",
+        three: "#C7A794",
+        four: "#836858",
+        five: "#432E25"
+      },
+      {
+        one: "#C7C0BF",
+        two: "#708EAB",
+        three: "#593C21",
+        four: "#332720",
+        five: "#232D49"
+      }
+    ]
+  },  
+  {
+    paintingName: "Still Life with Apples and a Pot of Primroses",
+    objectID: 435882,
+    wikiSearch: "",
+    description: "Cézanne rarely painted flowering plants or fresh-cut bouquets, which were susceptible to wilting under his protracted gaze. He included potted plants only in three still lifes, two views of the conservatory at Jas de Bouffan, his family's estate, and about a dozen exquisite watercolors made over the course of two decades (from about 1878 to 1906). Cézanne seems to have reserved this particular table, with its scalloped apron and distinctive bowed legs, for three of his finest still lifes of the 1890s. This painting was once owned by the ardent gardener Claude Monet.",
+    orientation: "landscape",
+    metURL: "https://www.metmuseum.org/art/collection/search/435882",
+    weatherPalettes: [
+      {
+        one: "#F8EAC8",
+        two: "#818E63",
+        three: "#A56F3F",
+        four: "#606F4C",
+        five: "#A83A0D"
+      },
+      {
+        one: "#E5D7BA",
+        two: "#7B8C60",
+        three: "#4F593E",
+        four: "#5E472B",
+        five: "#2A1D17"
+      },
+      {
+        one: "#DBCCAE",
+        two: "#717D5C",
+        three: "#4E664C",
+        four: "#742313",
+        five: "#341E16"
+      }
+    ]
+  },  
 //   {
 //     paintingName: "Whalers",
 //     objectID: 437854,
@@ -124,7 +190,7 @@ let paintings = [
 //     wikiSearch: "View of Toledo",
 //     description: "",
 //     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
-//     orientation: portrait
+//     orientation: "portrait"
 //   },
 //   {
 //     paintingName: "Young Woman with a Water Pitcher",
@@ -132,15 +198,7 @@ let paintings = [
 //     wikiSearch: "",
 //     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
 //     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
-//     orientation: portrait
-//   },
-//   {
-//     paintingName: "Boating",
-//     objectID: 436947,
-//     wikiSearch: "",
-//     description: "Boating was painted in the summer of 1874 when Manet was at the family home at Gennevilliers on the Seine, opposite Argenteuil. At this time he was frequently joined by Claude Monet, who had been living in Argenteuil for some time, and occasionally by Renoir. Manet painted Monet and his wife and it was at this period that he came closest to adopting the impressionist idiom of working in the open air, using short rapid brushstrokes and adopting a much higher key than in his earlier work.",
-//     palette: ["rgb(101, 134, 166)", "rgb(89, 57, 36)", "rgb(216, 212, 209)"]
-//     orientation: landscape
+//     orientation: "portrait"
 //   },
 //   {
 //     paintingName: "La Berceuse",
@@ -148,7 +206,7 @@ let paintings = [
 //     wikiSearch: "",
 //     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
 //     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"]
-//     orientation: portrait
+//     orientation: "portrait"
 //   },
 //  
   // {
@@ -258,12 +316,6 @@ let paintings = [
   //   objectID: 436139,
   //   palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
   //   orientation: "portrait"
-  // },
-  // {
-  //   paintingName: "Still Life with Apples and a Pot of Primroses",
-  //   objectID: 435882,
-  //   palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
-  //   orientation: "landscape"
   // },
   // {
   //   paintingName: "Madame Cézanne (Hortense Fiquet, 1850–1922) in the Conservatory",
@@ -477,23 +529,28 @@ function getWeather() {
 }
 
 
+let thisPalette;
 
 //basic function for now, will add color printing later.  sets weather code
 function setWeather(code) {
   whichWeather = code;
+  console.log("the weather code is" + code);
+  thisPalette = thisPainting.weatherPalettes[whichWeather];
   console.log("the weather is: " + code)
-  $(".geoBox1").attr("style", "background-image: linear-gradient(to top, " + thisPainting.weatherPalettes[whichWeather].four + ", " + thisPainting.weatherPalettes[whichWeather].one + ");");
-  $(".geoBox2").attr("style", "background-image: linear-gradient(to right, " + thisPainting.weatherPalettes[whichWeather].five + ", " + thisPainting.weatherPalettes[whichWeather].three + ");");
-  $(".geoBox3").attr("style", "background-image: linear-gradient(to right, " + thisPainting.weatherPalettes[whichWeather].four + ", " + thisPainting.weatherPalettes[whichWeather].two + ");");
-  $("html").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $(".geoBox1").attr("style", "background-image: linear-gradient(to top, " + thisPalette.four + ", " + thisPalette.one + ");");
+  $(".geoBox2").attr("style", "background-image: linear-gradient(to right, " + thisPalette.five + ", " + thisPalette.three + ");");
+  $(".geoBox3").attr("style", "background-image: linear-gradient(to right, " + thisPalette.four + ", " + thisPalette.two + ");");
+  $(".geo-html").attr("style", "background-color: " + thisPalette.one);
 
-  $("body").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $(".the-back").attr("style", "background: " + thisPainting.weatherPalettes[whichWeather].one);
-  $(".the-back").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $(".btn-floating").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
-  $(".material-icons").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $(".geo-body").attr("style", "color: " + thisPalette.five);
+  $(".the-back").attr("style", "background: " + thisPalette.one);
+  $(".the-back").attr("style", "color: " + thisPalette.five);
+  $(".btn-floating").attr("style", "background-color: " + thisPalette.one);
+  $(".material-icons").attr("style", "color: " + thisPalette.five);
 
-  $(".art-info").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $(".art-info").attr("style", "color: " + thisPalette.one);
+
+  $(".extra-info").attr("href", thisPainting.metURL);
 
 
   //space for Ben
@@ -588,7 +645,7 @@ $(document).ready(function(){
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.fixed-action-btn');
   var instances = M.FloatingActionButton.init(elems, {
-    direction: 'right'
+    // direction: 'right'
   });
 });
 
@@ -643,6 +700,7 @@ $(document).ready(function () {
     $(".painting-info2").text(year + " " + medium);
     $(".painting-info3").text(dimensions);
 
+
     console.log(paintingTitle);
     console.log(artist);
     console.log(artistBio);
@@ -653,6 +711,16 @@ $(document).ready(function () {
     console.log(paintingURL);
 
   })
+  console.log("my new test: " + thisPainting.orientation);
+
+
+
+
+
+
+
+
+
 
   ///add moment.js - time
   //more possible additions:
