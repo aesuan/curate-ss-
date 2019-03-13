@@ -407,6 +407,7 @@ let dimensions;
 let paintingURL;
 
 let paintingDescription;
+let paintingNumber;
 
 let intervalID;
 let time;
@@ -434,27 +435,6 @@ function choosePainting(paintingsArray) {
   let numberChoices = paintingsArray.length;
   return Math.floor(Math.random() * numberChoices);
 }
-
-
-
-let paintingNumber = choosePainting(paintings);
-
-console.log(paintingNumber);
-
-function choosePainting(paintingsArray) {
-  let numberChoices = paintingsArray.length;
-  return Math.floor(Math.random() * numberChoices);
-}
-
-
-
-
-//chooses random painting, will be fleshed out later
-function choosePainting(paintingsArray) {
-  let numberChoices = paintingsArray.length;
-  return Math.floor(Math.random() * numberChoices);
-}
-
 
 
 //get's user's geolocation, if it fails defaults to berkeley location
@@ -722,7 +702,7 @@ $(document).ready(function () {
   setTime();
   setDate();
 
-  let paintingNumber;
+ 
   if (localStorage.getItem("paintingChoice") === null) {
     paintingNumber = choosePainting(paintings);
     localStorage.setItem("paintingChoice", paintingNumber);
