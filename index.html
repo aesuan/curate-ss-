@@ -14,12 +14,12 @@
 </head>
 <body id='gallery-body'>
 
-  <div id="wrapper" class="container">
-    <div class="row">
+  <div id="wrapper" class="container row">
+    <!-- <div class="row"> -->
 <!-- ======================ARTIST & PAINTING INFORMATIONAL CONTENT CONTAINER ==================-->
-      <div id='content-container' class="row col 12">
+      <div id='content-container' class="row col 12 center">
         <div class="row col s12 m6 l6 xl6 left">
-          <div class="col s12 m8 l8 xl8 right">
+          <div class="col s12 m10 l10 xl10 right">
             <h3 id='artist-name'></h3>
             <section id='painting-card' class="card" width='400'>
               <div class="card-content">
@@ -30,13 +30,12 @@
             </section>
           </div>
         </div>
-<!-- ====================IMAGE/PAINTING CONTAINER================================ -->
+<!-- =====================IMAGE/PAINTING CONTAINER================================ -->
         <div id='img-container' class="row col s12 m6 l6 xl6 right">
-
           <div class="col s12 m10 l10 xl10 flip-card">
             <div class="flip-content">
-              <div class="flip-front">
-                <img id="art-piece" src="" class="z-depth-2" height="440">
+              <div class="col s12 m10 l10 xl10">
+                <img id="art-piece" src="" class="flip-front z-depth-2 hoverable" height="440" alt=''>
               </div>
 <!-- ======================START IMAGE FLIP FUNCTIONALITY ================================-->
               <div class='flip-back'>
@@ -87,21 +86,12 @@
                   </div>
                 </div>
               </div>
+              </div>
             </div>
-          <div class="col s12 m10 l10 xl10">
-            <img id="art-piece" src="" class="z-depth-2 hoverable" width="300" alt=''>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
-    <!-- ============================= CLOCK/TIME/WEATHER ===============================
-    <div id='clock-container' class="row">
-      <div class="col s4 push-s4 center">
-        <h5 id="date" class="flow-text"><span class="date"></span></h5>
-        <h2 id="time"><span class='clock'></span></h2>
-        <h5 class="flow-text"><span id='city'>  |  <span id='weather'></h5>
-      </div>
-    </div> -->
   </div>
   <!--============================= CLOCK/TIME/WEATHER ===============================-->
   <div id='clock-container' class="row">

@@ -504,10 +504,10 @@ function setWeather(code) {
   
   //==CARD BACKSIDE=======//
   $("#demo-card-info").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
-  $(".card-tabs").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $(".card-tabs").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
   $("#info-back").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
   $(".flip-back").attr("style", "background: " + thisPainting.weatherPalettes[whichWeather].five);
-  $("#info-back-title").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].two);
+  $("#info-back-title").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
   $("#info-back-text").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
 
   //==ARTIST INFO====//
@@ -601,7 +601,7 @@ $(document).ready(function(){
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.fixed-action-btn');
   var instances = M.FloatingActionButton.init(elems, {
-    direction: 'right'
+    // direction: 'right'
   });
 });
 
