@@ -479,18 +479,50 @@ function getWeather() {
 function setWeather(code) {
   whichWeather = code;
   console.log("the weather is: " + code)
+  //==GEO COLOR ASSIGNMENTS====================================================================================================================================================================================
   $(".geoBox1").attr("style", "background-image: linear-gradient(to top, " + thisPainting.weatherPalettes[whichWeather].four + ", " + thisPainting.weatherPalettes[whichWeather].one + ");");
   $(".geoBox2").attr("style", "background-image: linear-gradient(to right, " + thisPainting.weatherPalettes[whichWeather].five + ", " + thisPainting.weatherPalettes[whichWeather].three + ");");
   $(".geoBox3").attr("style", "background-image: linear-gradient(to right, " + thisPainting.weatherPalettes[whichWeather].four + ", " + thisPainting.weatherPalettes[whichWeather].two + ");");
-  $("html").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $(".geo-html").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
 
-  $("body").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $(".geo-html").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
   $(".the-back").attr("style", "background: " + thisPainting.weatherPalettes[whichWeather].one);
   $(".the-back").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
   $(".btn-floating").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
   $(".material-icons").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
 
   $(".art-info").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
+  
+  //==GALLERY COLOR ASSIGNMENTS====================================================================================================================================================================================
+  //==BODY/BG=============//
+  $("#gallery-body").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].two);
+  // $(".wrapper").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  
+  //==BUTTONS=============//
+  $(".btn-floating").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $(".material-icons").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  
+  //==CARD BACKSIDE=======//
+  $("#demo-card-info").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $(".card-tabs").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $("#info-back").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $(".flip-back").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $("#info-back-title").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $("#info-back-text").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
+
+  //==ARTIST INFO====//
+  $("#painting-card").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $("#artist-name").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $("#painting-name").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $("#artist-bio").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+
+  //==CLOCK/TIME====//
+  $("#date").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $("#time").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $("#city").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $("#weather").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $("#temp").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $("#temp-weather-info").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
 }
 
 
@@ -573,10 +605,11 @@ $(document).ready(function(){
   $('.materialboxed').materialbox();
 });
 
+//nav button event listener 
+//direction is defaulted to up, need to set in each instance for other directionality
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.fixed-action-btn');
   var instances = M.FloatingActionButton.init(elems, {
-    direction: 'right'
   });
 });
 
@@ -623,13 +656,21 @@ $(document).ready(function () {
     dimensions = response.dimensions;
     paintingURL = response.primaryImageSmall;
 
+    //===GEO ASSIGNMENTS ======================================================================
     $("#vg-painting").attr("src", paintingURL);
     $("#vg-painting").attr("alt", thisPainting.paintingName);
     $(".artist-name").text(artist);
     $(".painting-name").text(paintingTitle);
     $(".painting-info").text(artistBio);
     $(".painting-info2").text(year + " " + medium);
-
+    //===GALLERY ASSIGNMENTS ==================================================================
+    $("#art-piece").attr("src", paintingURL);
+    $("#art-piece").attr("alt", thisPainting.paintingName);
+    $("#artist-name").text(artist);
+    $("#painting-name").text(paintingTitle);
+    $("#artist-bio").text(artistBio);
+    $("#painting-info").text(year + " " + medium);
+    
     console.log(paintingTitle);
     console.log(artist);
     console.log(artistBio);
