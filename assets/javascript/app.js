@@ -353,6 +353,8 @@ let dimensions;
 let paintingURL;
 
 let paintingDescription;
+let paintingNumber;
+let excludeIndexes = [];
 
 let intervalID;
 let time;
@@ -360,47 +362,6 @@ let date;
 let thisPainting;
 let user = "Gray";
 let timeOfDay;
-
-
-
-//Search API by painting name
-// let paintingNumber = 7;
-// let thisPainting = paintings[paintingNumber];
-// let metSearchURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=" + paintings[paintingNumber].paintingName;
-// $.ajax({
-//   url: metSearchURL,
-//   method: "GET"
-// }).then(function (response) {
-//   console.log(response);
-//   let paintingID = response.objectIDs[0];
-//   metAPI(paintingID);
-// })
-
-function choosePainting(paintingsArray) {
-  let numberChoices = paintingsArray.length;
-  return Math.floor(Math.random() * numberChoices);
-}
-
-
-
-let paintingNumber = choosePainting(paintings);
-
-console.log(paintingNumber);
-
-function choosePainting(paintingsArray) {
-  let numberChoices = paintingsArray.length;
-  return Math.floor(Math.random() * numberChoices);
-}
-
-
-
-
-//chooses random painting, will be fleshed out later
-function choosePainting(paintingsArray) {
-  let numberChoices = paintingsArray.length;
-  return Math.floor(Math.random() * numberChoices);
-}
-
 
 
 //get's user's geolocation, if it fails defaults to berkeley location
@@ -429,9 +390,6 @@ function getLocationPermission() {
   } else {
     navigator.geolocation.getCurrentPosition(success, error);
   }
-
-
-
 }
 
 function getIP() {
@@ -554,6 +512,8 @@ function setWikiDescription(index) {
   }
 }
 
+//TIME-RELATED FUNCTIONS
+
 function getGreetingTime(m) {
   var g = null; //return g
 
@@ -597,48 +557,47 @@ function setDate() {
   //some statment printing date
 }
 
+//PAINTING CHOICE RELATED FCNS
 
-//stuff for materialize functionality
-document.addEventListener('DOMContentLoaded', function () {
-  var elems = document.querySelectorAll('.fixed-action-btn');
-  var instances = M.FloatingActionButton.init(elems, {
-    direction: 'right'
-  });
-});
-
-
-//when page is loaded gets location/weather, does met api call, etc
-$(document).ready(function () {
-  //materialize stuff
-  $('.materialboxed').materialbox();
-  //modal stuff
-  M.AutoInit();
-  $('.modal').modal('open');
-
-  timeOfDay = getGreetingTime(moment());
-
-  $("#user-name").text(user);
-  getIP();
-  setTime();
-  setDate();
-
-  let paintingNumber;
+function choosePainting(paintingsArray, excludeIndex) {
   if (localStorage.getItem("paintingChoice") === null) {
-    paintingNumber = choosePainting(paintings);
+    if (excludeIndex != null) {
+      excludeIndexes[excludeIndex] = true;
+    }
+    let numberChoices = paintingsArray.length;
+    let choice = Math.floor(Math.random() * numberChoices);
+    if (excludeIndexes[choice]) {
+      choosePainting(paintings, null);
+    } else {
+      return choice;
+    } 
+
     localStorage.setItem("paintingChoice", paintingNumber);
-  }
-  else {
+
+  } else {
+
     paintingNumber = localStorage.getItem("paintingChoice");
-  }
-  thisPainting = paintings[paintingNumber];
+ 
+  } 
+}
+
+function redoPaintingChoice() {
+  localStorage.removeItem("paintingChoice");
+  metAPI(choosePainting(paintings, ))
+  
+}
+
+
+
+function metAPI(choice) {
+
+  thisPainting = paintings[choice];
   console.log("this is this painting: " + thisPainting);
   setWikiDescription(paintingNumber);
 
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
-
   //Met API ajax call
-
   $.ajax({
     url: metQueryURL,
     method: "GET"
@@ -673,6 +632,46 @@ $(document).ready(function () {
     console.log(paintingURL);
 
   })
+
+}
+
+$(".dislike").on("click", function () {
+  redoPaintingChoice();
+})
+
+
+//stuff for materialize functionality
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.fixed-action-btn');
+  var instances = M.FloatingActionButton.init(elems, {
+    direction: 'right'
+  });
+});
+
+
+
+
+
+
+//when page is loaded gets location/weather, does met api call, etc
+$(document).ready(function () {
+  //materialize stuff
+  $('.materialboxed').materialbox();
+  //modal stuff
+  M.AutoInit();
+  $('.modal').modal('open');
+
+  timeOfDay = getGreetingTime(moment());
+
+  $("#user-name").text(user);
+  getIP();
+  setTime();
+  setDate();
+
+  choosePainting(paintings, null);
+
+
+
 
 
   //more possible additions:
