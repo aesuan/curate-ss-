@@ -16,7 +16,7 @@
 
   <div id="wrapper" class="container">
     <div class="row">
-<!-- ARTIST & PAINTING INFORMATIONAL CONTENT CONTAINER -->
+<!-- ======================ARTIST & PAINTING INFORMATIONAL CONTENT CONTAINER ==================-->
       <div id='content-container' class="row col 12">
         <div class="row col s12 m6 l6 xl6 left">
           <div class="col s12 m8 l8 xl8 right">
@@ -30,18 +30,18 @@
             </section>
           </div>
         </div>
-<!-- IMAGE/PAINTING CONTAINER -->
+<!-- ====================IMAGE/PAINTING CONTAINER================================ -->
         <div id='img-container' class="row col s12 m6 l6 xl6 right">
 
           <div class="col s12 m10 l10 xl10 flip-card">
             <div class="flip-content">
               <div class="flip-front">
-                <img id="art-piece" src="./assets/images/richard-diebenkorn-ocean-park-79.jpg" class="z-depth-2">
+                <img id="art-piece" src="" class="z-depth-2" height="440">
               </div>
-<!-- START IMAGE FLIP FUNCTIONALITY -->
+<!-- ======================START IMAGE FLIP FUNCTIONALITY ================================-->
               <div class='flip-back'>
                 <div id='info-back' class="container">
-                  <h6>Features!</h6>
+                  <h6 id="info-back-title">Features!</h6>
                   <p id='info-back-text'>
                     There are a few ways to curate your space a bit more to your liking.
                     We have 2 layouts to choose from and other options you can try. Just click the  
@@ -49,7 +49,7 @@
                     in the bottom left.
                   </p>
 
-    <!-- DEMO CARD TABULATED OPTIONS -->
+    <!--=================== DEMO CARD TABULATED OPTIONS =================================-->
                   <div id='demo-card' class="card">
                     <div id='demo-card-info' class="card-content">
                       <p>Check out the demos below if you're having any trouble</p>
@@ -100,14 +100,9 @@
         <h2 id="time"><span class='clock'></span></h2>
         <h5 class="flow-text"><span id='city'>  |  <span id='weather'></h5>
       </div>
-      <!-- POTENTIALLY ADD BUTTON TO SURFACE OPTIONS TO USER
-      <div class="container">
-        <a class="btn-floating right waves-effect">
-          <i class="material-icons">menu</i>
-        </a>
-      </div> -->
     </div>
   </div>
+  <!--============================= MODAL ===============================-->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h3>
@@ -127,9 +122,21 @@
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">curate!</a>
     </div>
   </div>
+  <!--====================== NAV BUTTONS ========================-->
+  <div class="fixed-action-btn left-align">
+    <a class="btn-floating btn-large">
+        <i class="large material-icons">add</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating waves-effect"><i class="material-icons">favorite</i></a></li>
+      <li><a class="btn-floating waves-effect"><i class="material-icons">block</i></a></li>
+      <li><a class="btn-floating waves-effect"><i class="material-icons">info</i></a></li>
+      <li><a class="btn-floating waves-effect"><i class="material-icons">cached</i></a></li>
+    </ul>
+  </div>
 
 
-<!-- SCRIPTS -->
+<!-- =====================SCRIPTS============================ -->
 
 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./assets/javascript/materialize.min.js"></script>

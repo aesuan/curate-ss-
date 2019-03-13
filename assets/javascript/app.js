@@ -496,7 +496,7 @@ function setWeather(code) {
   //==GALLERY COLOR ASSIGNMENTS====================================================================================================================================================================================
   //==BODY/BG=============//
   $("#gallery-body").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].two);
-  $(".wrapper").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  // $(".wrapper").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
   
   //==BUTTONS=============//
   $(".btn-floating").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
@@ -505,14 +505,16 @@ function setWeather(code) {
   //==CARD BACKSIDE=======//
   $("#demo-card-info").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
   $(".card-tabs").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
-  $("#info-back").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].three);
-  $(".the-back").attr("style", "background: " + thisPainting.weatherPalettes[whichWeather].one);
+  $("#info-back").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $(".flip-back").attr("style", "background: " + thisPainting.weatherPalettes[whichWeather].five);
+  $("#info-back-title").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].two);
+  $("#info-back-text").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
 
   //==ARTIST INFO====//
   $("#painting-card").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
   $("#artist-name").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $("#painting-name").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].two);
-  $("#artist-bio").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].two);
+  $("#painting-name").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
+  $("#artist-bio").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
   
 }
 

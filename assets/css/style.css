@@ -6,6 +6,10 @@
   margin-top: 6%;
 }
 
+#painting-name {
+  font-style: italic;
+}
+
 #info-back {
   margin:10px auto;
 }
@@ -64,18 +68,14 @@
 .flip-front,
 .flip-back {
   position: absolute;
-  background: #03446A;
-  color: white;
   text-align: center;
   /* border-radius: 5px; */
   backface-visibility: hidden;
 }
 
 .flip-back {
-  background: #03446A;
   width: 380px;
   height: 437px;
-  color: white;
   transform: rotateY( 180deg );
   display:flex;
   flex-direction: column;
