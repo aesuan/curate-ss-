@@ -670,7 +670,7 @@ function setTime() {
 function getPainting() {
   if (localStorage.has("excludeThese")) {
     excludeIndexes = localStorage.get("excludeThese");
-    numberExcluded = localStorage.getItem("numberExcluded");
+    numberExcluded = parseInt(localStorage.getItem("numberExcluded"));
   }
   if (localStorage.getItem("paintingChoice") === null) {
     paintingNumber = choosePainting(paintings, null);
@@ -686,12 +686,12 @@ function getPainting() {
 function choosePainting(paintingsArray, excludeIndex) {
 
   if (excludeIndex != null) {
-    excludeIndexes[excludeIndex] = true;
     numberExcluded++;
     if (numberExcluded === paintingsArray.length) {
       numberExcluded = 0;
       excludedIndexes = [];
     }
+    excludeIndexes[excludeIndex] = true;
     localStorage.setItem("numberExcluded", numberExcluded);
     console.log(excludeIndexes);
     localStorage.set("excludeThese", excludeIndexes);
