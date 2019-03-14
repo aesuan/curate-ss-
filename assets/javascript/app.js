@@ -12,6 +12,48 @@
 // };
 // firebase.initializeApp(config);
 
+let loadingScreens = [
+  {
+    bgColor: "#1B3C54",
+    color: "#BECFC7",
+    text: "reticulating splines..."
+  },
+  {
+    bgColor: "#DBCCAE",
+    color: "#742313",
+    text: "building more pylons..."
+  },
+  {
+    bgColor: "#6386A4",
+    color: "#C5C1C5",
+    text: "cleansing palette..."
+  },
+  {
+    bgColor: "#F0C242",
+    color: "#C25A3D",
+    text: "leveling frames..."
+  },
+  {
+    bgColor: "#717453",
+    color: "#F7B252",
+    text: "stilling life..."
+  },
+  {
+    bgColor: "#F1C77A",
+    color: "#C15E0C",
+    text: "daisy, daisy..."
+  },
+  {
+    bgColor: "#7A795E",
+    color: "#2F2F21",
+    text: "rendering trees..."
+  },
+  {
+    bgColor: "#4A5578",
+    color: "#E6E2E9",
+    text: "rigging deck..."
+  }
+]
 
 let paintings = [
   {
@@ -447,7 +489,64 @@ let thisPalette;
 let excludedIndexes = {};
 let numberExcluded = 0;
 
+
+
+
+let loading = false;
+let loadingScreenNumber = 0;
+let totalLoadingScreens = 7;
+let loadingInterval;
+
+
+
+//Search API by painting name
+// let paintingNumber = 7;
+// let thisPainting = paintings[paintingNumber];
+// let metSearchURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=" + paintings[paintingNumber].paintingName;
+// $.ajax({
+//   url: metSearchURL,
+//   method: "GET"
+// }).then(function (response) {
+//   console.log(response);
+//   let paintingID = response.objectIDs[0];
+//   metAPI(paintingID);
+// })
+
 let user = "User";
+
+
+// plus method needs to call loadingPage() and set loading = true when necessary
+// and set loading = false when loading is complete
+
+function loadingPage() {
+
+  loadingInterval = setInterval(cycleLoadingScreen, 1000)
+  $(".loader").show();
+  function cycleLoadingScreen () {
+    if (loading) {
+      
+      $(".loading-text").attr("style", "color: " + loadingScreens[loadingScreenNumber].color);
+      $(".loader").attr("style", "background-color: " + loadingScreens[loadingScreenNumber].bgColor);
+      $(".loading-text").text(loadingScreens[loadingScreenNumber].text);
+      if (loadingScreenNumber === totalLoadingScreens) {
+        loadingScreenNumber = 0;
+      } else {
+        loadingScreenNumber++;
+      }
+    } else {
+      clearInterval(loadingInterval);
+      $(".loader").hide();
+    }
+    
+  }
+ 
+ }
+
+
+ 
+
+
+
 
 //get's user's geolocation, if it fails defaults to berkeley location
 function getLocationPermission() {
@@ -550,6 +649,8 @@ function getWeather() {
 
 //basic function for now, will add color printing later.  sets weather code
 function setWeather(code) {
+  loading=true;
+  loadingPage();
   whichWeather = code;
   console.log("the weather code is" + code);
   thisPalette = thisPainting.weatherPalettes[whichWeather];
@@ -606,6 +707,7 @@ function setWeather(code) {
   $(".temp-color").attr("style", "color: " + thisPalette.four);
   $(".temp-weather-info-color").attr("style", "color: " + thisPalette.four);
 
+  loading=false;
 }
 
 
@@ -729,6 +831,8 @@ function choosePainting(paintingsArray, excludeIndex) {
 
 
 function redoPaintingChoice(currentPainting) {
+  loading=true;
+  loadingPage();
   localStorage.removeItem("paintingChoice");
   localStorage.removeItem("daySet");
   paintingNumber = choosePainting(paintings, currentPainting);
@@ -787,7 +891,8 @@ function metAPI(choice) {
     $("#painting-name").text(paintingTitle);
     $("#artist-bio").text(artistBio);
     $("#painting-info").text(year + " " + medium);
-
+    
+    loading=false;
 
   })
 
@@ -865,11 +970,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //when page is loaded gets location/weather, does met api call, etc
 $(document).ready(function () {
-  //materialize stuff
+ 
+  loading=true;
+  loadingPage();
+
+  
 
   timeOfDay = getGreetingTime(moment());
   date = moment().format("dddd MMM Do");
-
+  
+   //materialize stuff
   if (localStorage.getItem("userName") === null) {
     $('.materialboxed').materialbox();
     //modal stuff
@@ -877,7 +987,10 @@ $(document).ready(function () {
     $('.modal').modal({
       dismissible: false
     });
-    $('.modal').modal('open');
+    $('.modal').modal('open')
+  }
+
+
 
   } else {
     user = localStorage.getItem("userName");
