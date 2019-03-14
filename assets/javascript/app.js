@@ -491,6 +491,11 @@ let numberExcluded = 0;
 
 let user = "Gray";
 
+let loading = false;
+let loadingScreenNumber = 0;
+let totalLoadingScreens = 7;
+let loadingInterval;
+
 
 
 //Search API by painting name
@@ -510,19 +515,14 @@ let user = "Gray";
 // plus method needs to call loadingPage() and set loading = true when necessary
 // and set loading = false when loading is complete
 
-let loading = true;
-let loadingScreenNumber = 0;
-let totalLoadingScreens = 8;
-let loadingInterval;
-
 function loadingPage() {
 
-  loadingInterval = setInterval(cycleLoadingScreen, 2000)
-
+  loadingInterval = setInterval(cycleLoadingScreen, 1000)
+  $(".loader").show();
   function cycleLoadingScreen () {
     if (loading) {
-      $(".loader").show();
-      $(".loader").attr("style", "color: " + loadingScreens[loadingScreenNumber].color);
+      
+      $(".loading-text").attr("style", "color: " + loadingScreens[loadingScreenNumber].color);
       $(".loader").attr("style", "background-color: " + loadingScreens[loadingScreenNumber].bgColor);
       $(".loading-text").text(loadingScreens[loadingScreenNumber].text);
       if (loadingScreenNumber === totalLoadingScreens) {
@@ -539,7 +539,7 @@ function loadingPage() {
  
  }
 
- loadingPage();
+
  
 
 
@@ -650,6 +650,8 @@ function getWeather() {
 
 //basic function for now, will add color printing later.  sets weather code
 function setWeather(code) {
+  loading=true;
+  loadingPage();
   whichWeather = code;
   console.log("the weather code is" + code);
   thisPalette = thisPainting.weatherPalettes[whichWeather];
@@ -706,6 +708,7 @@ function setWeather(code) {
   $(".temp-color").attr("style", "color: " + thisPalette.four);
   $(".temp-weather-info-color").attr("style", "color: " + thisPalette.four);
 
+  loading=false;
 }
 
 
@@ -829,6 +832,8 @@ function choosePainting(paintingsArray, excludeIndex) {
 
 
 function redoPaintingChoice(currentPainting) {
+  loading=true;
+  loadingPage();
   localStorage.removeItem("paintingChoice");
   localStorage.removeItem("daySet");
   paintingNumber = choosePainting(paintings, currentPainting);
@@ -887,7 +892,8 @@ function metAPI(choice) {
     $("#painting-name").text(paintingTitle);
     $("#artist-bio").text(artistBio);
     $("#painting-info").text(year + " " + medium);
-
+    
+    loading=false;
 
   })
 
@@ -931,7 +937,8 @@ document.addEventListener('DOMContentLoaded', function () {
 //when page is loaded gets location/weather, does met api call, etc
 $(document).ready(function () {
   //materialize stuff
-
+  loading=true;
+  loadingPage();
   if (localStorage.getItem("userName") === null) {
     $('.materialboxed').materialbox();
     //modal stuff
