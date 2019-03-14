@@ -12,9 +12,9 @@ Thanks, we hope you enjoy your curated(ss) experience!
 
 ## Demo Images
 
-![Gallery Layout](./assets/images/gallery-snip)
+![Gallery Layout](./assets/images/gallery-snip.png)
 
-![Geometric Layout](./assets/images/geo-snip)
+![Geometric Layout](./assets/images/geo-snip.png)
 
 
 ## Contributing & Support
