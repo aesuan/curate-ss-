@@ -144,7 +144,7 @@ let paintings = [
         five: "#232D49"
       }
     ]
-  },  
+  },
 
   {
     paintingName: "Still Life with Apples and a Pot of Primroses",
@@ -176,41 +176,41 @@ let paintings = [
         five: "#1B3C54"
       }
     ]
-  },  
+  },
 
-//   {
-//     paintingName: "Whalers",
-//     objectID: 437854,
-//     wikiSearch: "Whalers (J. M. W. Turner)",
-//     description: "",
-//     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
-//     orientation: "landscape"
-//   },
-//   {
-//     paintingName: "View of Toledo",
-//     objectID: 436575,
-//     wikiSearch: "View of Toledo",
-//     description: "",
-//     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
-//     orientation: "portrait"
-//   },
-//   {
-//     paintingName: "Young Woman with a Water Pitcher",
-//     objectID: 437881,
-//     wikiSearch: "",
-//     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
-//     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
+  //   {
+  //     paintingName: "Whalers",
+  //     objectID: 437854,
+  //     wikiSearch: "Whalers (J. M. W. Turner)",
+  //     description: "",
+  //     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
+  //     orientation: "landscape"
+  //   },
+  //   {
+  //     paintingName: "View of Toledo",
+  //     objectID: 436575,
+  //     wikiSearch: "View of Toledo",
+  //     description: "",
+  //     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
+  //     orientation: "portrait"
+  //   },
+  //   {
+  //     paintingName: "Young Woman with a Water Pitcher",
+  //     objectID: 437881,
+  //     wikiSearch: "",
+  //     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
+  //     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
 
-//   },
-//   {
-//     paintingName: "La Berceuse",
-//     objectID: 437984,
-//     wikiSearch: "",
-//     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
-//     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
-//     orientation: portrait
-//   },
-//  
+  //   },
+  //   {
+  //     paintingName: "La Berceuse",
+  //     objectID: 437984,
+  //     wikiSearch: "",
+  //     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
+  //     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
+  //     orientation: portrait
+  //   },
+  //  
   // {
   //   paintingName: "Pines Along the Shore",
   //   objectID: 459095,
@@ -660,6 +660,9 @@ function setTime() {
 
   function count() {
     time = moment().format("hh:mm A");
+    if (time === "12:00 AM") {
+      redoPaintingChoice(paintingIndex);
+    }
     date = moment().format("dddd MMM Do");
     $(".date").text(date);
     console.log(time);
@@ -690,11 +693,14 @@ function choosePainting(paintingsArray, excludeIndex) {
 
   if (excludeIndex != null) {
     numberExcluded++;
+    excludedIndexes[excludeIndex] = true;
+    console.log(numberExcluded)
+    console.log(paintingsArray.length);
     if (numberExcluded === paintingsArray.length) {
       numberExcluded = 0;
-      excludedIndexes = [];
+      excludedIndexes = {};
     }
-    excludedIndexes[excludeIndex] = true;
+    
     localStorage.setItem("numberExcluded", numberExcluded);
     console.log(excludedIndexes);
     localStorage.set("excludeThese", excludedIndexes);
@@ -704,7 +710,7 @@ function choosePainting(paintingsArray, excludeIndex) {
   let numberChoices = paintingsArray.length;
   let choice = Math.floor(Math.random() * numberChoices);
 
-  if (excludedIndexes[choice] == "true") {
+  if (excludedIndexes[choice] == true) {
     return choosePainting(paintings, null);
 
   } else {
@@ -730,6 +736,7 @@ function metAPI(choice) {
 
   thisPainting = paintings[choice];
   console.log("this is this painting: " + thisPainting.paintingName);
+  setWikiDescription(choice);
 
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
@@ -786,17 +793,17 @@ $(".dislike").on("click", function () {
 })
 
 
- $(".switch-weather").on("click", function() {
-    console.log("the code now is: " + whichWeather);
-    if(whichWeather<=1) {
-      whichWeather++;
-      setWeather(whichWeather);
-    }
-    else {
-      whichWeather=0;
-      setWeather(whichWeather);
-    }
-  });
+$(".switch-weather").on("click", function () {
+  console.log("the code now is: " + whichWeather);
+  if (whichWeather <= 1) {
+    whichWeather++;
+    setWeather(whichWeather);
+  }
+  else {
+    whichWeather = 0;
+    setWeather(whichWeather);
+  }
+});
 
 
 
@@ -810,12 +817,17 @@ document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.fixed-action-btn');
   var instances = M.FloatingActionButton.init(elems, {
   });
-  
+})
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+
   var elems = document.querySelectorAll('.tooltipped');
-  var instances = M.Tooltip.init(elems, options);
-  var instance = M.Tooltip.getInstance(elem);
+  var instances = M.Tooltip.init(elems);
+  var instance = M.Tooltip.getInstance(elems);
 
 });
+
 
 
 //when page is loaded gets location/weather, does met api call, etc
