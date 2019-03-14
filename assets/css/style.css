@@ -2,6 +2,10 @@
   background-color: #CDAB63;
 } */
 
+#gallery-body {
+  max-height:100vh;
+}
+
 #wrapper {
   margin-top: 6%;
 }
@@ -47,8 +51,24 @@
 
 /* ADD MODAL TEXT STYLING */
 /*************************/
+
+/* #modal1 {
+} */
+
 .modal-content {
   color: #03648B;
+}
+
+.modal-content {
+  margin: 20px 30px;
+}
+
+#swap-demo-title{
+  margin-right: 18%;
+}
+
+#fave-demo-title {
+  margin-right: 8%;
 }
 /*************************/
 /*************************/

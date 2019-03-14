@@ -109,21 +109,38 @@
         curate(ss)
       </h4>
       <h6>
-        Hi there! We're excited to share curated(ss) with you - a web dashboard for art lovers and the curious. 
-        The experience is built around beautiful paintings pulled from the Met's extensive collection. 
-        The dashboard colors change each time the painting changes, and they are based on color samplings 
-        from the painting itself.
+        Hi there! We're excited to curate an experience for you. Come here each day to see a new work of art
+         with dynamic styles that change based on the colors of the painting itself. 
+        <br><br>
+        Add your name here so we can greet you, and let us know if we can use your location if you want the styles to reflect your local weather too!
       </h6>
-      <h6>
-        Take a look below at the two layouts we offer, and a few option to customize your dashboard:
-      </h6>
-    </div>
-    <div class="modal-footer">
-      <div>
-        
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input placeholder="name" id="first_name" type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">share location</a>
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">do not share location</a>
+            </div>
+          </div>
+        </form>
       </div>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">do not share location</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">share location</a>
+      <h6>
+        You can click on the   <a class="btn-small pulse btn-floating"><i class="material-icons">add</i></a>    button in the bottom of the screen to customize like you see below:
+      </h6>
+      <div class="row">
+        <div class='col s12 m5 right-align'>  
+          <h6 id="swap-demo-title">choose your design</h6>
+          <img src="./assets/images/swap-modal-img.png" width="250">
+        </div>
+        <div class="col s12 m6 right-align">
+          <h6 id="fave-demo-title">mark your favorites</h6>
+          <img src='./assets/images/fave-modal-img.png' width='250'>
+        </div>
+      </div>
     </div>
   </div>
   <!--====================== NAV BUTTONS ========================-->
