@@ -417,6 +417,7 @@ let timeOfDay;
 
 let thisPainting;
 let thisPalette;
+let excludedIndexes = {};
 let numberExcluded = 0;
 
 let user = "Gray";
@@ -671,7 +672,7 @@ function setTime() {
 
 function getPainting() {
   if (localStorage.has("excludeThese")) {
-    excludeIndexes = localStorage.get("excludeThese");
+    excludedIndexes = localStorage.get("excludeThese");
     numberExcluded = parseInt(localStorage.getItem("numberExcluded"));
   }
   if (localStorage.getItem("paintingChoice") === null) {
@@ -693,19 +694,19 @@ function choosePainting(paintingsArray, excludeIndex) {
       numberExcluded = 0;
       excludedIndexes = [];
     }
-    excludeIndexes[excludeIndex] = true;
+    excludedIndexes[excludeIndex] = true;
     localStorage.setItem("numberExcluded", numberExcluded);
-    console.log(excludeIndexes);
-    localStorage.set("excludeThese", excludeIndexes);
+    console.log(excludedIndexes);
+    localStorage.set("excludeThese", excludedIndexes);
     console.log(localStorage.get("excludeThese"));
   }
 
   let numberChoices = paintingsArray.length;
   let choice = Math.floor(Math.random() * numberChoices);
 
-
-  if (excludeIndexes[choice] === true) {
+  if (excludedIndexes[choice] == "true") {
     return choosePainting(paintings, null);
+
   } else {
     localStorage.setItem("paintingChoice", choice);
     localStorage.setItem("daySet", date);
@@ -720,6 +721,7 @@ function redoPaintingChoice(currentPainting) {
   localStorage.removeItem("daySet");
   paintingNumber = choosePainting(paintings, currentPainting);
   metAPI(paintingNumber);
+  setWeather(whichWeather);
 }
 
 
