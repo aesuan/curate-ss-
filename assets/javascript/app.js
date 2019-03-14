@@ -949,10 +949,10 @@ $(document).ready(function () {
 
   timeOfDay = getGreetingTime(moment());
   date = moment().format("dddd MMM Do");
-  
+  $('.materialboxed').materialbox();
    //materialize stuff
   if (localStorage.getItem("userName") === null) {
-    $('.materialboxed').materialbox();
+  
     //modal stuff
     M.AutoInit();
     $('.modal').modal({
