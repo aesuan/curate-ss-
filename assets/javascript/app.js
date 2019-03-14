@@ -250,41 +250,41 @@ let paintings = [
         five: "#473942"
       }
     ]
-  },  
+  },
 
-//   {
-//     paintingName: "Whalers",
-//     objectID: 437854,
-//     wikiSearch: "Whalers (J. M. W. Turner)",
-//     description: "",
-//     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
-//     orientation: "landscape"
-//   },
-//   {
-//     paintingName: "View of Toledo",
-//     objectID: 436575,
-//     wikiSearch: "View of Toledo",
-//     description: "",
-//     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
-//     orientation: "portrait"
-//   },
-//   {
-//     paintingName: "Young Woman with a Water Pitcher",
-//     objectID: 437881,
-//     wikiSearch: "",
-//     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
-//     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
+  //   {
+  //     paintingName: "Whalers",
+  //     objectID: 437854,
+  //     wikiSearch: "Whalers (J. M. W. Turner)",
+  //     description: "",
+  //     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
+  //     orientation: "landscape"
+  //   },
+  //   {
+  //     paintingName: "View of Toledo",
+  //     objectID: 436575,
+  //     wikiSearch: "View of Toledo",
+  //     description: "",
+  //     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
+  //     orientation: "portrait"
+  //   },
+  //   {
+  //     paintingName: "Young Woman with a Water Pitcher",
+  //     objectID: 437881,
+  //     wikiSearch: "",
+  //     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
+  //     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
 
-//   },
-//   {
-//     paintingName: "La Berceuse",
-//     objectID: 437984,
-//     wikiSearch: "",
-//     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
-//     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
-//     orientation: portrait
-//   },
-//  
+  //   },
+  //   {
+  //     paintingName: "La Berceuse",
+  //     objectID: 437984,
+  //     wikiSearch: "",
+  //     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
+  //     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
+  //     orientation: portrait
+  //   },
+  //  
 
   // {
   //   paintingName: "Pines Along the Shore",
@@ -456,9 +456,9 @@ let paintings = [
   // }
 ]
 
-
-let latitude = 0;
-let longitude = 0;
+//default location is berkeley
+let latitude = 37.9;
+let longitude = -122.3;
 let weatherCode;
 let weatherDescription;
 let weatherIcon;
@@ -489,7 +489,8 @@ let thisPalette;
 let excludedIndexes = {};
 let numberExcluded = 0;
 
-let user = "Gray";
+
+
 
 let loading = false;
 let loadingScreenNumber = 0;
@@ -510,6 +511,8 @@ let loadingInterval;
 //   let paintingID = response.objectIDs[0];
 //   metAPI(paintingID);
 // })
+
+let user = "User";
 
 
 // plus method needs to call loadingPage() and set loading = true when necessary
@@ -560,14 +563,10 @@ function getLocationPermission() {
 
   function error() {
     console.log("Unable to retrieve location");
-    latitude = 37.9;
-    longitude = -122.3;
   }
 
   if (!navigator.geolocation) {
     console.log('Geolocation is not supported by this browser');
-    latitude = 37.9;
-    longitude = -122.3;
   } else {
     navigator.geolocation.getCurrentPosition(success, error);
   }
@@ -809,7 +808,7 @@ function choosePainting(paintingsArray, excludeIndex) {
       numberExcluded = 0;
       excludedIndexes = {};
     }
-    
+
     localStorage.setItem("numberExcluded", numberExcluded);
     console.log(excludedIndexes);
     localStorage.set("excludeThese", excludedIndexes);
@@ -917,7 +916,41 @@ $(".switch-weather").on("click", function () {
   }
 });
 
+// $("#location-share").on("click", function (event) {
+//   event.preventDefault();
+// user = $("#name-input").val().trim();
+// console.log(user);
+// localStorage.setItem("name", user);
+// $("#user-name").text(user);
+// getIP();
 
+// })
+
+// $("#location-deny").on("click", function (event) {
+//   event.preventDefault();
+//   user = $("#name-input").val().trim();
+//   localStorage.setItem("name", user);
+//   $("#user-name").text(user);
+//   getWeather();
+// })
+
+$("[type=submit]").on("click", function (event) {
+  console.log("Hello!");
+  user = $("#name-input").val().trim();
+  console.log(user);
+  localStorage.setItem("userName", user);
+  $("#user-name").text(user);
+  setTime();
+  getPainting();
+  if ($(this).is("#location-share")) {
+    console.log("Share!");
+    getIP();
+  } else if ($(this).is("#location-deny")) {
+    console.log("Deny!");
+    getWeather();
+
+  }
+})
 
 
 //stuff for materialize functionality
@@ -934,27 +967,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
 //when page is loaded gets location/weather, does met api call, etc
 $(document).ready(function () {
-  //materialize stuff
+ 
   loading=true;
   loadingPage();
+
+  
+
+  timeOfDay = getGreetingTime(moment());
+  date = moment().format("dddd MMM Do");
+  
+   //materialize stuff
   if (localStorage.getItem("userName") === null) {
     $('.materialboxed').materialbox();
     //modal stuff
     M.AutoInit();
-    $('.modal').modal('open');
-  
+    $('.modal').modal({
+      dismissible: false
+    });
+    $('.modal').modal('open')
   }
 
 
-  timeOfDay = getGreetingTime(moment());
 
-  $("#user-name").text(user);
-  date = moment().format("dddd MMM Do");
-  getIP();
-  setTime();
-  getPainting();
+  } else {
+    user = localStorage.getItem("userName");
+    $("#user-name").text(user);
+    getIP();
+    setTime();
+    getPainting();
+  }
 
   //more possible additions:
   //change based on time period/location: font
