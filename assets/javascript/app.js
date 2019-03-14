@@ -960,10 +960,7 @@ $(document).ready(function () {
     });
     $('.modal').modal('open')
   }
-
-
-
-  } else {
+  else {
     user = localStorage.getItem("userName");
     $("#user-name").text(user);
     getIP();
