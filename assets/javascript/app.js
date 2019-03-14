@@ -564,6 +564,8 @@ function setWeather(code) {
   $(".the-back").attr("style", "color: " + thisPalette.five);
   $(".art-info").attr("style", "color: " + thisPalette.one);
   $(".extra-info").attr("href", thisPainting.metURL);
+  $(".extra-info").attr("target", "_blank");
+
 
   
     //==BUTTONS=============//
@@ -686,6 +688,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.fixed-action-btn');
   var instances = M.FloatingActionButton.init(elems, {
   });
+  var elems = document.querySelectorAll('.tooltipped');
+  var instances = M.Tooltip.init(elems, options);
+  var instance = M.Tooltip.getInstance(elem);
+
 });
 
 
@@ -696,6 +702,8 @@ $(document).ready(function () {
   //modal stuff
   M.AutoInit();
   $('.modal').modal('open');
+  //tootip stuff
+
 
   timeOfDay = getGreetingTime(moment());
 
