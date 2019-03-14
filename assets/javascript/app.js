@@ -144,7 +144,7 @@ let paintings = [
         five: "#232D49"
       }
     ]
-  },  
+  },
 
   {
     paintingName: "Still Life with Apples and a Pot of Primroses",
@@ -177,6 +177,7 @@ let paintings = [
       }
     ]
   },
+
   {
     paintingName: "Steamboats in the Port of Rouen",
     objectID: 437309,
@@ -242,6 +243,7 @@ let paintings = [
 //     orientation: portrait
 //   },
 //  
+
   // {
   //   paintingName: "Pines Along the Shore",
   //   objectID: 459095,
@@ -684,6 +686,9 @@ function setTime() {
 
   function count() {
     time = moment().format("hh:mm A");
+    if (time === "12:00 AM") {
+      redoPaintingChoice(paintingIndex);
+    }
     date = moment().format("dddd MMM Do");
     $(".date").text(date);
     console.log(time);
@@ -714,11 +719,14 @@ function choosePainting(paintingsArray, excludeIndex) {
 
   if (excludeIndex != null) {
     numberExcluded++;
+    excludedIndexes[excludeIndex] = true;
+    console.log(numberExcluded)
+    console.log(paintingsArray.length);
     if (numberExcluded === paintingsArray.length) {
       numberExcluded = 0;
-      excludedIndexes = [];
+      excludedIndexes = {};
     }
-    excludedIndexes[excludeIndex] = true;
+    
     localStorage.setItem("numberExcluded", numberExcluded);
     console.log(excludedIndexes);
     localStorage.set("excludeThese", excludedIndexes);
@@ -728,7 +736,7 @@ function choosePainting(paintingsArray, excludeIndex) {
   let numberChoices = paintingsArray.length;
   let choice = Math.floor(Math.random() * numberChoices);
 
-  if (excludedIndexes[choice] == "true") {
+  if (excludedIndexes[choice] == true) {
     return choosePainting(paintings, null);
 
   } else {
@@ -754,6 +762,7 @@ function metAPI(choice) {
 
   thisPainting = paintings[choice];
   console.log("this is this painting: " + thisPainting.paintingName);
+  setWikiDescription(choice);
 
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
@@ -810,17 +819,17 @@ $(".dislike").on("click", function () {
 })
 
 
- $(".switch-weather").on("click", function() {
-    console.log("the code now is: " + whichWeather);
-    if(whichWeather<=1) {
-      whichWeather++;
-      setWeather(whichWeather);
-    }
-    else {
-      whichWeather=0;
-      setWeather(whichWeather);
-    }
-  });
+$(".switch-weather").on("click", function () {
+  console.log("the code now is: " + whichWeather);
+  if (whichWeather <= 1) {
+    whichWeather++;
+    setWeather(whichWeather);
+  }
+  else {
+    whichWeather = 0;
+    setWeather(whichWeather);
+  }
+});
 
 
 
@@ -836,6 +845,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
 
 
 //when page is loaded gets location/weather, does met api call, etc
