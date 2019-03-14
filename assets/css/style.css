@@ -7,7 +7,7 @@
 }
 
 #wrapper {
-  margin-top: 6%;
+  margin-top: 5%;
 }
 
 #painting-name {
@@ -39,6 +39,15 @@
   padding-top:7%;
   padding-right:20%;
 }
+
+#time {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+/* #temp-weather-info {
+  margin-top:10px;
+} */
 
 #fav-img-demo{
   padding-left:10%;
