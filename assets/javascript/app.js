@@ -721,6 +721,7 @@ function redoPaintingChoice(currentPainting) {
   localStorage.removeItem("daySet");
   paintingNumber = choosePainting(paintings, currentPainting);
   metAPI(paintingNumber);
+  setWeather(whichWeather);
 }
 
 
