@@ -104,6 +104,11 @@ let time;
 let date;
 let numberExcluded = 0;
 
+let loading = false;
+let loadingImageNumber = 1;
+let totalLoadingImages = 9;
+let loadingInterval;
+
 //time functions
 
 function setTime() {
@@ -199,6 +204,7 @@ function metAPI(choice) {
     let year = response.objectDate;
     let dimensions = response.dimensions;
     let paintingURL = response.primaryImageSmall;
+    loading = false;
 
 
     console.log(paintingTitle);
@@ -214,6 +220,29 @@ function metAPI(choice) {
 
 }
 
+function loadingPage() {
+
+  function cycleLoadingImage () {
+    if (loading) {
+      $("#loading-image").src("./assets/images/loadingImage" + loadingImageNumber);
+      if (loadingImageNumber === totalLoadingImages) {
+        loadingImageNumber = 1;
+      } else {
+        loadingImageNumber++;
+      }
+    } else {
+      clearInterval(loadingInterval);
+      $("#loading-image").hide();
+    }
+
+  }
+
+  clearInterval(loadingInterval);
+  $("#loading-image").show();
+  loadingInterval = setInterval(cycleLoadingImage, 3000);
+  
+}
+
 
 
 
@@ -224,7 +253,8 @@ $(".dislike").on("click", function () {
 
 $(document).ready(function () {
 
-  
+
+  loading = true;
   setTime();
   getPainting();
   
