@@ -105,25 +105,59 @@
   <!--============================= MODAL ===============================-->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h3>
-        curated(ss)
-      </h3>
-      <h5>
-        Hi there! We're excited to share curated(ss) with you - a web dashboard for art lovers and the curious. 
-        The experience is built around beautiful paintings pulled from the Met's extensive collection. 
-        The dashboard colors change each time the painting changes, and they are based on color samplings 
-        from the painting itself.
-      </h5>
-      <h5>
-        Take a look below at the two layouts we offer, and a few option to customize your dashboard:
-      </h5>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">curate!</a>
+      <h4>
+        curate(ss)
+      </h4>
+      <h6>
+        Hi there! We're excited to curate an experience for you. Come here each day to see a new work of art
+         with dynamic styles that change based on the colors of the painting itself. 
+        <br><br>
+        Add your name here so we can greet you, and let us know if we can use your location if you want the styles to reflect your local weather too!
+      </h6>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input placeholder="name" id="first_name" type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">share location</a>
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">do not share location</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <h6>
+        You can click on the   <a class="btn-small pulse btn-floating"><i class="material-icons">add</i></a>    button in the bottom of the screen to customize like you see below:
+      </h6>
+      <div class="row">
+        <div class='col s12 m5 right-align'>  
+          <h6 id="swap-demo-title">choose your design</h6>
+          <img src="./assets/images/swap-modal-img.png" width="250">
+        </div>
+        <div class="col s12 m6 right-align">
+          <h6 id="fave-demo-title">mark your favorites</h6>
+          <img src='./assets/images/fave-modal-img.png' width='250'>
+        </div>
+      </div>
     </div>
   </div>
   <!--====================== NAV BUTTONS ========================-->
-  <div class="fixed-action-btn right direction-left">
+  <div class="fixed-action-btn left-align direction-left">
+    <a class="btn-floating btn-large">
+       <i class="large material-icons">add</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating waves-effect"><i class="material-icons">favorite</i></a></li>
+      <li class="dislike"><a class="btn-floating waves-effect"><i class="material-icons">block</i></a></li>
+      <li><a class="extra-info btn-floating waves-effect"><i class="material-icons">info</i></a></li>
+      <li class="switch-weather"><a class="btn-floating waves-effect"><i class="material-icons">cloud</i></a></li>
+      <li><a href="./geometric.html" class="btn-floating waves-effect"><i class="material-icons">cached</i></a></li>
+    </ul>
+  </div>
+
+  <!-- <div class="fixed-action-btn left-align direction-left">
     <a class="btn-floating btn-large">
       <i class="large material-icons">add</i>
     </a>
@@ -133,12 +167,12 @@
       <li><a class="btn-floating waves-effect extra-info"><i class="material-icons">info</i></a></li>
       <li><a href='./geometric.html' class="btn-floating waves-effect"><i class="material-icons">cached</i></a></li>
     </ul>
-  </div>
+  </div> -->
 
 
 <!-- =====================SCRIPTS============================ -->
 
-<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./assets/javascript/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
