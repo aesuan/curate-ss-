@@ -176,6 +176,37 @@ let paintings = [
         five: "#1B3C54"
       }
     ]
+  },
+  {
+    paintingName: "Steamboats in the Port of Rouen",
+    objectID: 437309,
+    wikiSearch: "",
+    description: "On January 20, 1896, when Pissarro arrived for his second extended stay in Rouen, he was already enraptured by 'the beautiful motifs of the quays, which will make famous paintings.' This is one of several views of the busy port that he painted from the window of his room at the Hôtel de Paris. Across the river in the background may be seen the wharves and warehouses of the working-class Saint-Sever district.",
+    orientation: "landscape",
+    metURL: "https://www.metmuseum.org/art/collection/search/437309",
+    weatherPalettes: [
+      {
+        one: "#E5DECE",
+        two: "#D9CAAF",
+        three: "#C0BECB",
+        four: "#656471",
+        five: "#AA5B4B"
+      },
+      {
+        one: "#DBD1C6",
+        two: "#D9CAAF",
+        three: "#B6B7BF",
+        four: "#8C776F",
+        five: "#A45E4B"
+      },
+      {
+        one: "#DBD1C6",
+        two: "#B49784",
+        three: "#8C776F",
+        four: "#A04B35",
+        five: "#473942"
+      }
+    ]
   },  
 
 //   {
@@ -238,12 +269,6 @@ let paintings = [
   // {
   //   paintingName: "Marine Landscape",
   //   objectID: 10215,
-  //   palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
-  //   orientation: "landscape"
-  // },
-  // {
-  //   paintingName: "Steamboats in the Port of Rouen",
-  //   objectID: 437309,
   //   palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
   //   orientation: "landscape"
   // },
@@ -618,7 +643,6 @@ function setWikiDescription(index) {
       contentType: "application/json; charset=utf-8",
       dataType: "json",
     }).then(function (response) {
-      console.log(response);
       let pageID = parseInt(Object.keys(response.query.pages)[0]);
       console.log(pageID);
       wikiExtract = response.query.pages[pageID].extract;
@@ -810,10 +834,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.fixed-action-btn');
   var instances = M.FloatingActionButton.init(elems, {
   });
-  
-  var elems = document.querySelectorAll('.tooltipped');
-  var instances = M.Tooltip.init(elems, options);
-  var instance = M.Tooltip.getInstance(elem);
 
 });
 
