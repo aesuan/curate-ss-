@@ -12,6 +12,48 @@
 // };
 // firebase.initializeApp(config);
 
+let loadingScreens = [
+  {
+    bgColor: "#1B3C54",
+    color: "#BECFC7",
+    text: "reticulating splines..."
+  },
+  {
+    bgColor: "#DBCCAE",
+    color: "#742313",
+    text: "building more pylons..."
+  },
+  {
+    bgColor: "#6386A4",
+    color: "#C5C1C5",
+    text: "cleansing palette..."
+  },
+  {
+    bgColor: "#F0C242",
+    color: "#C25A3D",
+    text: "leveling frames..."
+  },
+  {
+    bgColor: "#717453",
+    color: "#F7B252",
+    text: "stilling life..."
+  },
+  {
+    bgColor: "#F1C77A",
+    color: "#C15E0C",
+    text: "daisy, daisy..."
+  },
+  {
+    bgColor: "#7A795E",
+    color: "#2F2F21",
+    text: "rendering trees..."
+  },
+  {
+    bgColor: "#4A5578",
+    color: "#E6E2E9",
+    text: "rigging deck..."
+  }
+]
 
 let paintings = [
   {
@@ -465,6 +507,44 @@ let user = "Gray";
 // })
 
 
+// plus method needs to call loadingPage() and set loading = true when necessary
+// and set loading = false when loading is complete
+
+let loading = true;
+let loadingScreenNumber = 0;
+let totalLoadingScreens = 8;
+let loadingInterval;
+
+function loadingPage() {
+
+  loadingInterval = setInterval(cycleLoadingScreen, 2000)
+
+  function cycleLoadingScreen () {
+    if (loading) {
+      $(".loader").show();
+      $(".loader").attr("style", "color: " + loadingScreens[loadingScreenNumber].color);
+      $(".loader").attr("style", "background-color: " + loadingScreens[loadingScreenNumber].bgColor);
+      $(".loading-text").text(loadingScreens[loadingScreenNumber].text);
+      if (loadingScreenNumber === totalLoadingScreens) {
+        loadingScreenNumber = 0;
+      } else {
+        loadingScreenNumber++;
+      }
+    } else {
+      clearInterval(loadingInterval);
+      $(".loader").hide();
+    }
+    
+  }
+ 
+ }
+
+ loadingPage();
+ 
+
+
+
+
 //get's user's geolocation, if it fails defaults to berkeley location
 function getLocationPermission() {
 
@@ -857,6 +937,7 @@ $(document).ready(function () {
     //modal stuff
     M.AutoInit();
     $('.modal').modal('open');
+  
   }
 
 
