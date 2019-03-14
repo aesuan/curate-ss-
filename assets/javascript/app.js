@@ -144,7 +144,7 @@ let paintings = [
         five: "#232D49"
       }
     ]
-  },  
+  },
   {
     paintingName: "Still Life with Apples and a Pot of Primroses",
     objectID: 435882,
@@ -175,41 +175,41 @@ let paintings = [
         five: "#341E16"
       }
     ]
-  },  
+  },
 
-//   {
-//     paintingName: "Whalers",
-//     objectID: 437854,
-//     wikiSearch: "Whalers (J. M. W. Turner)",
-//     description: "",
-//     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
-//     orientation: "landscape"
-//   },
-//   {
-//     paintingName: "View of Toledo",
-//     objectID: 436575,
-//     wikiSearch: "View of Toledo",
-//     description: "",
-//     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
-//     orientation: "portrait"
-//   },
-//   {
-//     paintingName: "Young Woman with a Water Pitcher",
-//     objectID: 437881,
-//     wikiSearch: "",
-//     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
-//     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
+  //   {
+  //     paintingName: "Whalers",
+  //     objectID: 437854,
+  //     wikiSearch: "Whalers (J. M. W. Turner)",
+  //     description: "",
+  //     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
+  //     orientation: "landscape"
+  //   },
+  //   {
+  //     paintingName: "View of Toledo",
+  //     objectID: 436575,
+  //     wikiSearch: "View of Toledo",
+  //     description: "",
+  //     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
+  //     orientation: "portrait"
+  //   },
+  //   {
+  //     paintingName: "Young Woman with a Water Pitcher",
+  //     objectID: 437881,
+  //     wikiSearch: "",
+  //     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
+  //     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
 
-//   },
-//   {
-//     paintingName: "La Berceuse",
-//     objectID: 437984,
-//     wikiSearch: "",
-//     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
-//     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
-//     orientation: portrait
-//   },
-//  
+  //   },
+  //   {
+  //     paintingName: "La Berceuse",
+  //     objectID: 437984,
+  //     wikiSearch: "",
+  //     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
+  //     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
+  //     orientation: portrait
+  //   },
+  //  
   // {
   //   paintingName: "Pines Along the Shore",
   //   objectID: 459095,
@@ -412,9 +412,13 @@ let paintingNumber;
 let intervalID;
 let time;
 let date;
-let thisPainting;
-let user = "Gray";
 let timeOfDay;
+
+let thisPainting;
+let thisPalette;
+let numberExcluded = 0;
+
+let user = "Gray";
 
 
 
@@ -430,11 +434,6 @@ let timeOfDay;
 //   let paintingID = response.objectIDs[0];
 //   metAPI(paintingID);
 // })
-
-function choosePainting(paintingsArray) {
-  let numberChoices = paintingsArray.length;
-  return Math.floor(Math.random() * numberChoices);
-}
 
 
 //get's user's geolocation, if it fails defaults to berkeley location
@@ -540,7 +539,7 @@ function getWeather() {
 }
 
 
-let thisPalette;
+
 
 //basic function for now, will add color printing later.  sets weather code
 function setWeather(code) {
@@ -549,8 +548,8 @@ function setWeather(code) {
   thisPalette = thisPainting.weatherPalettes[whichWeather];
   console.log("the weather is: " + code)
 
-    //==GEO COLOR ASSIGNMENTS====================================================================================================================================================================================
-  
+  //==GEO COLOR ASSIGNMENTS====================================================================================================================================================================================
+
   //==GEO SHAPE GRADIENTS
   $(".geoBox1").attr("style", "background-image: linear-gradient(to top, " + thisPalette.four + ", " + thisPalette.one + ");");
   $(".geoBox2").attr("style", "background-image: linear-gradient(to right, " + thisPalette.five + ", " + thisPalette.three + ");");
@@ -563,39 +562,39 @@ function setWeather(code) {
   $(".art-info").attr("style", "color: " + thisPalette.one);
   $(".extra-info").attr("href", thisPainting.metURL);
 
-  
-    //==BUTTONS=============//
+
+  //==BUTTONS=============//
   $(".btn-floating").attr("style", "background-color: " + thisPalette.one);
   $(".material-icons").attr("style", "color: " + thisPalette.five);
 
 
-  
+
   //==GALLERY COLOR ASSIGNMENTS====================================================================================================================================================================================
   //==BODY/BG=============//
-  $("#gallery-body").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].two);
-  // $(".wrapper").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
-  
+  $("#gallery-body").attr("style", "background-color: " + thisPalette.two);
+  // $(".wrapper").attr("style", "color: " + thisPalette.four);
+
   //==CARD BACKSIDE=======//
-  $("#demo-card-info").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
-  $(".card-tabs").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $("#info-back").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $(".flip-back").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $("#info-back-title").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
-  $("#info-back-text").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].one);
+  $("#demo-card-info").attr("style", "background-color: " + thisPalette.one);
+  $(".card-tabs").attr("style", "background-color: " + thisPalette.five);
+  $("#info-back").attr("style", "background-color: " + thisPalette.five);
+  $(".flip-back").attr("style", "background-color: " + thisPalette.five);
+  $("#info-back-title").attr("style", "color: " + thisPalette.one);
+  $("#info-back-text").attr("style", "color: " + thisPalette.one);
 
   //==ARTIST INFO====//
-  $("#painting-card").attr("style", "background-color: " + thisPainting.weatherPalettes[whichWeather].one);
-  $("#artist-name").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $("#painting-name").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $("#artist-bio").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $("#painting-card").attr("style", "background-color: " + thisPalette.one);
+  $("#artist-name").attr("style", "color: " + thisPalette.five);
+  $("#painting-name").attr("style", "color: " + thisPalette.five);
+  $("#artist-bio").attr("style", "color: " + thisPalette.four);
 
   //==CLOCK/TIME====//
-  $(".date-color").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
-  $(".time-color").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].five);
-  $(".city-color").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
-  $(".weather-color").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
-  $(".temp-color").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
-  $(".temp-weather-info-color").attr("style", "color: " + thisPainting.weatherPalettes[whichWeather].four);
+  $(".date-color").attr("style", "color: " + thisPalette.four);
+  $(".time-color").attr("style", "color: " + thisPalette.five);
+  $(".city-color").attr("style", "color: " + thisPalette.four);
+  $(".weather-color").attr("style", "color: " + thisPalette.four);
+  $(".temp-color").attr("style", "color: " + thisPalette.four);
+  $(".temp-weather-info-color").attr("style", "color: " + thisPalette.four);
 }
 
 
@@ -626,7 +625,7 @@ function setWikiDescription(index) {
       console.log(paintingDescription);
     })
 
-    
+
 
   }
 }
@@ -668,69 +667,91 @@ function setTime() {
   }
 }
 
-
-
-
-//stuff for materialize functionality
-
-//nav button event listener 
-//direction is defaulted to up, need to set in each instance for other directionality
-document.addEventListener('DOMContentLoaded', function() {
-
-  var elems = document.querySelectorAll('.fixed-action-btn');
-  var instances = M.FloatingActionButton.init(elems, {
-  });
-});
-
-
-//when page is loaded gets location/weather, does met api call, etc
-$(document).ready(function () {
-  //materialize stuff
-  $('.materialboxed').materialbox();
-  //modal stuff
-  M.AutoInit();
-  $('.modal').modal('open');
-
-  timeOfDay = getGreetingTime(moment());
-
-  $("#user-name").text(user);
-  getIP();
-  setTime();
-  setDate();
-
- 
-  if (localStorage.getItem("paintingChoice") === null) {
-    paintingNumber = choosePainting(paintings);
-    localStorage.setItem("paintingChoice", paintingNumber);
+function getPainting() {
+  if (localStorage.has("excludeThese")) {
+    excludeIndexes = localStorage.get("excludeThese");
+    numberExcluded = localStorage.getItem("numberExcluded");
   }
-  else {
+  if (localStorage.getItem("paintingChoice") === null) {
+    paintingNumber = choosePainting(paintings, null);
+  } else if (date != localStorage.getItem("daySet")) {
+    redoPaintingChoice(paintingNumber);
+  } else {
     paintingNumber = localStorage.getItem("paintingChoice");
   }
-  thisPainting = paintings[paintingNumber];
-  console.log("this is this painting: " + thisPainting);
-  setWikiDescription(paintingNumber);
+  metAPI(paintingNumber);
+}
+
+
+function choosePainting(paintingsArray, excludeIndex) {
+
+  if (excludeIndex != null) {
+    excludeIndexes[excludeIndex] = true;
+    numberExcluded++;
+    if (numberExcluded === paintingsArray.length) {
+      numberExcluded = 0;
+      excludedIndexes = [];
+    }
+    localStorage.setItem("numberExcluded", numberExcluded);
+    console.log(excludeIndexes);
+    localStorage.set("excludeThese", excludeIndexes);
+    console.log(localStorage.get("excludeThese"));
+  }
+
+  let numberChoices = paintingsArray.length;
+  let choice = Math.floor(Math.random() * numberChoices);
+
+  if (excludeIndexes[choice] === true) {
+    return choosePainting(paintings, null);
+  } else {
+    localStorage.setItem("paintingChoice", choice);
+    localStorage.setItem("daySet", date);
+
+    return choice;
+  }
+}
+
+
+function redoPaintingChoice(currentPainting) {
+  localStorage.removeItem("paintingChoice");
+  localStorage.removeItem("daySet");
+  paintingNumber = choosePainting(paintings, currentPainting);
+  metAPI(paintingNumber);
+}
+
+
+
+function metAPI(choice) {
+
+  thisPainting = paintings[choice];
+  console.log("this is this painting: " + thisPainting.paintingName);
 
   let metQueryURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + thisPainting.objectID;
 
-
   //Met API ajax call
-
   $.ajax({
     url: metQueryURL,
     method: "GET"
   }).then(function (response) {
-    // if (!isPublicDomain) {
-    //   console.log("Can't use this one!");
-    // }
-    paintingTitle = response.title;
-    artist = response.artistDisplayName;
-    artistBio = response.artistDisplayBio;
-    artistNationality = response.artistNationality;
-    medium = response.medium;
-    //might have to remove all non-number characters from response depending on how this is used
-    year = response.objectDate;
-    dimensions = response.dimensions;
-    paintingURL = response.primaryImageSmall;
+
+    let paintingTitle = response.title;
+    let artist = response.artistDisplayName;
+    let artistBio = response.artistDisplayBio;
+    let artistNationality = response.artistNationality;
+    let medium = response.medium;
+    let year = response.objectDate;
+    let dimensions = response.dimensions;
+    let paintingURL = response.primaryImageSmall;
+
+
+    console.log(paintingTitle);
+    console.log(artist);
+    console.log(artistBio);
+    console.log(artistNationality);
+    console.log(medium);
+    console.log(year);
+    console.log(dimensions);
+    console.log(paintingURL);
 
     //===GEO ASSIGNMENTS ======================================================================
     $("#vg-painting").attr("src", paintingURL);
@@ -749,42 +770,56 @@ $(document).ready(function () {
     $("#painting-name").text(paintingTitle);
     $("#artist-bio").text(artistBio);
     $("#painting-info").text(year + " " + medium);
-    
 
-    console.log(paintingTitle);
-    console.log(artist);
-    console.log(artistBio);
-    console.log(artistNationality);
-    console.log(medium);
-    console.log(year);
-    console.log(dimensions);
-    console.log(paintingURL);
 
   })
-  console.log("my new test: " + thisPainting.orientation);
+
+}
 
 
 
 
+$(".dislike").on("click", function () {
+  redoPaintingChoice(paintingNumber);
+})
 
 
 
 
+//stuff for materialize functionality
+
+//nav button event listener 
+//direction is defaulted to up, need to set in each instance for other directionality
+document.addEventListener('DOMContentLoaded', function () {
+
+  var elems = document.querySelectorAll('.fixed-action-btn');
+  var instances = M.FloatingActionButton.init(elems, {
+  });
+});
 
 
+//when page is loaded gets location/weather, does met api call, etc
+$(document).ready(function () {
+  //materialize stuff
+
+  if (localStorage.getItem("userName") === null) {
+    $('.materialboxed').materialbox();
+    //modal stuff
+    M.AutoInit();
+    $('.modal').modal('open');
+  }
+
+
+  timeOfDay = getGreetingTime(moment());
+
+  $("#user-name").text(user);
+  date = moment().format("dddd MMM Do");
+  getIP();
+  setTime();
+  getPainting();
 
   //more possible additions:
   //change based on time period/location: font
   //also - greeting in language of nationality of painter?
-  //
-
-  //for use with firebase storing timeAdded to look back on (check if after midnight - could do locally)
-
-  // database.ref().push({
-  //   userID: ?,
-  //   paintingIndex: n,
-  //   timeAdded: firebase.database.ServerValue.TIMESTAMP
-  // });
-
 
 })

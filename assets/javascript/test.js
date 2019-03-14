@@ -224,7 +224,7 @@ $(".dislike").on("click", function () {
 
 $(document).ready(function () {
 
-  date = moment().format("dddd MMM Do");
+  
   setTime();
   getPainting();
   
