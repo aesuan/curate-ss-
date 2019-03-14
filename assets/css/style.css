@@ -115,3 +115,11 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.loader {
+  height:100vh;
+  width: 100vw;
+  font-size: 6vh;
+  text-align: center;
+  padding-top: 47vh;
+}
