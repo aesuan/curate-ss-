@@ -1,18 +1,3 @@
-// Initialize Firebase
-
-//const firebaseAPI = "AIzaSyDFkB70-ZlFHiBOIFlSzE0TSkw00BNmuIs";
-
-// const config = {
-//   apiKey: firebaseAPI,
-//   authDomain: "curate-ss.firebaseapp.com",
-//   databaseURL: "https://curate-ss.firebaseio.com",
-//   projectId: "curate-ss",
-//   storageBucket: "curate-ss.appspot.com",
-//   messagingSenderId: "872408743875"
-// };
-// firebase.initializeApp(config);
-
-
 let paintings = [
   {
     paintingName: "The Harvesters",
@@ -811,23 +796,6 @@ $(".switch-weather").on("click", function () {
   }
 });
 
-// $("#location-share").on("click", function (event) {
-//   event.preventDefault();
-// user = $("#name-input").val().trim();
-// console.log(user);
-// localStorage.setItem("name", user);
-// $("#user-name").text(user);
-// getIP();
-
-// })
-
-// $("#location-deny").on("click", function (event) {
-//   event.preventDefault();
-//   user = $("#name-input").val().trim();
-//   localStorage.setItem("name", user);
-//   $("#user-name").text(user);
-//   getWeather();
-// })
 
 $("[type=submit]").on("click", function (event) {
   console.log("Hello!");
