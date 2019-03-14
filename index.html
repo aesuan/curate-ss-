@@ -12,132 +12,167 @@
     
     <title>curate(ss)</title>
 </head>
-<body>
+<body id='gallery-body'>
 
-  <div id="wrapper" class="container">
-    <div class="row">
-<!-- ARTIST & PAINTING INFORMATIONAL CONTENT CONTAINER -->
-      <div id='content-container' class="row col 12">
-        <div class="row col s12 m6 l6 xl6 left">
-          <div class="col s12 m8 l8 xl8 right">
-            <h3>Richard<br>Diebenkorn</h3>
-            <section class="card">
-              <div class="card-content">
-                <div class="card-title">Ocean Park #79, 1975</div>
-                <div class="card-title">Philadelphia Museum of Art</div>
-                <br>
-                <p>
-                  Richard Diebenkorn was an American painter and printmaker. His early work is associated with abstract 
-                  expressionism and the Bay Area Figurative Movement of the 1950s and 1960s. In the late 1960s he began 
-                  his extensive series of geometric, lyrical abstract paintings.
-                </p>
-              </div>
-            </section>
+<!-- ==========================ARTIST & PAINTING INFORMATIONAL CONTENT CONTAINER ==================-->
+  <div id='wrapper' class="container row col 12 center">
+    <div class="row col s12 m6">
+      <div class="col s12 m8 right">
+        <h3 id='artist-name'></h3>
+        <section id='painting-card' class="card" width='400'>
+          <div id='painting-card-info' class="card-content">
+            <div class="card-title"><span id='painting-name'></span></div>
+            <div class="card-title"><span id='artist-bio'></span></div>
+            <div></div>
           </div>
-        </div>
-<!-- IMAGE/PAINTING CONTAINER -->
-        <div id='img-container' class="row col s12 m6 l6 xl6 right">
+        </section>
+      </div>
+    </div>
+<!-- ===========================IMAGE/PAINTING CONTAINER================================ -->
+    <div id='img-container' class="row col s12 m6">
+      <div class="col s12 m10 l10 xl10 flip-card">
+        <div class="flip-content">
+          <div class="col s12 m10 left-align">
+            <img id="art-piece" src="" class="flip-front z-depth-2 hoverable" height="440" alt=''>
+          </div>
+<!-- ===========================START IMAGE FLIP BACK-SIDE FUNCTIONALITY ================================-->
+          <div class='flip-back'>
+            <div id='info-back' class="container">
+              <h6 id="info-back-title">Features!</h6>
+              <p id='info-back-text'>
+                There are a few ways to curate your space a bit more to your liking.
+                We have 2 layouts to choose from and other options you can try. Just click the  
+                <a class="btn-small btn-floating">
+                  <i class="material-icons">add</i>
+                </a>
+                in the bottom right.
+              </p>
 
-          <div class="col s12 m10 l10 xl10 flip-card">
-            <div class="flip-content">
-              <div class="flip-front">
-                <img id="art-piece" src="./assets/images/richard-diebenkorn-ocean-park-79.jpg" class="z-depth-2">
-              </div>
-<!-- START IMAGE BACK FUNCTIONALITY -->
-              <div class='flip-back'>
-                <div id='info-back' class="container">
-                  <h6>Features!</h6>
-                  <p id='info-back-text'>
-                    There are a few ways to curate your space a bit more to your liking.
-                    We have 2 layouts to choose from and other options you can try. Just click the  
-                    <a class="btn-small btn-floating"><i class="material-icons">add</i></a>
-                    in the bottom left.
-                  </p>
-
-    <!-- DEMO CARD TABULATED OPTIONS -->
-                  <div id='demo-card' class="card">
-                    <div class="card-content">
-                      <p>Check out the demos below if you're having any trouble</p>
+    <!--=================== DEMO CARD TABULATED OPTIONS =================================-->
+              <div id='demo-card' class="card">
+                <div id='demo-card-info' class="card-content">
+                  <p>Check out the demos below if you're having any trouble</p>
+                </div>
+                <div class="card-tabs">
+                  <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a class="active" href="#layout-demo">layout</a></li>
+                    <li class="tab"><a  href="#fav-demo">favorite</a></li>
+                    <!-- <li class="tab"><a href="#light-dark-demo">nightmode</a></li> -->
+                  </ul>
+                </div>
+                <div class="card-content grey lighten-4">
+                  <div id="layout-demo" class="row">
+                    <div class="col 5 left">
+                      <p>geo</p>
+                      <img class="responsive-img" src="./assets/images/geo-demo.png" width="90">
                     </div>
-                    <div class="card-tabs">
-                      <ul class="tabs tabs-fixed-width">
-                        <li class="tab"><a class="active" href="#layout-demo">layout</a></li>
-                        <li class="tab"><a  href="#fav-demo">favorite</a></li>
-                        <!-- <li class="tab"><a href="#light-dark-demo">nightmode</a></li> -->
-                      </ul>
+                    <div class='col 2'>
+                        <a class="btn-floating waves-effect"><i class="material-icons">cached</i></a>
                     </div>
-                    <div class="card-content grey lighten-4">
-                      <div id="layout-demo" class="row">
-                        <div class="col 5 left">
-                          <p>geo</p>
-                          <img class="responsive-img" src="./assets/images/geo-demo.png" width="90">
-                        </div>
-                        <div class='col 2'>
-                            <a class="btn-floating waves-effect"><i class="material-icons">cached</i></a>
-                        </div>
-                        <div class="col 5 right">
-                          <p>gallery</p>
-                          <img class="responsive-img" src="./assets/images/gallery-demo.png" width="90">
-                        </div>
-                      </div>
-                      <div id="fav-demo" class="row">
-                        <div id='fav-img-demo' class="col 4 left">
-                          <p>geo</p>
-                          <img class="responsive-img" src="./assets/images/geo-demo.png" width="90">
-                        </div>
-                        <div id='fav-icon-demo' class='col 4 right'>
-                            <a class="btn-floating waves-effect"><i class="material-icons">favorite</i></a>
-                        </div>
+                    <div class="col 5 right">
+                      <p>gallery</p>
+                      <img class="responsive-img" src="./assets/images/gallery-demo.png" width="90">
+                    </div>
+                  </div>
+                  <div id="fav-demo" class="row">
+                    <div id='fav-img-demo' class="col 4 left">
+                      <p>geo</p>
+                      <img class="responsive-img" src="./assets/images/geo-demo.png" width="90">
+                    </div>
+                    <div id='fav-icon-demo' class='col 4 right'>
+                      <a class="btn-floating waves-effect">
+                        <i class="material-icons">favorite</i>
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-=======
-          <div class="col s12 m10 l10 xl10">
-            <img id="art-piece" src="./assets/images/richard-diebenkorn-ocean-park-79.jpg" class="z-depth-2 hoverable" width="300">
           </div>
         </div>
       </div>
     </div>
-    <div id='clock-container' class="row">
-      <div class="col s4 push-s4 center">
-        <h5 id="date" class="flow-text">Sunday March 10</h5>
-        <h2 id="time">10:15 am</h2>
-        <h5 id="loc-weather" class="flow-text">Oakland, CA  |  58° & cloudy</h5>
-      </div>
-      <!-- POTENTIALLY ADD BUTTON TO SURFACE OPTIONS TO USER
-      <div class="container">
-        <a class="btn-floating right waves-effect">
-          <i class="material-icons">menu</i>
-        </a>
-      </div> -->
+  </div>
+
+  <!--============================= CLOCK/TIME/WEATHER ===============================-->
+  <div id='clock-container' class="row">
+    <div class="col s4 push-s4 center">
+      <h5 id="date" class="flow-text"><span class="date"></span></h5>
+      <h2 id="time"><span class='clock'></span></h2>
+      <h5 class="flow-text" id="temp-weather-info"><span id='city'></span>  |  <span><span id='weather'></span> & <span id="temp"></span>&deg;</span></h5>
     </div>
   </div>
+  <!--============================= MODAL ===============================-->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h3>
-        curated(ss)
-      </h3>
-      <h5>
-        Hi there! We're excited to share curated(ss) with you - a web dashboard for art lovers and the curious. 
-        The experience is built around beautiful paintings pulled from the Met's extensive collection. 
-        The dashboard colors change each time the painting changes, and they are based on color samplings 
-        from the painting itself.
-      </h5>
-      <h5>
-        Take a look below at the two layouts we offer, and a few option to customize your dashboard:
-      </h5>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">curate!</a>
+      <h4>
+        curate(ss)
+      </h4>
+      <h6>
+        Hi there! We're excited to curate an experience for you. Come here each day to see a new work of art
+         with dynamic styles that change based on the colors of the painting itself. 
+        <br><br>
+        Add your name here so we can greet you, and let us know if we can use your location if you want the styles to reflect your local weather too!
+      </h6>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input placeholder="name" id="first_name" type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">share location</a>
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">do not share location</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <h6>
+        You can click on the   <a class="btn-small pulse btn-floating"><i class="material-icons">add</i></a>    button in the bottom of the screen to customize like you see below:
+      </h6>
+      <div class="row">
+        <div class='col s12 m5 right-align'>  
+          <h6 id="swap-demo-title">choose your design</h6>
+          <img src="./assets/images/swap-modal-img.png" width="250">
+        </div>
+        <div class="col s12 m6 right-align">
+          <h6 id="fave-demo-title">mark your favorites</h6>
+          <img src='./assets/images/fave-modal-img.png' width='250'>
+        </div>
+      </div>
     </div>
   </div>
+  <!--====================== NAV BUTTONS ========================-->
+  <div class="fixed-action-btn left-align direction-left">
+    <a class="btn-floating btn-large">
+       <i class="large material-icons">add</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating waves-effect"><i class="material-icons">favorite</i></a></li>
+      <li class="dislike"><a class="btn-floating waves-effect"><i class="material-icons">block</i></a></li>
+      <li><a class="extra-info btn-floating waves-effect"><i class="material-icons">info</i></a></li>
+      <li class="switch-weather"><a class="btn-floating waves-effect"><i class="material-icons">cloud</i></a></li>
+      <li><a href="./geometric.html" class="btn-floating waves-effect"><i class="material-icons">cached</i></a></li>
+    </ul>
+  </div>
+
+  <!-- <div class="fixed-action-btn left-align direction-left">
+    <a class="btn-floating btn-large">
+      <i class="large material-icons">add</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating waves-effect"><i class="material-icons">favorite</i></a></li>
+      <li><a class="btn-floating waves-effect"><i class="material-icons">block</i></a></li>
+      <li><a class="btn-floating waves-effect extra-info"><i class="material-icons">info</i></a></li>
+      <li><a href='./geometric.html' class="btn-floating waves-effect"><i class="material-icons">cached</i></a></li>
+    </ul>
+  </div> -->
 
 
-<!-- SCRIPTS -->
+<!-- =====================SCRIPTS============================ -->
 
-<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./assets/javascript/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 

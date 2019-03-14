@@ -1,19 +1,30 @@
-body {
+/* body {
   background-color: #CDAB63;
+} */
+
+#gallery-body {
+  max-height:100vh;
 }
 
 #wrapper {
   margin-top: 6%;
 }
 
-.card-content {
-  background: #A9A8BD;
-  color: #395A7A;
+#painting-name {
+  font-style: italic;
+}
+
+#artist-name{
+  text-align: left;
+  max-width: 180px;
+}
+
+#painting-card-info {
+  text-align: left;
 }
 
 #info-back {
   margin:10px auto;
-  color: #A9A8BD;
 }
 
 #info-back-text {
@@ -33,31 +44,42 @@ body {
   padding-left:10%;
 }
 
-h3 {
-  color: #03648B;
+.fixed-action-btn{
+  right: auto;
+  margin-left: 5%;
 }
 
-h2 {
-  color: #528360;
-}
+/* ADD MODAL TEXT STYLING */
+/*************************/
 
-h5 {
-  color: #03648B;
-}
-
-h6{
-  color:#A9A8BD;
-}
+/* #modal1 {
+} */
 
 .modal-content {
   color: #03648B;
 }
 
+.modal-content {
+  margin: 20px 30px;
+}
+
+#swap-demo-title{
+  margin-right: 18%;
+}
+
+#fave-demo-title {
+  margin-right: 8%;
+}
+/*************************/
+/*************************/
+/*************************/
+
+
 /* CARD FLIP ANIMATION */
 .flip-card {
   position: relative;
-  width: 380px;
-  height: 437px;
+  width: 100%;
+  height: 100%;
   float: left;
   perspective: 700px;
 }
@@ -66,7 +88,7 @@ h6{
   position: relative;
   width: 380px;
   height: 437px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  /* box-shadow: 0 0 15px rgba(0,0,0,0.1); */
 
   transition: transform 1s;
   transform-style: preserve-3d;
@@ -80,18 +102,14 @@ h6{
 .flip-front,
 .flip-back {
   position: absolute;
-  background: #03446A;
-  color: white;
   text-align: center;
   /* border-radius: 5px; */
   backface-visibility: hidden;
 }
 
 .flip-back {
-  background: #03446A;
   width: 380px;
   height: 437px;
-  color: white;
   transform: rotateY( 180deg );
   display:flex;
   flex-direction: column;

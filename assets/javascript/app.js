@@ -1,6 +1,6 @@
 // Initialize Firebase
 
-
+//const firebaseAPI = "AIzaSyDFkB70-ZlFHiBOIFlSzE0TSkw00BNmuIs";
 
 // const config = {
 //   apiKey: firebaseAPI,
@@ -144,7 +144,8 @@ let paintings = [
         five: "#232D49"
       }
     ]
-  },
+  },  
+
   {
     paintingName: "Still Life with Apples and a Pot of Primroses",
     objectID: 435882,
@@ -154,62 +155,62 @@ let paintings = [
     metURL: "https://www.metmuseum.org/art/collection/search/435882",
     weatherPalettes: [
       {
-        one: "#F8EAC8",
-        two: "#818E63",
-        three: "#A56F3F",
-        four: "#606F4C",
-        five: "#A83A0D"
+        one: "#EBEDE0",
+        two: "#F0C242",
+        three: "#71A29E",
+        four: "#BF593C",
+        five: "#2A4F5C"
       },
       {
-        one: "#E5D7BA",
-        two: "#7B8C60",
-        three: "#4F593E",
-        four: "#5E472B",
-        five: "#2A1D17"
+        one: "#DAD8C6",
+        two: "#BF5D42",
+        three: "#548A89",
+        four: "#C2891A",
+        five: "#47626E"
       },
       {
-        one: "#DBCCAE",
-        two: "#717D5C",
-        three: "#4E664C",
-        four: "#742313",
-        five: "#341E16"
+        one: "#BECFC7",
+        two: "#4F8283",
+        three: "#1E4644",
+        four: "#7E3523",
+        five: "#1B3C54"
       }
     ]
-  },
+  },  
 
-  //   {
-  //     paintingName: "Whalers",
-  //     objectID: 437854,
-  //     wikiSearch: "Whalers (J. M. W. Turner)",
-  //     description: "",
-  //     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
-  //     orientation: "landscape"
-  //   },
-  //   {
-  //     paintingName: "View of Toledo",
-  //     objectID: 436575,
-  //     wikiSearch: "View of Toledo",
-  //     description: "",
-  //     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
-  //     orientation: "portrait"
-  //   },
-  //   {
-  //     paintingName: "Young Woman with a Water Pitcher",
-  //     objectID: 437881,
-  //     wikiSearch: "",
-  //     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
-  //     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
+//   {
+//     paintingName: "Whalers",
+//     objectID: 437854,
+//     wikiSearch: "Whalers (J. M. W. Turner)",
+//     description: "",
+//     palette: ["rgb(219, 201, 169)", "rgb(193, 180, 147)", "rgb(39, 28, 15)"],
+//     orientation: "landscape"
+//   },
+//   {
+//     paintingName: "View of Toledo",
+//     objectID: 436575,
+//     wikiSearch: "View of Toledo",
+//     description: "",
+//     palette: ["rgb(35, 81, 89)", "rgb(71, 68, 49)", "rgb(90, 103, 62)"],
+//     orientation: "portrait"
+//   },
+//   {
+//     paintingName: "Young Woman with a Water Pitcher",
+//     objectID: 437881,
+//     wikiSearch: "",
+//     description: "This painting is one of a closely related group painted in the early to mid-1660s as the artist was not using linear perspective and geometric order and the light was his only source of emphasis.  The painting by Henry Gurdon Marquand in 1887 at a Paris gallery for $800. When Marquand brought it to the United States, it was the first Vermeer in America. Marquand donated the artwork along with other pieces in his collection to the Metropolitan Museum of Art in New York City",
+//     palette: ["rgb(17, 40, 64)", "rgb(141, 133, 112)", "rgb(38, 20, 23)"],
 
-  //   },
-  //   {
-  //     paintingName: "La Berceuse",
-  //     objectID: 437984,
-  //     wikiSearch: "",
-  //     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
-  //     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
-  //     orientation: portrait
-  //   },
-  //  
+//   },
+//   {
+//     paintingName: "La Berceuse",
+//     objectID: 437984,
+//     wikiSearch: "",
+//     description: 'After her husband had posed for several works with van Gogh, Augustine Roulin sat for Van Gogh and Paul Gauguin in the Yellow House the two men shared. Van Gogh created several La Berceuse [la bɛʁsøz] works where Augustine rocked her unseen cradle by a string.[15] Van Gogh labeled the group of work La Berceuse meaning "our lullaby or the woman rocking the cradle." The colour and setting were intended to set the scene of a lullaby, meant to give comfort to "lonely souls."',
+//     palette: ["rgb(29, 89, 68)", "rgb(142, 16, 16)", "rgb(191, 130, 24)"],
+//     orientation: portrait
+//   },
+//  
   // {
   //   paintingName: "Pines Along the Shore",
   //   objectID: 459095,
@@ -539,8 +540,6 @@ function getWeather() {
 }
 
 
-
-
 //basic function for now, will add color printing later.  sets weather code
 function setWeather(code) {
   whichWeather = code;
@@ -563,10 +562,11 @@ function setWeather(code) {
   $(".extra-info").attr("href", thisPainting.metURL);
 
 
+
   //==BUTTONS=============//
+
   $(".btn-floating").attr("style", "background-color: " + thisPalette.one);
   $(".material-icons").attr("style", "color: " + thisPalette.five);
-
 
 
   //==GALLERY COLOR ASSIGNMENTS====================================================================================================================================================================================
@@ -595,6 +595,7 @@ function setWeather(code) {
   $(".weather-color").attr("style", "color: " + thisPalette.four);
   $(".temp-color").attr("style", "color: " + thisPalette.four);
   $(".temp-weather-info-color").attr("style", "color: " + thisPalette.four);
+
 }
 
 
@@ -624,7 +625,6 @@ function setWikiDescription(index) {
       $(".card-reverse").text(paintingDescription);
       console.log(paintingDescription);
     })
-
 
 
   }
@@ -707,6 +707,7 @@ function choosePainting(paintingsArray, excludeIndex) {
     localStorage.setItem("paintingChoice", choice);
     localStorage.setItem("daySet", date);
 
+
     return choice;
   }
 }
@@ -734,15 +735,14 @@ function metAPI(choice) {
     method: "GET"
   }).then(function (response) {
 
-    let paintingTitle = response.title;
-    let artist = response.artistDisplayName;
-    let artistBio = response.artistDisplayBio;
-    let artistNationality = response.artistNationality;
-    let medium = response.medium;
-    let year = response.objectDate;
-    let dimensions = response.dimensions;
-    let paintingURL = response.primaryImageSmall;
-
+    paintingTitle = response.title;
+    artist = response.artistDisplayName;
+    artistBio = response.artistDisplayBio;
+    artistNationality = response.artistNationality;
+    medium = response.medium;
+    year = response.objectDate;
+    dimensions = response.dimensions;
+    paintingURL = response.primaryImageSmall;
 
     console.log(paintingTitle);
     console.log(artist);
@@ -753,6 +753,7 @@ function metAPI(choice) {
     console.log(dimensions);
     console.log(paintingURL);
 
+
     //===GEO ASSIGNMENTS ======================================================================
     $("#vg-painting").attr("src", paintingURL);
     $("#vg-painting").attr("alt", thisPainting.paintingName);
@@ -761,7 +762,6 @@ function metAPI(choice) {
     $(".painting-info").text(artistBio);
     $(".painting-info2").text(year + " " + medium);
     $(".painting-info3").text(dimensions);
-
 
     //===GALLERY ASSIGNMENTS ==================================================================
     $("#art-piece").attr("src", paintingURL);
@@ -777,11 +777,22 @@ function metAPI(choice) {
 }
 
 
-
-
 $(".dislike").on("click", function () {
   redoPaintingChoice(paintingNumber);
 })
+
+
+ $(".switch-weather").on("click", function() {
+    console.log("the code now is: " + whichWeather);
+    if(whichWeather<=1) {
+      whichWeather++;
+      setWeather(whichWeather);
+    }
+    else {
+      whichWeather=0;
+      setWeather(whichWeather);
+    }
+  });
 
 
 

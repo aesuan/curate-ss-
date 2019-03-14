@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="geo-html" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
@@ -14,7 +12,7 @@
     <link rel="stylesheet" href="./assets/css/geo.css">
     <title>Geometric</title>
 </head>
-<body class="geo-html">
+<body class="geo-body">
 
 <div class="geoBox1 grad1"></div>
 <div class="geoBox2 grad2"></div>
@@ -27,13 +25,13 @@
     </div>
     <div class="row">
 
-        <div class="col s3 offset-s2 z-depth-3 center-align time hoverable">
-            <h4 class="weather"><span id="city"></span>, <span id="state"></span> | <span id="temp"></span>&deg; and <span id="weather"></span></h4>
+        <div class="col s3 offset-s2 z-depth-3 center-align time">
+            <h4 class="weather"><span id="city"></span>, <span id="state"></span> | <span id="temp"></span>&deg; | <span id="weather"></span></h4>
             <h1 class="clock"></h1>
             <h4 class="date"></h4>
         </div>
 
-        <div class="col s4 offset-s1">
+        <div class="col s4 offset-s1 painting">
             <img class="z-depth-3 materialboxed" id="vg-painting" src="" alt="">
         </div>
     </div>
@@ -44,44 +42,38 @@
                 <div class="z-depth-3 art-info left-align the-front">
                     <h5 class="artist-name"></h5>
                     <h5 class="painting-name"></h5>
-                    <p class="painting-info"></p>
-                    <p class="painting-info2"></p>
+                    <p id="no-padding" class="painting-info"></p>
+                    <p id="no-padding" class="painting-info2"></p>
+                    <p id="no-padding" class="painting-info3"></p>
                 </div>
                 <div class="z-depth-3 art-info left-align the-back">
 
-                    <p class="card-reverse left-align">
-                        In the last weeks of his life, Van Gogh completed a number of impressive paintings of the wheatfields around Auvers. This outspread field under a dark sky is one of them.
-                    </p>
-                    <p class="card-reverse left-align">
-                        In these landscapes he tried to express 'sadness, extreme loneliness'. But the overwhelming emotions that Van Gogh experienced in nature were also positive. He wrote to his brother Theo, 'I'd almost believe that these canvases will tell you what I can't say in words, what I consider healthy and fortifying about the countryside.'
-                    </p>
-                    <p class="card-reverse left-align">
-                        The elongated format of Wheatfields under Thunderclouds is unusual. It emphasizes the grandeur of the landscape, as does the simple composition: two horizontal planes.
-                    </p>
+                    <p class="card-reverse left-align"></p>
+                  
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="fixed-action-btn left-align">
+    <div class="fixed-action-btn left-align direction-right">
         <a class="btn-floating btn-large">
             <i class="large material-icons">add</i>
         </a>
         <ul>
             <li><a class="btn-floating waves-effect"><i class="material-icons">favorite</i></a></li>
             <li class="dislike"><a class="btn-floating waves-effect"><i class="material-icons">block</i></a></li>
-            <li><a class="btn-floating waves-effect"><i class="material-icons">info</i></a></li>
-            <li><a class="btn-floating waves-effect"><i class="material-icons">cached</i></a></li>
+            <li><a class="extra-info btn-floating waves-effect"><i class="material-icons">info</i></a></li>
+            <li class="switch-weather"><a class="btn-floating waves-effect"><i class="material-icons">cloud</i></a></li>
+            <li><a href="./index.html" class="btn-floating waves-effect"><i class="material-icons">cached</i></a></li>
         </ul>
     </div>
                 
 
-
-<script type="text/javascript" src="./assets/javascript/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script src="./assets/javascript/materialize.min.js"></script>
 <script src="./assets/javascript/apikeys.js"></script>
 <script src="./assets/javascript/app.js"></script>
-<script src="./assets/javascript/geo.js"></script>
 </body>
 </html>
 
