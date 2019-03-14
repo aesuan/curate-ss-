@@ -484,6 +484,8 @@ let loading = false;
 let loadingScreenNumber = 0;
 let totalLoadingScreens = 7;
 let loadingInterval;
+let weatherLoaded = false;
+let metLoaded = false;
 
 
 
@@ -508,30 +510,33 @@ let user = "User";
 
 function loadingPage() {
 
-  loadingInterval = setInterval(cycleLoadingScreen, 1000)
-  $(".loader").show();
-  function cycleLoadingScreen () {
+  function cycleLoadingScreen() {
     if (loading) {
-      
+      loadingScreenNumber++;
+      console.log("changed " + loadingScreenNumber);
       $(".loading-text").attr("style", "color: " + loadingScreens[loadingScreenNumber].color);
       $(".loader").attr("style", "background-color: " + loadingScreens[loadingScreenNumber].bgColor);
       $(".loading-text").text(loadingScreens[loadingScreenNumber].text);
       if (loadingScreenNumber === totalLoadingScreens) {
         loadingScreenNumber = 0;
-      } else {
-        loadingScreenNumber++;
-      }
+        console.log("zeroed " + loadingScreenNumber);
+      } 
     } else {
       clearInterval(loadingInterval);
       $(".loader").hide();
     }
-    
   }
- 
- }
+
+  clearInterval(loadingInterval);
+  loadingInterval = setInterval(cycleLoadingScreen, 1000);
+  $(".loader").show();
+  
+}
 
 
- 
+
+
+
 
 
 
@@ -637,8 +642,6 @@ function getWeather() {
 
 //basic function for now, will add color printing later.  sets weather code
 function setWeather(code) {
-  loading=true;
-  loadingPage();
   whichWeather = code;
   console.log("the weather code is" + code);
   thisPalette = thisPainting.weatherPalettes[whichWeather];
@@ -695,7 +698,10 @@ function setWeather(code) {
   $(".temp-color").attr("style", "color: " + thisPalette.four);
   $(".temp-weather-info-color").attr("style", "color: " + thisPalette.four);
 
-  loading=false;
+  weatherLoaded = true;
+  if (loading && metLoaded) {
+    loading = false;
+  }
 }
 
 
@@ -819,7 +825,9 @@ function choosePainting(paintingsArray, excludeIndex) {
 
 
 function redoPaintingChoice(currentPainting) {
-  loading=true;
+  loading = true;
+  metLoaded = false;
+  weatherLoaded = false;
   loadingPage();
   localStorage.removeItem("paintingChoice");
   localStorage.removeItem("daySet");
@@ -879,8 +887,11 @@ function metAPI(choice) {
     $("#painting-name").text(paintingTitle);
     $("#artist-bio").text(artistBio);
     $("#painting-info").text(year + " " + medium);
-    
-    loading=false;
+
+    metLoaded = true;
+    if (loading && weatherLoaded) {
+      loading = false;
+    }
 
   })
 
@@ -894,7 +905,11 @@ $(".dislike").on("click", function () {
 
 $(".switch-weather").on("click", function () {
   console.log("the code now is: " + whichWeather);
-  if (whichWeather <= 1) {
+  loading = true;
+  metLoaded = true;
+  weatherLoaded = false;
+  loadingPage();
+  if (whichWeather < 2) {
     whichWeather++;
     setWeather(whichWeather);
   }
@@ -905,7 +920,16 @@ $(".switch-weather").on("click", function () {
 });
 
 
+$(".switch-user").on("click", function () {
+  loading = true;
+  metLoaded = false;
+  weatherLoaded = false;
+  loadingPage();
+})
+
+
 $("[type=submit]").on("click", function (event) {
+  event.preventDefault();
   console.log("Hello!");
   user = $("#name-input").val().trim();
   console.log(user);
@@ -941,16 +965,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //when page is loaded gets location/weather, does met api call, etc
 $(document).ready(function () {
- 
-  loading=true;
+
+  loading = true;
+  metLoaded = false;
+  weatherLoaded = false;
   loadingPage();
 
-  
+
 
   timeOfDay = getGreetingTime(moment());
   date = moment().format("dddd MMM Do");
-  
-   //materialize stuff
+
+  //materialize stuff
   if (localStorage.getItem("userName") === null) {
     $('.materialboxed').materialbox();
     //modal stuff
@@ -959,13 +985,13 @@ $(document).ready(function () {
       dismissible: false
     });
     $('.modal').modal('open')
-  }
-  else {
+
+  } else {
     user = localStorage.getItem("userName");
     $("#user-name").text(user);
-    getIP();
     setTime();
     getPainting();
+    getIP();
   }
 
   //more possible additions:
